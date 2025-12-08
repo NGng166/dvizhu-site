@@ -1,0 +1,185 @@
+"use client";
+
+import { useState } from "react";
+
+// Массив фотографий для первого слайдера
+const photosSlider1 = [
+  { src: "/bustour-06-09/photo1.jpg", alt: "Мерч ДвижУфы для парней" },
+  { src: "/bustour-06-09/photo2.jpg", alt: "Мерч ДвижУфы в горах" },
+  { src: "/bustour-06-09/photo3.jpg", alt: "Мерч ДвижУфыв горах 2" },
+  { src: "/bustour-06-09/photo4.jpg", alt: "Мерч ДвижУфы парень и девушка" },
+  { src: "/bustour-06-09/photo5.jpg", alt: "Мерч ДвижУфы в городе" },
+];
+
+// Массив видео с подписями
+const videos = [
+  { src: "/bustour-06-09/video1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
+  { src: "/bustour-06-09/video2.mp4", caption: "В бастуре рождается любовь!.." },
+  { src: "/bustour-06-09/video3.mp4", caption: "Мерч ДвижУфы очень яркий" },
+];
+
+export default function BustourPage() {
+  // Состояние для слайдера фото
+  const [currentIndex1, setCurrentIndex1] = useState(0);
+
+  const prev1 = () => setCurrentIndex1(i => (i === 0 ? photosSlider1.length - 1 : i - 1));
+  const next1 = () => setCurrentIndex1(i => (i === photosSlider1.length - 1 ? 0 : i + 1));
+
+  return (
+    <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
+      {/* Заголовок */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 leading-tight">
+          🔥 BUSTOUR <br />
+          UFA - ALMATY 🔥<br />
+          <span className="text-3xl sm:text-4xl font-normal">6 сентября</span>
+        </h1>
+      </div>
+
+      {/* Фото под заголовком */}
+      <img
+        src="/bustour-06-09/bustour-cover.jpg"
+        alt="BUSTOUR UFA-ALMATY"
+        className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
+      />
+
+      {/* Краткое описание */}
+      <section className="mb-12">
+        <p className="text-lg leading-relaxed indent-6">
+          Бастур — это когда толпа фанатов, единомышленников и друзей отправляется в другой город на концерт любимого исполнителя. В сентябре 2025 года мы рванули в Казахстан: два автобуса, битком забитых фанатами, зажигательные тусовки в пути и города по маршруту — Астана и Алматы. Энергетику бастура не передать словами — это свобода, драйв и музыка, объединяющие людей со всего мира.
+        </p>
+      </section>
+
+      {/* О поездке */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-2">О поездке</h2>
+        <p className="text-lg leading-relaxed indent-6">
+          Бастур — это не обычный «Бла-бла-кар», а настоящая дружеская экспедиция:
+        </p>
+        <ul className="list-disc list-inside text-lg space-y-1 mb-4">
+          <li>50 единомышленников в каждом автобусе, мощная колонка, атмосфера праздника;</li>
+          <li>За рулем — энергия фанатов, которые готовы отрываться на полную.</li>
+        </ul>
+
+        {/* Первый видео-блок */}
+        <video
+          src="/bustour-06-09/vid2.MOV"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
+        />
+
+        <p className="text-lg leading-relaxed indent-6 font-semibold mb-2">По маршруту:</p>
+        <ul className="list-disc list-inside text-lg space-y-1">
+          <li>2.09 — выезд из Уфы. Торжественное открытие, раздача welcome-подарков, знакомство участников и первые автобусные вечеринки.</li>
+          <li>3.09 — Астана. Ночной переход через границу, прибытие в город, остановка в гостинице, отдых и возможность осмотреть город.</li>
+          <li>4.09 — Алматы. Дорога сквозь красоты Казахстана, виды на горы, подготовка к концерту.</li>
+          <li>5.09 — Алматы. Заселение, изучение города, Заилийский Алатау, шопинг и национальная кухня.</li>
+          <li>6.09 — День концерта. Общий марш фанатов, невероятная энергетика танцпола и фанзоны, тысячная толпа под музыку любимого исполнителя.</li>
+          <li>7.09 — возвращение домой. Сборы, прощание с друзьями, но энергия концерта остаётся с нами до конца пути.</li>
+          <li>9.09 — прибытие в Уфу. Делимся эмоциями, контактами и планируем новые встречи.</li>
+        </ul>
+      </section>
+
+      {/* Слайдер фото */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Каждый из фанатов получил свой тематический мерч:</h2>
+        <div className="relative w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden" style={{ aspectRatio: '3 / 4' }}>
+          <div
+            className="flex transition-transform duration-300"
+            style={{ transform: `translateX(-${currentIndex1 * 100}%)` }}
+          >
+            {photosSlider1.map((photo, index) => (
+              <img
+                key={index}
+                src={photo.src}
+                alt={photo.alt}
+                className="flex-shrink-0 w-full h-full object-contain rounded-lg mr-4"
+              />
+            ))}
+          </div>
+
+          {/* Кнопки переключения */}
+          <button
+            onClick={prev1}
+            className="absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 bg-black/70 text-white text-2xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next1}
+            className="absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 bg-black/70 text-white text-2xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+          >
+            ›
+          </button>
+        </div>
+      </section>
+
+      {/* Особенности тура */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-2">Особенности тура</h2>
+        <ul className="list-disc list-inside text-lg space-y-1">
+          <li>Трансфер Уфа ↔ Алматы на комфортабельных автобусах;</li>
+          <li>Проживание в гостиницах в Астане и Алматы (3* и выше);</li>
+          <li>Билет на концерт (танцпол / фанзона);</li>
+          <li>Сопровождение организаторов на протяжении всей поездки.</li>
+        </ul>
+      </section>
+
+{/* Видео */} <section className="mb-12"> <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2> <div className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg" style={{ aspectRatio: '4 / 3' }}> <video src="/bustour-06-09/rils.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg" /> </div> </section>
+
+      {/* Стоимость */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-2">Стоимость</h2>
+        <ul className="list-disc list-inside text-lg space-y-1">
+          <li>С билетом фанзоны: 36 000 р </li>
+          <li>С билетом на концерт: 34 000 р</li>
+          <li>Без билета на концерт: 30 000 р</li>
+          <li>Бронь места: 7 000 р (остаток оплаты — не позднее чем за месяц до старта)</li>
+        </ul>
+      </section>
+
+      {/* Видео блок с тремя видео в ряд */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Видео с поездки</h2>
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
+          {videos.map((video, index) => (
+            <div key={index} className="flex flex-col items-center w-full md:w-1/3">
+              <div className="w-full" style={{ aspectRatio: "9 / 16" }}>
+                <video
+                  src={video.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <p className="mt-2 text-center">{video.caption}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Итоги и впечатления */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-2">Итоги и впечатления</h2>
+        <p className="text-lg leading-relaxed indent-6">
+          Бастур — это дружба, эмоции, музыка и новые знакомства. Каждая поездка превращается в легенду, которую участники вспоминают долго. Это энергия, драйв и незабываемые моменты, когда каждый день — праздник.
+        </p>
+      </section>
+
+      {/* Кнопка назад */}
+      <div className="text-center mt-8">
+        <a
+          href="/"
+          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
+        >
+          Назад на главную
+        </a>
+      </div>
+    </main>
+  );
+}
