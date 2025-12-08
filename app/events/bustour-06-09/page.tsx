@@ -11,7 +11,7 @@ const photosSlider1 = [
   { src: "/bustour-06-09/photo5.jpg", alt: "Мерч ДвижУфы в городе" },
 ];
 
-// Массив видео с подписями
+// Массив видео с подписями  //
 const videos = [
   { src: "/bustour-06-09/video1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
   { src: "/bustour-06-09/video2.mp4", caption: "В бастуре рождается любовь!.." },
