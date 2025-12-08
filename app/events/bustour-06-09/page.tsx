@@ -4,18 +4,18 @@ import { useState } from "react";
 
 // Массив фотографий для первого слайдера
 const photosSlider1 = [
-  { src: "/bustour-06-09/photo1.jpg", alt: "Мерч ДвижУфы для парней" },
-  { src: "/bustour-06-09/photo2.jpg", alt: "Мерч ДвижУфы в горах" },
-  { src: "/bustour-06-09/photo3.jpg", alt: "Мерч ДвижУфыв горах 2" },
-  { src: "/bustour-06-09/photo4.jpg", alt: "Мерч ДвижУфы парень и девушка" },
-  { src: "/bustour-06-09/photo5.jpg", alt: "Мерч ДвижУфы в городе" },
+  { src: "/bustour-06-09/p1.jpg", alt: "Мерч ДвижУфы для парней" },
+  { src: "/bustour-06-09/p2.jpg", alt: "Мерч ДвижУфы в горах" },
+  { src: "/bustour-06-09/p3.jpg", alt: "Мерч ДвижУфыв горах 2" },
+  { src: "/bustour-06-09/p4.jpg", alt: "Мерч ДвижУфы парень и девушка" },
+  { src: "/bustour-06-09/p5.jpg", alt: "Мерч ДвижУфы в городе" },
 ];
 
 // Массив видео с подписями  //
 const videos = [
-  { src: "/bustour-06-09/video1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
-  { src: "/bustour-06-09/video2.mp4", caption: "В бастуре рождается любовь!.." },
-  { src: "/bustour-06-09/video3.mp4", caption: "Мерч ДвижУфы очень яркий" },
+  { src: "/bustour-06-09/vid1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
+  { src: "/bustour-06-09/vid2.mp4", caption: "В бастуре рождается любовь!.." },
+  { src: "/bustour-06-09/vid3.mp4", caption: "Мерч ДвижУфы очень яркий" },
 ];
 
 export default function BustourPage() {
@@ -63,7 +63,7 @@ export default function BustourPage() {
 
         {/* Первый видео-блок */}
         <video
-          src="/bustour-06-09/vid2.mp4"
+          src="/bustour-06-09/vid0.mp4"
           autoPlay
           loop
           muted
