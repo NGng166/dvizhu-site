@@ -63,7 +63,7 @@ export default function BustourPage() {
 
         {/* Первый видео-блок */}
         <video
-          src="/bustour-06-09/vid2.MOV"
+          src="/bustour-06-09/vid2.mp4"
           autoPlay
           loop
           muted
@@ -128,7 +128,13 @@ export default function BustourPage() {
         </ul>
       </section>
 
-{/* Видео */} <section className="mb-12"> <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2> <div className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg" style={{ aspectRatio: '4 / 3' }}> <video src="/bustour-06-09/rils.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg" /> </div> </section>
+{/* Видео */} <section className="mb-12">
+  <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2>
+  <div className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg"
+  style={{ aspectRatio: '4 / 3' }}> <video src="/bustour-06-09/rils.mp4"
+  autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg" />
+  </div>
+  </section>
 
       {/* Стоимость */}
       <section className="mb-12">
