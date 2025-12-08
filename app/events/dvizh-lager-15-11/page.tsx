@@ -4,20 +4,20 @@ import { useState } from "react";
 
 // Массив фотографий
 const photos = [
-  { src: "/dvizh-lager-15-11/lager1.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/lager2.jpg", alt: "Спортивные дружные созтязания" },
-  { src: "/dvizh-lager-15-11/lager3.jpg", alt: "Выступления отрядов" },
-  { src: "/dvizh-lager-15-11/lager4.jpg", alt: "Игры на сплочение, Бирпонг" },
-  { src: "/dvizh-lager-15-11/lager5.jpg", alt: "Песни под гитару" },
-  { src: "/dvizh-lager-15-11/lager6.jpg", alt: "Спортивные игры" },
-  { src: "/dvizh-lager-15-11/lager7.jpg", alt: "Самая высокая скульптура из людей" },
-  { src: "/dvizh-lager-15-11/lager8.jpg", alt: "Костюмы в стиле 90х" },
-  { src: "/dvizh-lager-15-11/lager9.jpg", alt: "Спортивные игры" },
-  { src: "/dvizh-lager-15-11/lager10.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/lager11.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/lager12.jpg", alt: "Выступление отрядов" },
-  { src: "/dvizh-lager-15-11/lager13.jpg", alt: "Общее фото" },
-  { src: "/dvizh-lager-15-11/lager14.jpg", alt: "Костюмы в стиле 90х" }
+  { src: "/dvizh-lager-15-11/l1.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/l2.jpg", alt: "Спортивные дружные созтязания" },
+  { src: "/dvizh-lager-15-11/l3.jpg", alt: "Выступления отрядов" },
+  { src: "/dvizh-lager-15-11/l4.jpg", alt: "Игры на сплочение, Бирпонг" },
+  { src: "/dvizh-lager-15-11/l5.jpg", alt: "Песни под гитару" },
+  { src: "/dvizh-lager-15-11/l6.jpg", alt: "Спортивные игры" },
+  { src: "/dvizh-lager-15-11/l7.jpg", alt: "Самая высокая скульптура из людей" },
+  { src: "/dvizh-lager-15-11/l8.jpg", alt: "Костюмы в стиле 90х" },
+  { src: "/dvizh-lager-15-11/l9.jpg", alt: "Спортивные игры" },
+  { src: "/dvizh-lager-15-11/l10.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/l11.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/l12.jpg", alt: "Выступление отрядов" },
+  { src: "/dvizh-lager-15-11/l13.jpg", alt: "Общее фото" },
+  { src: "/dvizh-lager-15-11/l14.jpg", alt: "Костюмы в стиле 90х" }
 ];
 
 export default function DvizhLagerPage() {
@@ -127,7 +127,7 @@ export default function DvizhLagerPage() {
         <h2 className="text-2xl font-semibold mb-4">Видео</h2>
         <div className="w-full max-w-2xl mx-auto">
           <video
-            src="/dvizh-lager-15-11/lager-video.mp4"
+            src="/dvizh-lager-15-11/l-video.mp4"
             controls
             className="w-full h-auto rounded-lg"
           />
