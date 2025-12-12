@@ -4,20 +4,20 @@ import { useState } from "react";
 
 // Массив фотографий
 const photos = [
-  { src: "/dvizh-lager-15-11/l1.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/l2.jpg", alt: "Спортивные дружные созтязания" },
-  { src: "/dvizh-lager-15-11/l3.jpg", alt: "Выступления отрядов" },
-  { src: "/dvizh-lager-15-11/l4.jpg", alt: "Игры на сплочение, Бирпонг" },
-  { src: "/dvizh-lager-15-11/l5.jpg", alt: "Песни под гитару" },
-  { src: "/dvizh-lager-15-11/l6.jpg", alt: "Спортивные игры" },
-  { src: "/dvizh-lager-15-11/l7.jpg", alt: "Самая высокая скульптура из людей" },
-  { src: "/dvizh-lager-15-11/l8.jpg", alt: "Костюмы в стиле 90х" },
-  { src: "/dvizh-lager-15-11/l9.jpg", alt: "Спортивные игры" },
-  { src: "/dvizh-lager-15-11/l10.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/l11.jpg", alt: "Дружные отряды" },
-  { src: "/dvizh-lager-15-11/l12.jpg", alt: "Выступление отрядов" },
-  { src: "/dvizh-lager-15-11/l13.jpg", alt: "Общее фото" },
-  { src: "/dvizh-lager-15-11/l14.jpg", alt: "Костюмы в стиле 90х" }
+  { src: "/dvizh-lager-15-11/photo_1_2025-12-12_11-14-02.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/photo_2_2025-12-12_11-14-02.jpg", alt: "Спортивные дружные созтязания" },
+  { src: "/dvizh-lager-15-11/photo_3_2025-12-12_11-14-02.jpg", alt: "Выступления отрядов" },
+  { src: "/dvizh-lager-15-11/photo_4_2025-12-12_11-14-02.jpg", alt: "Игры на сплочение, Бирпонг" },
+  { src: "/dvizh-lager-15-11/photo_5_2025-12-12_11-14-02.jpg", alt: "Песни под гитару" },
+  { src: "/dvizh-lager-15-11/photo_6_2025-12-12_11-14-02.jpg", alt: "Спортивные игры" },
+  { src: "/dvizh-lager-15-11/photo_7_2025-12-12_11-14-02.jpg", alt: "Самая высокая скульптура из людей" },
+  { src: "/dvizh-lager-15-11/photo_8_2025-12-12_11-14-02.jpg", alt: "Костюмы в стиле 90х" },
+  { src: "/dvizh-lager-15-11/photo_9_2025-12-12_11-14-02.jpg", alt: "Спортивные игры" },
+  { src: "/dvizh-lager-15-11/photo_10_2025-12-12_11-14-02.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/photo_11_2025-12-12_11-14-02.jpg", alt: "Дружные отряды" },
+  { src: "/dvizh-lager-15-11/photo_12_2025-12-12_11-14-02.jpg", alt: "Выступление отрядов" },
+  { src: "/dvizh-lager-15-11/photo_13_2025-12-12_11-14-02.jpg", alt: "Общее фото" },
+  { src: "/dvizh-lager-15-11/photo_14_2025-12-12_11-14-02.jpg", alt: "Костюмы в стиле 90х" }
 ];
 
 export default function DvizhLagerPage() {
@@ -65,7 +65,7 @@ export default function DvizhLagerPage() {
   {/* Фото под дресс-кодом */}
   <div className="mt-4 w-full max-w-xl mx-auto">
     <img
-      src="/dvizh-lager-15-11/dress-code.jpg"
+      src="/dvizh-lager-15-11/dc.jpg"
       alt="Дресс-код"
       className="w-full h-auto rounded-lg"
     />
@@ -127,7 +127,7 @@ export default function DvizhLagerPage() {
         <h2 className="text-2xl font-semibold mb-4">Видео</h2>
         <div className="w-full max-w-2xl mx-auto">
           <video
-            src="/dvizh-lager-15-11/l-video.mp4"
+            src="/dvizh-lager-15-11/vid1.mp4"
             controls
             className="w-full h-auto rounded-lg"
           />

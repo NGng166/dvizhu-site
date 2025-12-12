@@ -29,7 +29,7 @@ export default function WhoWeAre() {
 {/* Цитата */}
 <div className="bg-gray-700 border-l-4 border-orange-400 p-6 rounded-r-lg mb-8 shadow-md max-w-3xl mx-auto">
   <p className="text-lg italic leading-relaxed text-center sm:text-left">
-    «Даже потеряв всё, тебе здесь устроят тёплый приём»
+    Даже потеряв всё, с сумкой пустой тебе устроят хороший приём...»
   </p>
   <p className="text-right mt-2 text-orange-300 font-semibold">
     — Макс Корж
