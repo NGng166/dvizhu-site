@@ -8,7 +8,7 @@ export default function PastEventsGallery() {
     { title: "BEERPONG", date: "20 сентября 2025 г.", slug: "beerpong-20-09", image: "/beerpong-20-09/beerpong-20-09.jpg" },
     { title: "DVIZH ЛАГЕРЬ II смена", date: "15-17 августа 2025 г.", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
     { title: "Общий сбор в Дустаре", date: "14 августа 2025 г.", slug: "obshe-sbor-14-08", image: "/obshe-sbor-14-08/obshe-sbor-14-08.webp" },
-    { title: "Питбайки", date: "12.07", slug: "pitbike-12-07", image: "/pitbike-12-07/pitbike-12-07.jpg" },
+    { title: "Питбайки", date: "12 июля 2025 г.", slug: "pitbike-12-07", image: "/pitbike-12-07/pitbike-12-07.jpg" },
     { title: "DVIZH ЛАГЕРЬ Iсмена", date: "27-29 июня 2025 г.", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
     //{ title: "Встречай лето", date: "30 мая - 1 июня 2025 г.", slug: "vstrechay-leto-30-05", image: "/vstrechay-leto-30-05/vstrechay-leto-30-05.jpg" },
     //{ title: "гора Малиновая", date: "17-18 мая 2025 г.", slug: "gora-malinovaya-17-05", image: "/gora-malinovaya-17-05/gora-malinovaya-17-05.jpg" },
