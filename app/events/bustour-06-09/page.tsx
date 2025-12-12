@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Slider from "../../components/Slider";
 
-// Массив фотографий для первого слайдера
+// Массив фотографий для слайдера
 const photosSlider1 = [
   { src: "/bustour-06-09/p1.jpg", alt: "Мерч ДвижУфы для парней" },
   { src: "/bustour-06-09/p2.jpg", alt: "Мерч ДвижУфы в горах" },
@@ -11,7 +12,7 @@ const photosSlider1 = [
   { src: "/bustour-06-09/p5.jpg", alt: "Мерч ДвижУфы в городе" },
 ];
 
-// Массив видео с подписями  //
+// Массив видео
 const videos = [
   { src: "/bustour-06-09/vid1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
   { src: "/bustour-06-09/vid2.mp4", caption: "В бастуре рождается любовь!.." },
@@ -19,12 +20,6 @@ const videos = [
 ];
 
 export default function BustourPage() {
-  // Состояние для слайдера фото
-  const [currentIndex1, setCurrentIndex1] = useState(0);
-
-  const prev1 = () => setCurrentIndex1(i => (i === 0 ? photosSlider1.length - 1 : i - 1));
-  const next1 = () => setCurrentIndex1(i => (i === photosSlider1.length - 1 ? 0 : i + 1));
-
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
       {/* Заголовок */}
@@ -83,37 +78,11 @@ export default function BustourPage() {
         </ul>
       </section>
 
-      {/* Слайдер фото */}
+      {/* Новый слайдер фото */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Каждый из фанатов получил свой тематический мерч:</h2>
-        <div className="relative w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden" style={{ aspectRatio: '3 / 4' }}>
-          <div
-            className="flex transition-transform duration-300"
-            style={{ transform: `translateX(-${currentIndex1 * 100}%)` }}
-          >
-            {photosSlider1.map((photo, index) => (
-              <img
-                key={index}
-                src={photo.src}
-                alt={photo.alt}
-                className="flex-shrink-0 w-full h-full object-contain rounded-lg mr-4"
-              />
-            ))}
-          </div>
-
-          {/* Кнопки переключения */}
-          <button
-            onClick={prev1}
-            className="absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 bg-black/70 text-white text-2xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-          >
-            ‹
-          </button>
-          <button
-            onClick={next1}
-            className="absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 bg-black/70 text-white text-2xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-          >
-            ›
-          </button>
+        <div className="max-w-3xl mx-auto">
+          <Slider photos={photosSlider1} peek={10} />
         </div>
       </section>
 
@@ -128,13 +97,13 @@ export default function BustourPage() {
         </ul>
       </section>
 
-{/* Видео */} <section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2>
-  <div className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg"
-  style={{ aspectRatio: '4 / 3' }}> <video src="/bustour-06-09/rils.mp4"
-  autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg" />
-  </div>
-  </section>
+      {/* Видео */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2>
+        <div className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg" style={{ aspectRatio: '4 / 3' }}>
+          <video src="/bustour-06-09/rils.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover rounded-lg" />
+        </div>
+      </section>
 
       {/* Стоимость */}
       <section className="mb-12">
