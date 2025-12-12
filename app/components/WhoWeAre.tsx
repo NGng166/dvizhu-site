@@ -19,12 +19,22 @@ export default function WhoWeAre() {
           className="w-full max-w-3xl mx-auto rounded-lg mb-8 object-cover"
         />
 
-        <p className="mb-6 text-lg leading-relaxed text-center sm:text-left">
-          Мы встречаемся, дружим, путешествуем, устраиваем лагеря, походы, квартирники, 
-          бирпонг, пейнтбол, Flat-вечеринки, совместные выезды в горы и поездки на концерты. 
-          В любом городе есть ребята, которые рады принять, согреть и показать лучшие места — 
-          как писал Корж: «Даже потеряв всё, тебе здесь устроят тёплый приём».
-        </p>
+{/* Большой текст + цитата Коржа */}
+<p className="mb-6 text-lg leading-relaxed text-center sm:text-left">
+  Мы встречаемся, дружим, путешествуем, устраиваем лагеря, походы, квартирники, 
+  бирпонг, пейнтбол, Flat-вечеринки, совместные выезды в горы и поездки на концерты. 
+  В любом городе есть ребята, которые рады принять, согреть и показать лучшие места.
+</p>
+
+{/* Цитата */}
+<div className="bg-gray-700 border-l-4 border-orange-400 p-6 rounded-r-lg mb-8 shadow-md max-w-3xl mx-auto">
+  <p className="text-lg italic leading-relaxed text-center sm:text-left">
+    «Даже потеряв всё, тебе здесь устроят тёплый приём»
+  </p>
+  <p className="text-right mt-2 text-orange-300 font-semibold">
+    — Макс Корж
+  </p>
+</div>
 
         <img
           src="/dvizh2.jpg"
