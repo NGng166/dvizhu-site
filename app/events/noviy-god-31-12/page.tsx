@@ -193,7 +193,16 @@ export default function NoviyGodPage() {
           Это люди и моменты, которые хочется беречь 🤍
         </p>
       </section>
-
+      
+      {/* Кнопка назад */}
+      <div className="text-center mt-8">
+        <a
+          href="/"
+          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
+        >
+          Назад на главную
+        </a>
+      </div>
     </main>
   );
 }
