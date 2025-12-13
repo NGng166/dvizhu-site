@@ -4,11 +4,11 @@ import { useState } from "react";
 import Slider from "../../components/Slider";
 
 const photos = [
-  { src: "/noviy-god-31-12/p1.jpg", alt: "Новогодняя ночь с Dvizh — атмосфера" },
+  { src: "/noviy-god-31-12/p5.jpg", alt: "Новогодняя ночь с Dvizh — атмосфера" },
   { src: "/noviy-god-31-12/p2.jpg", alt: "Новогодняя ночь с Dvizh — друзья" },
   { src: "/noviy-god-31-12/p3.jpg", alt: "Новогодняя ночь с Dvizh — танцы" },
   { src: "/noviy-god-31-12/p4.jpg", alt: "Новогодняя ночь с Dvizh — уют" },
-  { src: "/noviy-god-31-12/p5.jpg", alt: "Новогодняя ночь с Dvizh — праздник" },
+  { src: "/noviy-god-31-12/p1.jpg", alt: "Новогодняя ночь с Dvizh — праздник" },
 ];
 
 export default function NoviyGodPage() {
@@ -137,6 +137,12 @@ export default function NoviyGodPage() {
       {/* АТМОСФЕРА */}
       <section className="mb-14 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Атмосфера</h2>
+    {/* Фото под заголовком */}
+      <img
+        src="/noviy-god-31-12/guitar.jpg"
+        alt="atmosfera"
+        className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
+      />
         <p className="text-lg leading-relaxed indent-6 mb-4">
           Мы просто были рядом. Пели, говорили тёплые слова,
           делились историями и смеялись до ночи.
@@ -160,9 +166,24 @@ export default function NoviyGodPage() {
         </p>
       </section>
 
+{/* Атмосферное видео на фоне */}
+<section className="mb-16 flex justify-center">
+  <div className="w-full max-w-3xl overflow-hidden rounded-xl shadow-lg bg-black">
+    <video
+      src="/noviy-god-31-12/atmosfera.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-auto object-cover rounded-xl"
+    />
+  </div>
+</section>
+
+
+
       {/* ФИНАЛ */}
       <section className="mb-20 max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl font-semibold mb-4">Финал</h2>
         <p className="text-lg leading-relaxed mb-4">
           Так мы проводили уходящий год —<br />
           в кругу друзей, с теплом и ощущением единства.
