@@ -62,11 +62,11 @@ export default function AygirTripPage() {
         </p>
       </section>
 
-      {/* ВИДЕО-ЛУП С КНОПКОЙ */}
+{/* ВИДЕО-ЛУП С КРУГЛОЙ МАСКОЙ И КНОПКОЙ */}
 <section className="mb-20">
   <div className="max-w-sm sm:max-w-md mx-auto">
     <div
-      className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+      className="relative overflow-hidden rounded-full shadow-lg cursor-pointer group"
       style={{ aspectRatio: "1 / 1" }}
       onClick={() => setOpenVideo(true)}
     >
@@ -93,29 +93,18 @@ export default function AygirTripPage() {
   </div>
 </section>
 
-
-      {/* МОДАЛКА С ПОЛНЫМ ВИДЕО */}
+{/* МОДАЛКА С ПОЛНЫМ ВИДЕО (без маски, прямоугольник) */}
 {openVideo && (
   <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
     <div className="relative w-full max-w-sm sm:max-w-md">
-
       <button
         onClick={() => setOpenVideo(false)}
-        className="
-          fixed top-6 right-6 z-50
-          w-12 h-12
-          bg-black/70 text-white text-3xl
-          rounded-full flex items-center justify-center
-          hover:bg-black/90 transition
-        "
+        className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
       >
         ✕
       </button>
 
-      <div
-        className="bg-black rounded-xl overflow-hidden"
-        style={{ aspectRatio: "1 / 1" }}
-      >
+      <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "1 / 1" }}>
         <video
           src="/aygir-01-03/moment-full.mp4"
           controls
