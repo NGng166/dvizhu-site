@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Slider from "../../components/Slider";
 
 const photos = [
@@ -11,40 +12,82 @@ const photos = [
 ];
 
 export default function NoviyGodPage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
-      {/* Hero-блок */}
-<section className="mb-16">
-    <div className="text-center mt-8 max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
-            Новогодняя ночь с Dvizh
-          </h1>
-          <p className="text-lg sm:text-xl leading-relaxed">
-            Впервые мы встретили Новый год вместе ✨<br />
-            Мы решили собрать друзей и близких, чтобы проводить уходящий год
-            в тёплой, душевной и по-настоящему домашней атмосфере Dvizh.
+      {/* ШАПКА */}
+      <section className="mb-12 text-center max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-6">
+          Новогодняя ночь с Dvizh
+        </h1>
+
+        <p className="text-lg sm:text-xl leading-relaxed text-gray-200">
+          Мы решили собрать друзей и близких, чтобы проводить уходящий год
+          в тёплой, душевной и по-настоящему домашней атмосфере Dvizh.
+        </p>
+      </section>
+
+      {/* ВИДЕО-ЛУП */}
+      <section className="mb-20">
+        <div className="max-w-md sm:max-w-lg mx-auto">
+          <div
+            className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+            style={{ aspectRatio: "9 / 16" }}
+            onClick={() => setOpen(true)}
+          >
+            <video
+              src="/noviy-god-31-12/hero-loop.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+
+            {/* Play overlay */}
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
+              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+                ▶
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-gray-400 mt-3">
+            Нажмите, чтобы посмотреть видео со звуком
           </p>
         </div>
-        
-  <div className="max-w-3xl mx-auto">
-        <div
-      className="overflow-hidden rounded-xl shadow-lg bg-black"
-      style={{ aspectRatio: "9 / 16" }}
-    >
-          <video
-        src="/noviy-god-31-12/hero.mp4"
-        controls
-        preload="metadata"
-        className="w-full h-full object-cover"
-          />
-        </div>
-    </div>
-</section>
+      </section>
 
-      {/* Идея встречи */}
+      {/* МОДАЛКА С ПОЛНЫМ ВИДЕО */}
+      {open && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+          <div className="relative w-full max-w-md sm:max-w-lg">
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute -top-10 right-0 text-white text-3xl"
+            >
+              ✕
+            </button>
+
+            <div
+              className="bg-black rounded-xl overflow-hidden"
+              style={{ aspectRatio: "9 / 16" }}
+            >
+              <video
+                src="/noviy-god-31-12/hero-full.mp4"
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ИДЕЯ ВСТРЕЧИ */}
       <section className="mb-14 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Идея встречи</h2>
         <p className="text-lg leading-relaxed indent-6 mb-4">
           Это была не просто новогодняя ночь. Нам хотелось создать пространство,
           где каждому будет комфортно — даже если раньше этот праздник было не с кем разделить.
@@ -55,7 +98,7 @@ export default function NoviyGodPage() {
         </p>
       </section>
 
-      {/* Как это было */}
+      {/* КАК ЭТО БЫЛО */}
       <section className="mb-12 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Как это было</h2>
 
@@ -80,14 +123,14 @@ export default function NoviyGodPage() {
         </p>
       </section>
 
-      {/* Слайдер */}
+      {/* СЛАЙДЕР */}
       <section className="mb-16">
         <div className="max-w-3xl mx-auto">
           <Slider photos={photos} peek={12} />
         </div>
       </section>
 
-      {/* Атмосфера */}
+      {/* АТМОСФЕРА */}
       <section className="mb-14 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Атмосфера</h2>
         <p className="text-lg leading-relaxed indent-6 mb-4">
@@ -100,7 +143,7 @@ export default function NoviyGodPage() {
         </p>
       </section>
 
-      {/* Поздравления */}
+      {/* ПОЗДРАВЛЕНИЯ */}
       <section className="mb-14 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Поздравления</h2>
         <p className="text-lg leading-relaxed indent-6 mb-4">
@@ -113,7 +156,7 @@ export default function NoviyGodPage() {
         </p>
       </section>
 
-      {/* Финал */}
+      {/* ФИНАЛ */}
       <section className="mb-20 max-w-3xl mx-auto text-center">
         <h2 className="text-2xl font-semibold mb-4">Финал</h2>
         <p className="text-lg leading-relaxed mb-4">
