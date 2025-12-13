@@ -1,0 +1,151 @@
+"use client";
+
+import { useState } from "react";
+
+const loopVideos = [
+  {
+    id: 1,
+    srcLoop: "/beerpong-12-04/loop1.mp4",
+    srcFull: "/beerpong-12-04/full1.mp4",
+    alt: "BeerPong момент 1"
+  },
+  {
+    id: 2,
+    srcLoop: "/beerpong-12-04/loop2.mp4",
+    srcFull: "/beerpong-12-04/full2.mp4",
+    alt: "BeerPong момент 2"
+  },
+  {
+    id: 3,
+    srcLoop: "/beerpong-12-04/loop3.mp4",
+    srcFull: "/beerpong-12-04/full3.mp4",
+    alt: "BeerPong момент 3"
+  },
+];
+
+export default function BeerPongPage() {
+  const [openVideoId, setOpenVideoId] = useState<number | null>(null);
+
+  return (
+    <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
+
+      {/* Заголовок */}
+      <section className="mb-12 text-center max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+          BEERPONG
+        </h1>
+      </section>
+
+      {/* Начальное горизонтальное видео */}
+      <section className="mb-16 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
+        <video
+          src="/beerpong-12-04/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-auto object-cover rounded-xl"
+        />
+      </section>
+
+      {/* Текстовые абзацы */}
+      <section className="max-w-3xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
+        <p className="indent-6">
+          БирПонг — это шумно, весело и с эмоциями. Две команды, десять стаканов и один бросок,
+          после которого либо весь стол орёт, либо все хватаются за голову. Мы стараемся проводить
+          такие турниры регулярно, примерно раз в месяц, потому что формат всегда заходит —
+          кто-то приходит играть, кто-то просто посмотреть, но в итоге втягиваются все.
+        </p>
+
+        <p className="indent-6">
+          Здесь нет разделения на профи и новичков. Есть меткость, азарт, промахи и бурная радость,
+          когда залетает нужный стакан. Во время турнира бар становится нашим: крики, смех,
+          поддержка, подколы — всё как надо. После игр мы никуда не разбегаемся, остаёмся в лаундже,
+          сидим, пьём и общаемся. Плюс бар для нас делает staff-ценник, так что вечер получается
+          особенно приятным 🍺
+        </p>
+
+        <p className="indent-6">
+          Один из турниров запомнился особенно — первое место заняла команда «Новоиспечённые» 🔥
+          Ребята забрали не только денежный приз, но и алкогольный, причём абсолютно заслуженно.
+          Без подарков вообще никто не уходит: фирменные стикеры получили и участники, и болельщики.
+        </p>
+
+        <p className="indent-6">
+          Можно приходить без напарника — команду найдём на месте. Можно просто зайти поболеть
+          и остаться на тусовку. БирПонг у нас — это не только про игру, а про людей,
+          атмосферу и хороший вечер в своей компании.
+        </p>
+
+        <p className="indent-6 font-semibold text-orange-400">
+          Берёшь друга — и залетаешь 🍻
+        </p>
+      </section>
+
+      {/* Три квадратных видео с лупом */}
+      <section className="mb-20 max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4">
+          {loopVideos.map((video) => (
+            <div
+              key={video.id}
+              className="relative flex-1 overflow-hidden rounded-xl shadow-lg cursor-pointer group"
+              style={{ aspectRatio: "1 / 1" }}
+              onClick={() => setOpenVideoId(video.id)}
+            >
+              <video
+                src={video.srcLoop}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+                  ▶
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Модалки для каждого видео */}
+      {loopVideos.map((video) =>
+        openVideoId === video.id ? (
+          <div
+            key={video.id}
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4"
+          >
+            <div className="relative w-full max-w-sm sm:max-w-md">
+              <button
+                onClick={() => setOpenVideoId(null)}
+                className="
+                  fixed top-6 right-6 z-50
+                  w-12 h-12
+                  bg-black/70 text-white text-3xl
+                  rounded-full flex items-center justify-center
+                  hover:bg-black/90 transition
+                "
+              >
+                ✕
+              </button>
+              <div
+                className="bg-black rounded-xl overflow-hidden"
+                style={{ aspectRatio: "1 / 1" }}
+              >
+                <video
+                  src={video.srcFull}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        ) : null
+      )}
+
+    </main>
+  );
+}
