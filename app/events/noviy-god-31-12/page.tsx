@@ -64,12 +64,16 @@ export default function NoviyGodPage() {
       {open && (
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
           <div className="relative w-full max-w-md sm:max-w-lg">
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute -top-10 right-0 text-white text-3xl"
-            >
-              ✕
-            </button>
+<button
+  onClick={() => setOpen(false)}
+  className="fixed top-6 right-6 z-50 w-12 h-12
+             bg-black/70 text-white text-3xl
+             rounded-full flex items-center justify-center
+             hover:bg-black/90 transition"
+>
+  ✕
+</button>
+
 
             <div
               className="bg-black rounded-xl overflow-hidden"
