@@ -23,11 +23,13 @@ export default function KvartirnikPage() {
 
       {/* ЛАМПОВЫЙ ВЕЧЕР */}
       <section className="max-w-3xl mx-auto mb-20 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-6">
-          Квартирник
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-6">
-            16 февраля 2025</h1>  
-        </h1>
+<h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-6">
+  Квартирник <br />
+  <span className="block mt-2 text-3xl sm:text-4xl font-normal">
+    16 февраля 2025 г.
+  </span>
+</h1>
+
 
       {/* ВИДЕО-ЛУП В НАЧАЛЕ */}
       <section className="mb-16">
@@ -129,7 +131,7 @@ export default function KvartirnikPage() {
           />
         </div>
       </section>
-      
+
       {/* Кнопка назад */}
       <div className="text-center mt-8">
         <a
