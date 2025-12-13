@@ -1,8 +1,11 @@
 "use client";
 
 import Slider from "../../components/Slider";
+import { useState } from "react";
 
 export default function DvizhLagerPage() {
+  const [openVideo, setOpenVideo] = useState(false); // состояние модалки
+
   const photos = [
     { src: "/dvizh-lager-15-11/photo_1_2025-12-12_11-14-02.jpg", alt: "Дружные отряды" },
     { src: "/dvizh-lager-15-11/photo_2_2025-12-12_11-14-02.jpg", alt: "Спортивные состязания" },
@@ -79,36 +82,76 @@ export default function DvizhLagerPage() {
         </ul>
       </section>
 
-{/* Галерея фото — НОВЫЙ СЛАЙДЕР */}
+      {/* Галерея фото */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Фото</h2>
+        <Slider photos={photos} />
+      </section>
+
+ {/* Видео-луп с кнопкой полного просмотра */}
 <section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-4">Фото</h2>
-  <Slider photos={photos} />
+  <h2 className="text-2xl font-semibold mb-4">Видео</h2>
+
+  <div className="w-full max-w-md mx-auto">
+    {/* Луп-видео */}
+    <div
+      className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+      style={{ aspectRatio: "9/16" }} // вертикальный формат
+      onClick={() => setOpenVideo(true)}
+    >
+      <video
+        src="/dvizh-lager-15-11/vid1.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover rounded-lg"
+      />
+      {/* Play overlay */}
+      <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
+        <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+          ▶
+        </div>
+      </div>
+    </div>
+
+    <p className="mt-2 text-center text-lg">
+      Отдельное спасибо за крутой рилс{" "}
+      <a
+        href="https://t.me/linalense_life"
+        target="_blank"
+        className="text-orange-400 underline"
+      >
+        Полине
+      </a>
+      .
+    </p>
+  </div>
+
+  {/* Модалка с полным видео */}
+{openVideo && (
+  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+    <div className="relative w-full max-w-md sm:max-w-lg">
+      <button
+        onClick={() => setOpenVideo(false)}
+        className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+      >
+        ✕
+      </button>
+      <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "9/16" }}>
+        <video
+          src="/dvizh-lager-15-11/vid1-full.mp4"
+          controls
+          autoPlay
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
 </section>
 
-
-      {/* Видео */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Видео</h2>
-
-        <div className="w-full max-w-2xl mx-auto">
-          <video
-            src="/dvizh-lager-15-11/vid1.mp4"
-            controls
-            className="w-full h-auto rounded-lg"
-          />
-          <p className="mt-2 text-center text-lg">
-            Отдельное спасибо за крутой рилс{" "}
-            <a
-              href="https://t.me/linalense_life"
-              target="_blank"
-              className="text-orange-400 underline"
-            >
-              Полине
-            </a>
-            .
-          </p>
-        </div>
-      </section>
 
       {/* Итоги */}
       <section className="mb-12">
