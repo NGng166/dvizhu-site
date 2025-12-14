@@ -2,15 +2,11 @@
 
 import { useState } from "react";
 
-// Экспортируем тип
-export type VideoItem = {
-  loop: string;   // для мобильного слайдера
-  full: string;   // для модалки/fullscreen
-  caption?: string; // для подписи
+type VideoItem = {
+  loop: string;
+  full: string;
 };
 
-
-// Компонент слайдера
 export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
   const [index, setIndex] = useState(0);
   const [openVideo, setOpenVideo] = useState<string | null>(null);

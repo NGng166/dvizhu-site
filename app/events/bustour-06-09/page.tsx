@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Slider from "../../components/Slider";
-import { VideoMobileSlider, VideoItem } from "../../components/VideoMobileSlider";
 
 // Массив фотографий для слайдера
 const photosSlider1 = [
@@ -13,37 +12,11 @@ const photosSlider1 = [
   { src: "/bustour-06-09/p5.jpg", alt: "Мерч ДвижУфы в городе" },
 ];
 
-// Видео начала маршрута
-const videoStart: VideoItem = {
-  loop: "/bustour-06-09/vid0-loop.mp4",
-  full: "/bustour-06-09/vid0-full.mp4",
-  caption: "Начало маршрута",
-};
-
-// Рилсы (одно видео)
-const videoRils: VideoItem = {
-  loop: "/bustour-06-09/rils-loop.mp4",
-  full: "/bustour-06-09/rils-full.mp4",
-  caption: "Рилс поездки",
-};
-
-// Основной слайдер видео
-const videosMain: VideoItem[] = [
-  {
-    loop: "/bustour-06-09/vid1-loop.mp4",
-    full: "/bustour-06-09/vid1-full.mp4",
-    caption: "Атмосфера бастура ДвижУфы - она такая)))",
-  },
-  {
-    loop: "/bustour-06-09/vid2-loop.mp4",
-    full: "/bustour-06-09/vid2-full.mp4",
-    caption: "В бастуре рождается любовь!..",
-  },
-  {
-    loop: "/bustour-06-09/vid3-loop.mp4",
-    full: "/bustour-06-09/vid3-full.mp4",
-    caption: "Мерч ДвижУфы очень яркий",
-  },
+// Массив видео для блока с тремя видео
+const videos = [
+  { src: "/bustour-06-09/vid1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
+  { src: "/bustour-06-09/vid2.mp4", caption: "В бастуре рождается любовь!.." },
+  { src: "/bustour-06-09/vid3.mp4", caption: "Мерч ДвижУфы очень яркий" },
 ];
 
 export default function BustourPage() {
@@ -86,28 +59,15 @@ export default function BustourPage() {
           <li>За рулем — энергия фанатов, которые готовы отрываться на полную.</li>
         </ul>
 
-        {/* Видео начала маршрута */}
-        <div className="sm:hidden mb-16 max-w-xs mx-auto relative">
-          <div
-            className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-            style={{ aspectRatio: "9 / 16" }}
-            onClick={() => setOpenVideo(videoStart.full)}
-          >
-            <video
-              src={videoStart.loop}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-black text-2xl">
-                ▶
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Первый видео-блок vid0 */}
+        <video
+          src="/bustour-06-09/vid0.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
+        />
 
         <p className="text-lg leading-relaxed indent-6 font-semibold mb-2">По маршруту:</p>
         <ul className="list-disc list-inside text-lg space-y-1">
@@ -140,47 +100,78 @@ export default function BustourPage() {
         </ul>
       </section>
 
-      {/* Рилсы видео */}
+      {/* Видео рилсы с луп-превью и модалкой */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Ну и были запалы, куда без них!</h2>
-        <div className="sm:hidden mb-16 max-w-xs mx-auto relative">
-          <div
-            className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-            style={{ aspectRatio: "9 / 16" }}
-            onClick={() => setOpenVideo(videoRils.full)}
-          >
-            <video
-              src={videoRils.loop}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-black text-2xl">
-                ▶
-              </div>
+        <h2 className="text-2xl font-semibold mb-4 text-center">
+          Ну и были запалы, куда без них!
+        </h2>
+
+        <div
+          className="w-full max-w-2xl md:max-w-xl mx-auto overflow-hidden rounded-lg relative cursor-pointer"
+          style={{ aspectRatio: "4 / 3" }}
+          onClick={() => setOpenVideo("/bustour-06-09/rils.mp4")}
+        >
+          <video
+            src="/bustour-06-09/rils.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-lg"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-black text-2xl">
+              ▶
             </div>
           </div>
         </div>
+
+        {openVideo && (
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+            <button
+              onClick={() => setOpenVideo(null)}
+              className="fixed top-6 right-6 z-50 w-12 h-12
+                bg-black/70 text-white text-3xl rounded-full
+                flex items-center justify-center"
+            >
+              ✕
+            </button>
+
+            <div
+              className="w-full max-w-3xl bg-black rounded-xl overflow-hidden"
+              style={{ aspectRatio: "4 / 3" }}
+            >
+              <video
+                src={openVideo}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        )}
       </section>
 
-      {/* Основной видео-слайдер vid1-3 */}
+      {/* Видео блок с тремя видео в ряд */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6 text-center">Видео с поездки</h2>
-        <VideoMobileSlider videos={videosMain} />
-      </section>
-
-      {/* Стоимость */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2">Стоимость</h2>
-        <ul className="list-disc list-inside text-lg space-y-1">
-          <li>С билетом фанзоны: 36 000 р </li>
-          <li>С билетом на концерт: 34 000 р</li>
-          <li>Без билета на концерт: 30 000 р</li>
-          <li>Бронь места: 7 000 р (остаток оплаты — не позднее чем за месяц до старта)</li>
-        </ul>
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
+          {videos.map((video, index) => (
+            <div key={index} className="flex flex-col items-center w-full md:w-1/3">
+              <div className="w-full" style={{ aspectRatio: "9 / 16" }}>
+                <video
+                  src={video.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <p className="mt-2 text-center">{video.caption}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Итоги и впечатления */}
@@ -201,27 +192,6 @@ export default function BustourPage() {
         </a>
       </div>
 
-      {/* Модалка для всех видео */}
-      {openVideo && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-          <button
-            onClick={() => setOpenVideo(null)}
-            className="fixed top-6 right-6 z-50 w-12 h-12
-              bg-black/70 text-white text-3xl rounded-full
-              flex items-center justify-center"
-          >
-            ✕
-          </button>
-          <div className="w-full max-w-md bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "9 / 16" }}>
-            <video
-              src={openVideo}
-              controls
-              autoPlay
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      )}
     </main>
   );
 }
