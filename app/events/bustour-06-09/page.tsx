@@ -152,27 +152,69 @@ export default function BustourPage() {
         )}
       </section>
 
-      {/* Видео блок с тремя видео в ряд */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Видео с поездки</h2>
-        <div className="flex flex-col md:flex-row gap-6 justify-center">
-          {videos.map((video, index) => (
-            <div key={index} className="flex flex-col items-center w-full md:w-1/3">
-              <div className="w-full" style={{ aspectRatio: "9 / 16" }}>
-                <video
-                  src={video.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <p className="mt-2 text-center">{video.caption}</p>
+{/* Видео блок с тремя рилс-видео */}
+<section className="mb-12">
+  <h2 className="text-2xl font-semibold mb-6 text-center">Видео с поездки</h2>
+
+  <div className="flex flex-col md:flex-row gap-6 justify-center">
+    {videos.map((video, index) => (
+      <div key={index} className="flex flex-col items-center w-full md:w-1/3">
+        {/* Контейнер для видео с кнопкой */}
+        <div
+          className="relative w-full cursor-pointer rounded-lg overflow-hidden"
+          style={{ aspectRatio: "9 / 16" }}
+          onClick={() => setOpenVideo(video.src)}
+        >
+          {/* Луп-версия видео */}
+          <video
+            src={video.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+
+          {/* Кнопка "Смотреть полностью" */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-black text-2xl">
+              ▶
             </div>
-          ))}
+          </div>
         </div>
-      </section>
+
+        {/* Подпись */}
+        <p className="mt-2 text-center">{video.caption}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+{/* Модалка для полного видео */}
+{openVideo && (
+  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+    <button
+      onClick={() => setOpenVideo(null)}
+      className="fixed top-6 right-6 z-50 w-12 h-12
+        bg-black/70 text-white text-3xl rounded-full
+        flex items-center justify-center"
+    >
+      ✕
+    </button>
+
+    <div
+      className="w-full max-w-md sm:max-w-lg bg-black rounded-xl overflow-hidden"
+      style={{ aspectRatio: "9 / 16" }}
+    >
+      <video
+        src={openVideo}
+        controls
+        autoPlay
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+)}
 
       {/* Итоги и впечатления */}
       <section className="mb-12">

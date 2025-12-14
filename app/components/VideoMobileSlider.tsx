@@ -3,8 +3,9 @@
 import { useState } from "react";
 
 type VideoItem = {
-  loop: string;
-  full: string;
+  loop: string; // луп-превью
+  full: string; // полное видео для модалки
+  caption: string;
 };
 
 export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
@@ -22,8 +23,6 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
       {/* МОБИЛЬНЫЙ СЛАЙДЕР */}
       <div className="sm:hidden mb-16">
         <div className="relative max-w-xs mx-auto">
-
-          {/* Видео */}
           <div
             className="relative overflow-hidden rounded-xl shadow-lg"
             style={{ aspectRatio: "9 / 16" }}
@@ -37,7 +36,6 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
               playsInline
               className="w-full h-full object-cover"
             />
-
             {/* Play */}
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
               <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-black text-2xl">
@@ -46,7 +44,7 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
             </div>
           </div>
 
-          {/* КНОПКИ */}
+          {/* Кнопки */}
           <button
             onClick={prev}
             className="absolute left-[-18px] top-1/2 -translate-y-1/2
@@ -65,7 +63,7 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
             ›
           </button>
 
-          {/* PEAK */}
+          {/* Peak */}
           <div className="absolute inset-y-0 left-[-28px] w-6 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
           <div className="absolute inset-y-0 right-[-28px] w-6 bg-gradient-to-l from-black/30 to-transparent pointer-events-none" />
         </div>
