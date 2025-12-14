@@ -100,7 +100,7 @@ export default function BustourPage() {
         </ul>
       </section>
 
-      {/* Видео рилсы с луп-превью и модалкой */}
+      {/* Видео рилсы с луп--превью и модалкой */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">
           Ну и были запалы, куда без них!
