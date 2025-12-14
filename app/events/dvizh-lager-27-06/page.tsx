@@ -5,30 +5,30 @@ import { VideoMobileSlider } from "../../components/VideoMobileSlider";
 
 export default function DvizhLagerJunePage() {
   const photos = [
-    { src: "/dvizh-lager-27-06/p1.jpg", alt: "Лагерь — утро" },
-    { src: "/dvizh-lager-27-06/p2.jpg", alt: "Костёр" },
-    { src: "/dvizh-lager-27-06/p3.jpg", alt: "Озеро" },
-    { src: "/dvizh-lager-27-06/p4.jpg", alt: "Команда" },
-    { src: "/dvizh-lager-27-06/p5.jpg", alt: "Вечер" },
-    { src: "/dvizh-lager-27-06/p6.jpg", alt: "Гитара" },
+    { src: "/dvizh-lager-27-06/p1.jpg", alt: "Друзья" },
+    { src: "/dvizh-lager-27-06/p2.jpg", alt: "Утро - палатка" },
+    { src: "/dvizh-lager-27-06/p3.jpg", alt: "Улыбки" },
+    { src: "/dvizh-lager-27-06/p4.jpg", alt: "Озеро, плавание" },
+    { src: "/dvizh-lager-27-06/p5.jpg", alt: "Мерч" },
+    { src: "/dvizh-lager-27-06/p6.jpg", alt: "Друзья, игры" },
   ];
 
   const v1to3 = [
-    { loop: "/dvizh-lager-27-06/v1.mp4", full: "/dvizh-lager-27-06/v1.mp4" },
-    { loop: "/dvizh-lager-27-06/v2.mp4", full: "/dvizh-lager-27-06/v2.mp4" },
-    { loop: "/dvizh-lager-27-06/v3.mp4", full: "/dvizh-lager-27-06/v3.mp4" },
+    { loop: "/dvizh-lager-27-06/v1-loop.mp4", full: "/dvizh-lager-27-06/v1.mp4" },
+    { loop: "/dvizh-lager-27-06/v2-loop.mp4", full: "/dvizh-lager-27-06/v2.mp4" },
+    { loop: "/dvizh-lager-27-06/v3-loop.mp4", full: "/dvizh-lager-27-06/v3.mp4" },
   ];
 
   const v4to6 = [
-    { loop: "/dvizh-lager-27-06/v4.mp4", full: "/dvizh-lager-27-06/v4.mp4" },
-    { loop: "/dvizh-lager-27-06/v5.mp4", full: "/dvizh-lager-27-06/v5.mp4" },
-    { loop: "/dvizh-lager-27-06/v6.mp4", full: "/dvizh-lager-27-06/v6.mp4" },
+    { loop: "/dvizh-lager-27-06/v4-loop.mp4", full: "/dvizh-lager-27-06/v4.mp4" },
+    { loop: "/dvizh-lager-27-06/v5-loop.mp4", full: "/dvizh-lager-27-06/v5.mp4" },
+    { loop: "/dvizh-lager-27-06/v6-loop.mp4", full: "/dvizh-lager-27-06/v6.mp4" },
   ];
 
   const progrevs = [
-    { loop: "/dvizh-lager-27-06/progrev1.mp4", full: "/dvizh-lager-27-06/progrev1.mp4" },
-    { loop: "/dvizh-lager-27-06/progrev2.mp4", full: "/dvizh-lager-27-06/progrev2.mp4" },
-    { loop: "/dvizh-lager-27-06/progrev3.mp4", full: "/dvizh-lager-27-06/progrev3.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev1-loop.mp4", full: "/dvizh-lager-27-06/progrev1.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev2-loop.mp4", full: "/dvizh-lager-27-06/progrev2.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev3-loop.mp4", full: "/dvizh-lager-27-06/progrev3.mp4" },
   ];
 
   const renderDesktopVideo = (src: string) => (
@@ -131,6 +131,15 @@ export default function DvizhLagerJunePage() {
         </p>
       </div>
 
+      {/* Кнопка назад */}
+      <div className="text-center mt-8">
+        <a
+          href="/"
+          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
+        >
+          Назад на главную
+        </a>
+      </div>
     </main>
   );
 }
