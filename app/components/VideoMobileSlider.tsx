@@ -13,15 +13,14 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
 
   const prev = () =>
     setIndex((i) => (i === 0 ? videos.length - 1 : i - 1));
-
   const next = () =>
     setIndex((i) => (i === videos.length - 1 ? 0 : i + 1));
 
   return (
     <>
       {/* МОБИЛЬНЫЙ СЛАЙДЕР */}
-      <div className="sm:hidden mb-16">
-        <div className="relative max-w-xs mx-auto">
+      <div className="sm:hidden mb-16 relative w-full">
+        <div className="relative w-full">
 
           {/* Видео */}
           <div
@@ -44,30 +43,33 @@ export function VideoMobileSlider({ videos }: { videos: VideoItem[] }) {
                 ▶
               </div>
             </div>
+
+            {/* Кнопки слева/справа */}
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    prev();
+  }}
+  className="absolute top-1/2 left-2 -translate-y-1/2
+    w-10 h-10 rounded-full bg-black/60 text-white text-2xl
+    flex items-center justify-center z-10"
+>
+  ‹
+</button>
+
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    next();
+  }}
+  className="absolute top-1/2 right-2 -translate-y-1/2
+    w-10 h-10 rounded-full bg-black/60 text-white text-2xl
+    flex items-center justify-center z-10"
+>
+  ›
+</button>
+
           </div>
-
-          {/* КНОПКИ */}
-          <button
-            onClick={prev}
-            className="absolute left-[-18px] top-1/2 -translate-y-1/2
-              w-10 h-10 rounded-full bg-black/70 text-white text-xl
-              flex items-center justify-center"
-          >
-            ‹
-          </button>
-
-          <button
-            onClick={next}
-            className="absolute right-[-18px] top-1/2 -translate-y-1/2
-              w-10 h-10 rounded-full bg-black/70 text-white text-xl
-              flex items-center justify-center"
-          >
-            ›
-          </button>
-
-          {/* PEAK */}
-          <div className="absolute inset-y-0 left-[-28px] w-6 bg-gradient-to-r from-black/30 to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-[-28px] w-6 bg-gradient-to-l from-black/30 to-transparent pointer-events-none" />
         </div>
       </div>
 
