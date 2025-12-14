@@ -96,7 +96,7 @@ export default function KvartirnikPage() {
 
       {/* МОМЕНТЫ ТЕПЛА */}
       <section className="max-w-3xl mx-auto mb-16">
-        <Slider photos={photosWarm} peek={14} />
+        <Slider photos={photosWarm} />
       </section>
 
       {/* В ПАМЯТИ */}

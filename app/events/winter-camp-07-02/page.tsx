@@ -113,7 +113,7 @@ export default function WinterCampPage() {
 
       {/* Слайдер фото 
       <section className="mb-16 max-w-3xl mx-auto">
-        <Slider photos={photos} peek={12} />
+        <Slider photos={photos} />
       </section>**/}
 
       {/* Финал */}

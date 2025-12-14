@@ -130,7 +130,7 @@ export default function NoviyGodPage() {
       {/* СЛАЙДЕР */}
       <section className="mb-16">
         <div className="max-w-3xl mx-auto">
-          <Slider photos={photos} peek={12} />
+          <Slider photos={photos} />
         </div>
       </section>
 

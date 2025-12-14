@@ -96,7 +96,7 @@ export default function DenHPage() {
           <li>Каждое изделие было сделано с мыслью о комфорте и дружеской атмосфере Dvizh</li>
         </ul>
         <div className="max-w-3xl mx-auto">
-          <Slider photos={merchPhotos} peek={10} />
+          <Slider photos={merchPhotos}/>
         </div>
       </section>
 
@@ -105,7 +105,7 @@ export default function DenHPage() {
         <h2 className="text-2xl font-semibold mb-4">Реакции ребят</h2>
         <p className="text-lg mb-2">Наш мерч сразу понравился ребятам:</p>
         <div className="max-w-3xl mx-auto">
-          <Slider photos={backPhotos} peek={15} />
+          <Slider photos={backPhotos} />
         </div>
       </section>
 
@@ -126,7 +126,7 @@ export default function DenHPage() {
           <li>…и многих других городах, где ребята любят наш движ</li>
         </ul>
         <div className="max-w-3xl mx-auto">
-          <Slider photos={globalMerchPhotos} peek={10} />
+          <Slider photos={globalMerchPhotos} />
         </div>
       </section>
 
