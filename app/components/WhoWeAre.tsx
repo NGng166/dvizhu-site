@@ -53,9 +53,10 @@ export default function WhoWeAre() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {[
-            { name: "Никита Пресняков", role: "Основатель", img: "/nikita.jpg" },
-            { name: "Камиль Зарипов", role: "Соорганизатор, DJ", img: "/kamil.jpg" },
-            { name: "Иван Киселев", role: "Координация мероприятий", img: "/ivan.jpg" },
+            { name: "Никита Пресняков", role: "Основатель движения, руководитель и стратег", img: "/nikita.jpg" },
+            { name: "Камиль Зарипов", role: "Соорганизатор, PR и медианаправление", img: "/kamil.jpg" },
+            { name: "Николай Глум", role: "Креативное направление и идеи проектов", img: "/kamil.jpg" },
+            { name: "Иван Киселев", role: "Организация мероприятий, логистика и визуал, ", img: "/ivan.jpg" },
           ].map((p) => (
             <div key={p.name} className="bg-gray-700 p-6 rounded-lg text-center">
               <img
