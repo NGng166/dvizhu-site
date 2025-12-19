@@ -3,7 +3,7 @@
 import Hero from "./components/Hero";
 import NextEventBlock from "./components/NextEventBlock";
 import WhoWeAre from "./components/WhoWeAre";
-import PastEventsGallery from "./components/PastEventsGallery";
+import FormatsDvizh from "./components/FormatsDvizh";
 import SocialPopup from "./components/SocialPopup";
 import Footer from "./components/Footer";
 
@@ -13,7 +13,12 @@ export default function Home() {
       <Hero />
       <NextEventBlock />
       <WhoWeAre />
-      <PastEventsGallery />
+
+      {/* 👇 Якорь */}
+      <section id="formats">
+        <FormatsDvizh />
+      </section>
+
       <Footer />
       <SocialPopup />
     </main>
