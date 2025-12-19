@@ -14,6 +14,7 @@ export default function FormatsDvizh() {
         { type: "image", src: "/formats/lager2.jpg" },
         { type: "image", src: "/formats/lager3.jpg" },
         { type: "image", src: "/formats/lager4.jpg" },
+        { type: "image", src: "/formats/lager5.jpg" },
         //{ type: "video", src: "/formats/lager-video.mp4" },
       ],
     },
