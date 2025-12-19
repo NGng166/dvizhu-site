@@ -55,7 +55,7 @@ export default function WhoWeAre() {
           {[
             { name: "Никита Пресняков", role: "Основатель движения, руководитель и стратег", img: "/nikita.jpg" },
             { name: "Камиль Зарипов", role: "Соорганизатор, PR и медианаправление", img: "/kamil.jpg" },
-            { name: "Николай Глум", role: "Креативное направление и идеи проектов", img: "/kamil.jpg" },
+            { name: "Николай Глум", role: "Креативное направление и идеи проектов", img: "/glum.jpg" },
             { name: "Иван Киселев", role: "Организация мероприятий, логистика и визуал, ", img: "/ivan.jpg" },
           ].map((p) => (
             <div key={p.name} className="bg-gray-700 p-6 rounded-lg text-center">
