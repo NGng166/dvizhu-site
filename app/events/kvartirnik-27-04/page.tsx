@@ -37,7 +37,7 @@ export default function Kvartirnik2704Page() {
       <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-20">
         <p className="indent-6">
           В этот вечер мы просто собрались друзьями в уже полюбившемся антикафе
-          «Странные дела». Без спешки и без плана — поиграть на гитаре,
+          «Странные дела». Без спешки и без плана - поиграть на гитаре,
           попеть любимые песни и наконец спокойно увидеться.
         </p>
 
@@ -49,7 +49,7 @@ export default function Kvartirnik2704Page() {
 
       </section>
 
-      {/* ВИДЕО — 3 КРУГЛЫХ */}
+      {/* ВИДЕО - 3 КРУГЛЫХ */}
       <section className="mb-20">
         <div
           className="

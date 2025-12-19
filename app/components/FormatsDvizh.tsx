@@ -23,7 +23,11 @@ export default function FormatsDvizh() {
       slug: "concerts",
       media: [
         { type: "image", src: "/formats/concerts1.jpg" },
-        { type: "video", src: "/formats/concerts-video.mp4" },
+        { type: "image", src: "/formats/concerts2.jpg" },
+        { type: "image", src: "/formats/concerts3.jpg" },
+        { type: "image", src: "/formats/concerts4.jpg" },
+        { type: "image", src: "/formats/concerts5.jpg" },
+        //{ type: "video", src: "/formats/concerts-video.mp4" },
       ],
     },
     {
@@ -87,37 +91,56 @@ function FormatCard({ format }: { format: any }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % mediaLength);
-    }, 2500); // смена каждые 2.5 секунды
+    }, 2500); // скорость перелистывания
+
     return () => clearInterval(interval);
   }, [mediaLength]);
 
-  const currentMedia = format.media[currentIndex];
-
   return (
     <Link href={`/formats/${format.slug}`}>
-      <div className="group relative overflow-hidden rounded-xl cursor-pointer">
-        {currentMedia.type === "image" ? (
-          <img
-            src={currentMedia.src}
-            alt={format.title}
-            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        ) : (
-          <video
-            src={currentMedia.src}
-            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-            autoPlay
-            muted
-            loop
-          />
-        )}
+      <div className="group relative overflow-hidden rounded-xl cursor-pointer h-56">
+        {/* Медиа слои */}
+        {format.media.map((item: any, index: number) => {
+          const isActive = index === currentIndex;
+
+          return (
+            <div
+              key={index}
+              className={`
+                absolute inset-0
+                transition-opacity duration-700 ease-in-out
+                ${isActive ? "opacity-100" : "opacity-0"}
+              `}
+            >
+              {item.type === "image" ? (
+                <img
+                  src={item.src}
+                  alt={format.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              ) : (
+                <video
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              )}
+            </div>
+          );
+        })}
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-5">
+        <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-5 z-10">
           <h3 className="text-xl font-bold">{format.title}</h3>
-          <p className="text-sm text-gray-200 mt-1">{format.description}</p>
+          <p className="text-sm text-gray-200 mt-1">
+            {format.description}
+          </p>
         </div>
       </div>
     </Link>
   );
 }
+

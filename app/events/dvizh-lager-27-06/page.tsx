@@ -85,10 +85,10 @@ export default function DvizhLagerJunePage() {
       {/* ВСТУП */}
       <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-20">
         <p className="indent-6">
-          В конце июня мы снова собрались в лагере. Палатки, костёр, озеро, гитара и разговоры до утра — всё то, за что мы так любим DvizhЛагерь.
+          В конце июня мы снова собрались в лагере. Палатки, костёр, озеро, гитара и разговоры до утра - всё то, за что мы так любим DvizhЛагерь.
         </p>
         <p className="indent-6">
-          Эта смена была тематической — «Встреча выпускников». Днём — активности и купание, вечером — костёр, песни и долгие разговоры.
+          Эта смена была тематической - «Встреча выпускников». Днём - активности и купание, вечером - костёр, песни и долгие разговоры.
         </p>
       </section>
 
@@ -102,7 +102,7 @@ export default function DvizhLagerJunePage() {
       {/* ТЕКСТ */}
       <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
         <p className="indent-6">
-          Лагерь снова напомнил, что Dvizh — это люди, атмосфера и моменты, когда всё просто хорошо.
+          Лагерь снова напомнил, что Dvizh - это люди, атмосфера и моменты, когда всё просто хорошо.
         </p>
       </section>
 
@@ -112,7 +112,7 @@ export default function DvizhLagerJunePage() {
 
       <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
         <p className="indent-6">
-          Эти видео — про то, как всё было на самом деле.
+          Эти видео - про то, как всё было на самом деле.
         </p>
       </section>
 
@@ -124,7 +124,7 @@ export default function DvizhLagerJunePage() {
       <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
         <p className="font-semibold">Подготовка тоже была частью лагеря</p>
         <p className="indent-6">
-          Видео-прогревы получились живыми и смешными — мы решили сохранить их здесь как часть истории.
+          Видео-прогревы получились живыми и смешными - мы решили сохранить их здесь как часть истории.
         </p>
       </section>
 
