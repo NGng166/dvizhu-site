@@ -7,10 +7,11 @@ import MediaGallery from "../../components/MediaGallery"; // относител�
 // Данные форматов
 const formatsData: Record<string, any> = {
   lager: {
-    title: "Dvizh Лагеря",
+    title: "Dvizh Лагеря, смены, ежегодные фестивали",
     description:
-      "Лагерь — это место, где взрослые снова становятся собой. Костры, разговоры до утра, река, музыка и ощущение, что ты на своём месте.",
-    heroImage: "/formats/lager-hero.jpg",
+      "Лагерь — это место, где взрослые снова становятся собой. Костры, разговоры до утра, музыка и ощущение, что ты на своём месте.",
+    heroImageDesktop: "/formats/lager-hero-desktop.webp",
+    heroImageMobile: "/formats/lager-hero-mobile.webp",
     heroImages: [
       "/formats/lager/photo1.jpg",
       "/formats/lager/photo2.jpg",
@@ -25,6 +26,7 @@ const formatsData: Record<string, any> = {
       { title: "Winter Camp 2.0", date: "7–9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
     ],
   },
+
   concerts: {
     title: "Концертные выезды",
     description:
@@ -35,6 +37,7 @@ const formatsData: Record<string, any> = {
       { title: "Концерт Макса Коржа | Самара", date: "29–30 марта 2025", slug: "concert-samara-29-03", image: "/concert-samara-29-03.jpg" },
     ],
   },
+
   tusy: {
     title: "Dvizh Тусы",
     description:
@@ -45,6 +48,7 @@ const formatsData: Record<string, any> = {
       { title: "FLAT by Samara", date: "29–30 марта 2025", slug: "flat-samara-29-03", image: "/flat-samara-29-03.jpg" },
     ],
   },
+
   artists: {
     title: "Dvizh × Артисты",
     description:
@@ -55,6 +59,7 @@ const formatsData: Record<string, any> = {
       { title: "Канги Live", date: "2025", slug: "kangi-2025", image: "/artists/kangi.jpg" },
     ],
   },
+
   mountains: {
     title: "Горы & походы",
     description:
@@ -64,6 +69,7 @@ const formatsData: Record<string, any> = {
       { title: "Айгир", date: "1–2 марта 2025", slug: "aygir-01-03", image: "/aygir-01-03/aygir-01-03.jpg" },
     ],
   },
+
   community: {
     title: "Комьюнити-ивенты",
     description:
@@ -91,13 +97,20 @@ export default function FormatPage() {
   return (
     <main className="bg-gray-900 text-white min-h-screen">
 
-      {/* Hero */}
-      <section className="relative h-[60vh]">
-        <img
-          src={format.heroImage}
-          alt={format.title}
-          className="w-full h-full object-cover"
-        />
+      {/* Hero: мобильная и десктопная версии */}
+      <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh]">
+        <picture>
+          <source
+            media="(max-width: 640px)"
+            srcSet={format.heroImageMobile || format.heroImageDesktop}
+          />
+          <img
+            src={format.heroImageDesktop}
+            alt={format.title}
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
+
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8 sm:p-16">
           <h1 className="text-3xl sm:text-5xl font-bold">{format.title}</h1>
         </div>
