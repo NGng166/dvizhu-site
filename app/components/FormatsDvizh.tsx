@@ -38,6 +38,9 @@ export default function FormatsDvizh() {
       media: [
         { type: "image", src: "/formats/tusy1.jpg" },
         { type: "image", src: "/formats/tusy2.jpg" },
+        { type: "image", src: "/formats/tusy3.jpg" },
+        { type: "image", src: "/formats/tusy4.jpg" },
+        { type: "image", src: "/formats/tusy5.jpg" },
       ],
     },
     {
@@ -46,7 +49,7 @@ export default function FormatsDvizh() {
       slug: "artists",
       media: [
         { type: "image", src: "/formats/artists1.jpg" },
-        { type: "video", src: "/formats/artists-video.mp4" },
+        { type: "image", src: "/formats/artists2.jpg" },
       ],
     },
     {

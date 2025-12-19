@@ -9,7 +9,7 @@ const formatsData: Record<string, any> = {
   lager: {
     title: "Dvizh Лагеря, смены, ежегодные фестивали",
     description:
-      "Лагерь — это место, где взрослые снова становятся собой. Костры, разговоры до утра, музыка и ощущение, что ты на своём месте.",
+      "Лагерь - это место, где взрослые снова становятся собой. Костры, разговоры до утра, музыка и ощущение, что ты на своём месте.",
     heroImageDesktop: "/formats/lager-hero-desktop.webp",
     heroImageMobile: "/formats/lager-hero-mobile.webp",
     heroImages: [
@@ -30,7 +30,7 @@ const formatsData: Record<string, any> = {
   concerts: {
     title: "Концертные выезды",
     description:
-      "Другие города, сцены и дороги вместе — Bustour и концертные туры Dvizh.",
+      "Другие города, сцены и дороги вместе - Bustour и концертные туры Dvizh.",
     heroImage: "/formats/concerts-hero.jpg",
     events: [
       { title: "BUSTOUR | UFA - ALMATY", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/bustour-06-09/bustour-cover.jpg" },
