@@ -1,44 +1,66 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function FormatsDvizh() {
   const formats = [
     {
       title: "Dvizh Лагеря",
-      description: "Смены, костры, река и полная перезагрузка",
+      description: "Смены, песни до утра и полная перезагрузка",
       slug: "lager",
-      image: "/formats/lager.jpg",
+      media: [
+        { type: "image", src: "/formats/lager1.jpg" },
+        { type: "image", src: "/formats/lager2.jpg" },
+        { type: "image", src: "/formats/lager3.jpg" },
+        { type: "image", src: "/formats/lager4.jpg" },
+        //{ type: "video", src: "/formats/lager-video.mp4" },
+      ],
     },
     {
       title: "Концертные выезды",
       description: "Другие города, большие сцены и дорога вместе",
       slug: "concerts",
-      image: "/formats/concerts.jpg",
+      media: [
+        { type: "image", src: "/formats/concerts1.jpg" },
+        { type: "video", src: "/formats/concerts-video.mp4" },
+      ],
     },
     {
       title: "Dvizh Тусы",
       description: "Флэты, вечеринки и ночи без тормозов",
       slug: "tusy",
-      image: "/formats/tusy.jpg",
+      media: [
+        { type: "image", src: "/formats/tusy1.jpg" },
+        { type: "image", src: "/formats/tusy2.jpg" },
+      ],
     },
     {
       title: "Dvizh × Артисты",
       description: "Особые события с музыкантами и гостями",
       slug: "artists",
-      image: "/formats/artists.jpg",
+      media: [
+        { type: "image", src: "/formats/artists1.jpg" },
+        { type: "video", src: "/formats/artists-video.mp4" },
+      ],
     },
     {
       title: "Горы и походы",
       description: "Природа, испытания и командный дух",
       slug: "mountains",
-      image: "/formats/mountains.jpg",
+      media: [
+        { type: "image", src: "/formats/mountains1.jpg" },
+        { type: "image", src: "/formats/mountains2.jpg" },
+      ],
     },
     {
       title: "Комьюнити-ивенты",
       description: "BeerPong, квартирники и тёплые сборы",
       slug: "community",
-      image: "/formats/community.jpg",
+      media: [
+        { type: "image", src: "/formats/community1.jpg" },
+        { type: "video", src: "/formats/community-video.mp4" },
+      ],
     },
   ];
 
@@ -50,25 +72,52 @@ export default function FormatsDvizh() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {formats.map((format, index) => (
-          <Link key={index} href={`/formats/${format.slug}`}>
-            <div className="group relative overflow-hidden rounded-xl cursor-pointer">
-              <img
-                src={format.image}
-                alt={format.title}
-                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-5">
-                <h3 className="text-xl font-bold">{format.title}</h3>
-                <p className="text-sm text-gray-200 mt-1">
-                  {format.description}
-                </p>
-              </div>
-            </div>
-          </Link>
+          <FormatCard key={index} format={format} />
         ))}
       </div>
     </section>
+  );
+}
+
+// --- карточка с мини-слайдшоу ---
+function FormatCard({ format }: { format: any }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const mediaLength = format.media.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % mediaLength);
+    }, 2500); // смена каждые 2.5 секунды
+    return () => clearInterval(interval);
+  }, [mediaLength]);
+
+  const currentMedia = format.media[currentIndex];
+
+  return (
+    <Link href={`/formats/${format.slug}`}>
+      <div className="group relative overflow-hidden rounded-xl cursor-pointer">
+        {currentMedia.type === "image" ? (
+          <img
+            src={currentMedia.src}
+            alt={format.title}
+            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <video
+            src={currentMedia.src}
+            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+            autoPlay
+            muted
+            loop
+          />
+        )}
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-5">
+          <h3 className="text-xl font-bold">{format.title}</h3>
+          <p className="text-sm text-gray-200 mt-1">{format.description}</p>
+        </div>
+      </div>
+    </Link>
   );
 }
