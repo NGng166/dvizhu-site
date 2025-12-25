@@ -74,7 +74,7 @@ export default function FormatsDvizh() {
   ];
 
 return (
-  <section className="py-20 px-6 sm:px-16 md:px-32 bg-gray-800">
+  <section className="py-12 px-6 sm:px-16 md:px-32 bg-gray-800">
     <div className="text-center mb-10">
       <h2 className="text-3xl sm:text-4xl font-bold">
         Чем живёт Dvizh-Ufa
