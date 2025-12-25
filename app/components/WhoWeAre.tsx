@@ -2,7 +2,7 @@
 
 export default function WhoWeAre() {
   return (
-    <section className="bg-gray-800 py-16">
+    <section className="bg-gray-800 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8 text-center">Кто мы</h2>
 
@@ -62,7 +62,7 @@ export default function WhoWeAre() {
               <img
                 src={p.img}
                 alt={p.name}
-                className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
+                className="w-32 h-32 mx-auto rounded-full mb-0 object-cover"
               />
               <h4 className="font-semibold text-lg">{p.name}</h4>
               <p>{p.role}</p>

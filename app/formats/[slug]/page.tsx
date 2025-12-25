@@ -20,7 +20,7 @@ const formatsData: Record<string, any> = {
         <li><span className="font-bold">SummerFest</span></li>
         <li><span className="font-bold">WinterCamp</span></li>
       </ul>,
-      <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - костры, музыка, баня и шашлыки. Люди приезжают из разных городов и стран, и уже в первый день становятся частью команды.</p>,
+      <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - костры, музыка, баня и шашлыки. Люди приезжают из разных городов и стран (привет ребятам из Минска и Алматы)), и уже в первый день становятся частью команды.</p>,
       <p key="4"><span className="font-bold">Встречай лето</span> - короткие трёхдневные сборы в ожидании лета, с палатками, шашлыками, конкурсами и активностями на свежем воздухе.</p>,
       <p key="5"><span className="font-bold">SummerFest</span> - летний фестиваль с конкурсами, командными играми, активностями и развлечениями: пенная вечеринка, баня, танцы, сценки, стрельба из ружья и многое другое.</p>,
       <p key="6"><span className="font-bold">WinterCamp</span> и другие лагеря продолжают эту идею зимой: три дня, две ночи, костры, музыка, походы, вечерние игры и командные активности.</p>,
@@ -47,8 +47,8 @@ const formatsData: Record<string, any> = {
       "/formats/lager/video2.mp4",
     ],
     events: [
-      { title: "Dvizh Лагерь I смена", date: "27–29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
       { title: "Dvizh Лагерь II смена", date: "15–17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
+      { title: "Dvizh Лагерь I смена", date: "27–29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
       { title: "Winter Camp 2.0", date: "7–9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
     ],
   },
@@ -183,13 +183,14 @@ export default function FormatPage() {
 
 
   {/* Описание */}
-  <section className="py-4 px-6 sm:px-16 md:px-32">
-    <div className="max-w-5xl mx-auto flex flex-col items-center">
-      <p className="text-lg text-gray-200 text-center">
-        {format.description}
-      </p>
-    </div>
-  </section>
+<section className="py-4 px-6 sm:px-16 md:px-32">
+  <div className="max-w-5xl mx-auto flex flex-col items-start">
+    <p className="text-lg text-gray-200 text-left">
+      {format.description}
+    </p>
+  </div>
+</section>
+
 
   {/* Подробно о формате с видео */}
 {/* Подробно о формате с видео */}
@@ -249,9 +250,9 @@ export default function FormatPage() {
       )}
 
       {/* Остальные абзацы начиная со второго */}
-      {format.about.slice(1).map((item, i) => (
-        <div key={i + 1} className="w-full">{item}</div>
-      ))}
+{format.about.slice(1).map((item: React.ReactNode, i: number) => (
+  <div key={i + 1} className="w-full">{item}</div>
+))}
     </div>
   </section>
 )}

@@ -74,13 +74,13 @@ export default function FormatsDvizh() {
   ];
 
 return (
-  <section className="py-12 px-6 sm:px-16 md:px-32 bg-gray-800">
-    <div className="text-center mb-10">
+  <section className="py-5 px-6 sm:px-16 md:px-32 bg-gray-800">
+    <div className="text-center mb-5">
       <h2 className="text-3xl sm:text-4xl font-bold">
         Чем живёт Dvizh-Ufa
       </h2>
       <p className="mt-3 text-base text-gray-400 leading-relaxed italic">
-        в каждой карточке своя история
+        в каждой карточке своя история:
       </p>
     </div>
 
