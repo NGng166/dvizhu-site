@@ -11,21 +11,21 @@ const formatsData: Record<string, any> = {
     title: "Dvizh Лагеря, смены, ежегодные фестивали",
     description:
       "Каждый год мы проводим серию мероприятий, объединённых общим форматом: встречи на природе, летние и зимние фестивали, лагеря и небольшие сборы друзей. Все они дают возможность провести время вместе, активно и интересно, независимо от того, приезжаешь ли ты один или с компанией",
-about: [
-  <p key="0">Мероприятия этого формата могут быть разными: от трёхдневных лагерей с кострами, походами и вечерними играми, до летних фестивалей с конкурсами, командными заданиями и активностями на любой вкус - от дегустаций фирменных настоек до пенной вечеринки.</p>,
-  <p key="1">Основные направления:</p>,
-  <ul key="2" className="list-disc list-inside text-lg text-gray-200 space-y-1">
-    <li><span className="font-bold">Dvizh Лагерь</span></li>
-    <li><span className="font-bold">Встречай лето</span></li>
-    <li><span className="font-bold">SummerFest</span></li>
-    <li><span className="font-bold">WinterCamp</span></li>
-  </ul>,
-  <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - костры, музыка, баня и шашлыки. Люди приезжают из разных городов и стран, и уже в первый день становятся частью команды.</p>,
-  <p key="4"><span className="font-bold">Встречай лето</span> - короткие трёхдневные сборы в ожидании лета, с палатками, шашлыками, конкурсами и активностями на свежем воздухе.</p>,
-  <p key="5"><span className="font-bold">SummerFest</span> - летний фестиваль с конкурсами, командными играми, активностями и развлечениями: пенная вечеринка, баня, танцы, сценки, стрельба из ружья и многое другое.</p>,
-  <p key="6"><span className="font-bold">WinterCamp</span> и другие лагеря продолжают эту идею зимой: три дня, две ночи, костры, музыка, походы, вечерние игры и командные активности.</p>,
-  <p key="7">Всё это - часть одного формата: мероприятия, где можно отдохнуть, познакомиться с новыми людьми, участвовать в активностях и просто хорошо провести время.</p>
-],
+    about: [
+      <p key="0">Мероприятия этого формата могут быть разными: от трёхдневных лагерей с кострами, походами и вечерними играми, до летних фестивалей с конкурсами, командными заданиями и активностями на любой вкус - от дегустаций фирменных настоек до пенной вечеринки.</p>,
+      <p key="1">Основные направления:</p>,
+      <ul key="2" className="list-disc list-inside text-lg text-gray-200 space-y-1">
+        <li><span className="font-bold">Dvizh Лагерь</span></li>
+        <li><span className="font-bold">Встречай лето</span></li>
+        <li><span className="font-bold">SummerFest</span></li>
+        <li><span className="font-bold">WinterCamp</span></li>
+      </ul>,
+      <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - костры, музыка, баня и шашлыки. Люди приезжают из разных городов и стран, и уже в первый день становятся частью команды.</p>,
+      <p key="4"><span className="font-bold">Встречай лето</span> - короткие трёхдневные сборы в ожидании лета, с палатками, шашлыками, конкурсами и активностями на свежем воздухе.</p>,
+      <p key="5"><span className="font-bold">SummerFest</span> - летний фестиваль с конкурсами, командными играми, активностями и развлечениями: пенная вечеринка, баня, танцы, сценки, стрельба из ружья и многое другое.</p>,
+      <p key="6"><span className="font-bold">WinterCamp</span> и другие лагеря продолжают эту идею зимой: три дня, две ночи, костры, музыка, походы, вечерние игры и командные активности.</p>,
+      <p key="7">Всё это - часть одного формата: мероприятия, где можно отдохнуть, познакомиться с новыми людьми, участвовать в активностях и просто хорошо провести время.</p>
+    ],
     wideMedia: {
       type: "video",
       src: "/formats/lager/lager-wide.mp4"
@@ -98,7 +98,7 @@ about: [
     heroImage: "/formats/community-hero.jpg",
     events: [
       { title: "BeerPong", date: "12 апреля 2025", slug: "beerpong-12-04", image: "/beerpong-12-04/beerpong-12-04.jpg" },
-      { title: "Квартирник", date: "27 апреля 2025", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04/kvartirnik-27-04.jpg" },
+      { title: "Квартирник", date: "27 апреля 2025", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04.jpg" },
     ],
   },
 };
@@ -118,177 +118,186 @@ export default function FormatPage() {
   }
 
   return (
-    <main className="bg-gray-900 text-white min-h-screen">
+<main className="bg-gray-900 text-white min-h-screen">
 
-      {/* Hero: мобильная и десктопная версии */}
-      <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
-        <div className="absolute inset-0 sm:hidden">
-          {format.heroMobile?.type === "video" ? (
-            <video
-              src={format.heroMobile.src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={format.heroMobile?.src}
-              alt={format.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
-
-        <div className="absolute inset-0 hidden sm:block">
-          {format.heroDesktop?.type === "video" ? (
-            <video
-              src={format.heroDesktop.src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={format.heroDesktop?.src}
-              alt={format.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
-
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center p-8 sm:p-16 z-10 text-center">
-          <h1 className="text-3xl sm:text-5xl font-semibold leading-snug">
-            {format.title}
-          </h1>
-        </div>
-      </section>
-
-      {/* Галерея медиа */}
-      {(format.heroImages || format.heroVideos) && (
-        <MediaGallery
-          media={[
-            ...(format.heroImages?.map((src: string) => ({ type: "image", src })) || []),
-            ...(format.heroVideos?.map((src: string) => ({ type: "video", src })) || []),
-          ]}
+  {/* Hero */}
+  <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
+    <div className="absolute inset-0 sm:hidden">
+      {format.heroMobile?.type === "video" ? (
+        <video
+          src={format.heroMobile.src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <img
+          src={format.heroMobile?.src}
+          alt={format.title}
+          className="w-full h-full object-cover"
         />
       )}
+    </div>
 
-      {/* Описание */}
-      <section className="py-4 px-6 sm:px-16 md:px-32">
-        <p className="text-lg text-gray-200 max-w-3xl">
-          {format.description}
-        </p>
-      </section>
+    <div className="absolute inset-0 hidden sm:block">
+      {format.heroDesktop?.type === "video" ? (
+        <video
+          src={format.heroDesktop.src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <img
+          src={format.heroDesktop?.src}
+          alt={format.title}
+          className="w-full h-full object-cover"
+        />
+      )}
+    </div>
 
-      {/* Подробно о формате с видео между абзацами */}
-      {format.about && (
-        <section className="py-4 px-6 sm:px-16 md:px-32 max-w-5xl">
-          <h2 className="text-2xl font-bold mb-4">
-            Что это за формат?
-          </h2>
+    <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-center pb-12 sm:pb-16 z-10 text-center">
+      <h1 className="text-3xl sm:text-5xl font-semibold leading-snug">
+        {format.title}
+      </h1>
+    </div>
+  </section>
 
-          <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
-            {/* Первый абзац */}
-            <p>{format.about[0]}</p>
+{/* Галерея медиа */} 
+{(format.heroImages || format.heroVideos) && (
+  <section className="py-4 px-6 sm:px-16 md:px-32">
+    <div className="max-w-5xl mx-auto">
+      <MediaGallery 
+        media={[ 
+          ...(format.heroImages?.map((src: string) => ({ type: "image", src })) || []), 
+          ...(format.heroVideos?.map((src: string) => ({ type: "video", src })) || []), 
+        ]} 
+      /> 
+    </div>
+  </section>
+)}
 
-            {/* Видео между абзацами */}
-            {format.wideMedia && format.wideMedia.type === "video" && (
-              <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
-                   style={{ aspectRatio: "16/9" }}
-                   onClick={() => setOpenWideVideo(true)}
-              >
-                <video
-                  src={format.wideMedia.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition rounded-2xl">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
-                    ▶
-                  </div>
-                </div>
 
-                {/* Модалка */}
-                {openWideVideo && (
-                  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-                    <div className="relative w-full max-w-3xl">
-                      <button
-                        onClick={() => setOpenWideVideo(false)}
-                        className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-                      >
-                        ✕
-                      </button>
-                      <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
-                        <video
-                          ref={wideVideoRef}
-                          src={format.wideMedia.src}
-                          controls
-                          autoPlay
-                          muted={false}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+  {/* Описание */}
+  <section className="py-4 px-6 sm:px-16 md:px-32">
+    <div className="max-w-5xl mx-auto flex flex-col items-center">
+      <p className="text-lg text-gray-200 text-center">
+        {format.description}
+      </p>
+    </div>
+  </section>
 
-            {/* Остальные абзацы */}
-            {format.about.slice(1).map((text: string, index: number) => (
-              <p key={index}>{text}</p>
-            ))}
+  {/* Подробно о формате с видео */}
+{/* Подробно о формате с видео */}
+{format.about && (
+  <section className="py-4 px-6 sm:px-16 md:px-32">
+    <div className="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-lg text-gray-200 leading-relaxed">
+      <h2 className="text-2xl font-bold mb-4 w-full text-center">Что это за формат?</h2>
+
+      {/* Первый абзац */}
+      <div className="w-full">{format.about[0]}</div>
+
+      {/* Вставляем видео прямо после первого абзаца */}
+      {format.wideMedia && format.wideMedia.type === "video" && (
+        <div
+          className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
+          style={{ aspectRatio: "16/9" }}
+          onClick={() => setOpenWideVideo(true)}
+        >
+          <video
+            src={format.wideMedia.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-2xl"
+          />
+          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition rounded-2xl">
+            <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+              ▶
+            </div>
           </div>
-        </section>
+
+          {/* Модалка */}
+          {openWideVideo && (
+            <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+              <div className="relative w-full max-w-3xl">
+                <button
+                  onClick={() => setOpenWideVideo(false)}
+                  className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+                >
+                  ✕
+                </button>
+                <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                  <video
+                    ref={wideVideoRef}
+                    src={format.wideMedia.src}
+                    controls
+                    autoPlay
+                    muted={false}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       )}
 
-      {/* Мероприятия формата */}
-      <section className="px-6 sm:px-16 md:px-32 pb-16">
-        <h2 className="text-2xl font-bold my-8 text-center">
-          Мероприятия этого формата
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {format.events.map((event: any, index: number) => (
-            <Link key={index} href={`/events/${event.slug}`}>
-              <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-40 object-cover"
-                />
-                <div className="p-2">
-                  <p className="font-bold">{event.title}</p>
-                  <p className="text-sm text-gray-400">{event.date}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* Остальные абзацы начиная со второго */}
+      {format.about.slice(1).map((item, i) => (
+        <div key={i + 1} className="w-full">{item}</div>
+      ))}
+    </div>
+  </section>
+)}
 
-      {/* Навигация */}
-      <section className="pb-16 px-6 sm:px-16 md:px-32 flex gap-4">
-        <Link
-          href="/#formats"
-          className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
-        >
-          ← К форматам
+  {/* Мероприятия формата */}
+  <section className="px-6 sm:px-16 md:px-32 pb-16">
+    <h2 className="text-2xl font-bold my-8 text-center">
+      Мероприятия этого формата
+    </h2>
+    <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      {format.events.map((event: any, index: number) => (
+        <Link key={index} href={`/events/${event.slug}`}>
+          <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-40 object-cover"
+            />
+            <div className="p-2">
+              <p className="font-bold">{event.title}</p>
+              <p className="text-sm text-gray-400">{event.date}</p>
+            </div>
+          </div>
         </Link>
+      ))}
+    </div>
+  </section>
 
-        <Link
-          href="/events"
-          className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-        >
-          Все мероприятия
-        </Link>
-      </section>
-    </main>
+  {/* Навигация */}
+  <section className="pb-16 px-6 sm:px-16 md:px-32">
+    <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center md:justify-start">
+      <Link
+        href="/#formats"
+        className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+      >
+        ← К форматам
+      </Link>
+
+      <Link
+        href="/events"
+        className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+      >
+        Все мероприятия
+      </Link>
+    </div>
+  </section>
+</main>
   );
 }
