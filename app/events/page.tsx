@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import SocialPopup from "../components/SocialPopup";
 
 export default function AllEventsPage() {
   const pastEvents = [
@@ -22,30 +23,51 @@ export default function AllEventsPage() {
   ];
 
   return (
-    <main className="bg-gray-900 text-white min-h-screen">
+    <main className="bg-gray-900 text-white min-h-screen relative">
       <section className="py-16 px-6 sm:px-16 md:px-32">
         <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
           Архив наших прошедших мероприятий
         </h1>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {pastEvents.map((event, index) => (
-            <Link key={index} href={`/events/${event.slug}`}>
-              <div className="overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition-transform">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-40 sm:h-48 md:h-52 object-cover"
-                />
-                <div className="p-2">
-                  <p className="font-bold text-white text-base sm:text-lg">{event.title}</p>
-                  <p className="text-gray-400 text-sm sm:text-base">{event.date}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+  {pastEvents.map((event, index) => (
+    <Link key={index} href={`/events/${event.slug}`}>
+      <div className="overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition-transform">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-40 sm:h-48 md:h-52 object-cover"
+        />
+        <div className="p-2">
+          <p className="font-bold text-white text-base sm:text-lg">{event.title}</p>
+          <p className="text-gray-400 text-sm sm:text-base">{event.date}</p>
+        </div>
+      </div>
+    </Link>
+  ))}
+
+  {/* Курсивная карточка */}
+  <div className="overflow-hidden rounded-lg flex items-center justify-center border border-gray-600 p-4">
+    <p className="text-gray-400 text-base sm:text-lg italic text-center">
+      и многие другие, на которые не хватило сил автору сайта...
+    </p>
+  </div>
+</div>
+
+
+        {/* Кнопка к якорю форматов */}
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            ← К форматам
+          </Link>
         </div>
       </section>
+
+      {/* Попап социальных сетей */}
+      <SocialPopup />
     </main>
   );
 }

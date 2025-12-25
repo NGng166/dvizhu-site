@@ -89,6 +89,15 @@ return (
         <FormatCard key={index} format={format} />
       ))}
     </div>
+        {/* Кнопка на страницу с архивом мероприятий */}
+    <div className="mt-8 text-center">
+      <Link
+        href="/events"
+    className="inline-block px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition"
+      >
+        Архив всех прошедших мероприятий
+      </Link>
+    </div>
   </section>
 );
 

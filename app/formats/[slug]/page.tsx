@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import MediaGallery from "../../components/MediaGallery"; // относительный путь к компоненту
+import SocialPopup from "../../components/SocialPopup"; // <-- импортируем
 import { useState, useRef } from "react";
 
 // Данные форматов
@@ -118,7 +119,7 @@ export default function FormatPage() {
   }
 
   return (
-<main className="bg-gray-900 text-white min-h-screen">
+    <main className="bg-gray-900 text-white min-h-screen">
 
   {/* Hero */}
   <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
@@ -299,6 +300,11 @@ export default function FormatPage() {
       </Link>
     </div>
   </section>
-</main>
+  
+      {/* Попап социальных сетей */}
+      <SocialPopup />
+
+    </main>
   );
 }
+
