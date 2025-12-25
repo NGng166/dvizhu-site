@@ -27,13 +27,13 @@ export default function FormatsDvizh() {
         { type: "image", src: "/formats/concerts2.jpg" },
         { type: "image", src: "/formats/concerts3.jpg" },
         { type: "image", src: "/formats/concerts4.jpg" },
-        { type: "image", src: "/formats/concerts5.jpg" },
+        { type: "image", src: "/formats/concerts5.webp" },
         //{ type: "video", src: "/formats/concerts-video.mp4" },
       ],
     },
     {
       title: "Dvizh Тусы",
-      description: "Флэты, вечеринки и ночи без тормозов",
+      description: "Флэты, вечеринки: когда выбираешь эмоции, а не сон",
       slug: "tusy",
       media: [
         { type: "image", src: "/formats/tusy1.jpg" },
@@ -57,8 +57,7 @@ export default function FormatsDvizh() {
       description: "Природа, испытания и командный дух",
       slug: "mountains",
       media: [
-        { type: "image", src: "/formats/mountains1.jpg" },
-        { type: "image", src: "/formats/mountains2.jpg" },
+        { type: "video", src: "/formats/mountains.mp4" },
       ],
     },
     {
@@ -67,24 +66,32 @@ export default function FormatsDvizh() {
       slug: "community",
       media: [
         { type: "image", src: "/formats/community1.jpg" },
-        { type: "video", src: "/formats/community-video.mp4" },
+        { type: "image", src: "/formats/community2.jpg" },
+        { type: "video", src: "/formats/community3.mp4" },
+        { type: "video", src: "/formats/community4.mp4" },
       ],
     },
   ];
 
-  return (
-    <section className="py-20 px-6 sm:px-16 md:px-32 bg-gray-800">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
+return (
+  <section className="py-20 px-6 sm:px-16 md:px-32 bg-gray-800">
+    <div className="text-center mb-10">
+      <h2 className="text-3xl sm:text-4xl font-bold">
         Чем живёт Dvizh-Ufa
       </h2>
+      <p className="mt-3 text-base text-gray-400 leading-relaxed italic">
+        в каждой карточке своя история
+      </p>
+    </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {formats.map((format, index) => (
-          <FormatCard key={index} format={format} />
-        ))}
-      </div>
-    </section>
-  );
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {formats.map((format, index) => (
+        <FormatCard key={index} format={format} />
+      ))}
+    </div>
+  </section>
+);
+
 }
 
 // --- карточка с мини-слайдшоу ---

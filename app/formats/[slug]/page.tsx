@@ -10,8 +10,28 @@ const formatsData: Record<string, any> = {
     title: "Dvizh Лагеря, смены, ежегодные фестивали",
     description:
       "Лагерь - это место, где взрослые снова становятся собой. Костры, разговоры до утра, музыка и ощущение, что ты на своём месте.",
-    heroImageDesktop: "/formats/lager-hero-desktop.webp",
-    heroImageMobile: "/formats/lager-hero-mobile.webp",
+    
+    about: [
+      "Dvizh Лагерь — это не турбаза и не детский лагерь. Это несколько дней вне города, где собираются люди, которым важно быть собой.",
+      "Сюда приезжают ребята из Уфы, других городов и стран. Кто-то едет один, но уже в первый день становится частью команды.",
+      "Днём — активности и разговоры, вечером — костры, музыка и ощущение, что ты в правильном месте."
+    ],
+
+  wideMedia: {
+    type: "video",
+    src: "/formats/lager/lager-wide.mp4"
+    // или image
+  },
+heroDesktop: {
+  type: "image",
+  src: "/formats/lager-hero-desktop.webp",
+},
+
+heroMobile: {
+  type: "video", // или "image"
+  src: "/formats/lager-hero-mobile.mp4",
+},
+
     heroImages: [
       "/formats/lager/photo1.jpg",
       "/formats/lager/photo2.jpg",
@@ -98,23 +118,55 @@ export default function FormatPage() {
     <main className="bg-gray-900 text-white min-h-screen">
 
       {/* Hero: мобильная и десктопная версии */}
-      <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh]">
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet={format.heroImageMobile || format.heroImageDesktop}
-          />
-          <img
-            src={format.heroImageDesktop}
-            alt={format.title}
-            className="w-full h-full object-cover object-center"
-          />
-        </picture>
+<section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
+  {/* Mobile */}
+  <div className="absolute inset-0 sm:hidden">
+    {format.heroMobile?.type === "video" ? (
+      <video
+        src={format.heroMobile.src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <img
+        src={format.heroMobile?.src}
+        alt={format.title}
+        className="w-full h-full object-cover"
+      />
+    )}
+  </div>
 
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8 sm:p-16">
-          <h1 className="text-3xl sm:text-5xl font-bold">{format.title}</h1>
-        </div>
-      </section>
+  {/* Desktop */}
+  <div className="absolute inset-0 hidden sm:block">
+    {format.heroDesktop?.type === "video" ? (
+      <video
+        src={format.heroDesktop.src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <img
+        src={format.heroDesktop?.src}
+        alt={format.title}
+        className="w-full h-full object-cover"
+      />
+    )}
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8 sm:p-16 z-10">
+    <h1 className="text-3xl sm:text-5xl font-bold">
+      {format.title}
+    </h1>
+  </div>
+</section>
+
 
       {/* Галерея медиа */}
       {(format.heroImages || format.heroVideos) && (
@@ -128,8 +180,50 @@ export default function FormatPage() {
 
       {/* Описание */}
       <section className="py-16 px-6 sm:px-16 md:px-32">
-        <p className="text-lg text-gray-200 max-w-3xl">{format.description}</p>
+        <p className="text-lg text-gray-200 max-w-3xl">
+          {format.description}
+        </p>
       </section>
+
+      {/* Подробно о формате */}
+{format.about && (
+  <section className="py-16 px-6 sm:px-16 md:px-32 max-w-5xl">
+    <h2 className="text-2xl font-bold mb-6">
+      Что это за формат
+    </h2>
+
+    <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
+      {format.about.map((text: string, index: number) => (
+        <p key={index}>{text}</p>
+      ))}
+    </div>
+  </section>
+)}
+
+{/* Акцентный медиа-блок */}
+{format.wideMedia && (
+  <section className="py-20 px-0 sm:px-16 md:px-32">
+    <div className="relative w-full h-[50vh] rounded-none sm:rounded-2xl overflow-hidden">
+      {format.wideMedia.type === "video" ? (
+        <video
+          src={format.wideMedia.src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <img
+          src={format.wideMedia.src}
+          alt={format.title}
+          className="w-full h-full object-cover"
+        />
+      )}
+    </div>
+  </section>
+)}
+
 
       {/* Мероприятия формата */}
       <section className="px-6 sm:px-16 md:px-32 pb-20">
