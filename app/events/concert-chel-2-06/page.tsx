@@ -11,6 +11,7 @@ const concertPhotos = [
   { src: "/concert-chel-2-06/2.jpg", alt: "Слэм в ДС Юность" },
   { src: "/concert-chel-2-06/3.jpg", alt: "Толпа на концерте" },
   { src: "/concert-chel-2-06/4.jpg", alt: "Эмоции ребят" },
+  { src: "/concert-chel-2-06/5.jpg", alt: "Флаг ДвижУфа" },
 ];
 
 export default function ConcertChelPage() {
