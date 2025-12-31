@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import SocialPopup from "../../components/SocialPopup";
 import { useState } from "react";
 import Slider from "../../components/Slider";
 import { VideoMobileSlider } from "../../components/VideoMobileSlider";
@@ -150,12 +152,70 @@ export default function DvizhLagerJunePage() {
         </div>
       )}
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a href="/" className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition">
-          Назад на главную
-        </a>
-      </div>
+
+{/* Навигация */}
+<section className="pb-16 px-6 sm:px-16 md:px-32">
+  <div className="
+    max-w-5xl mx-auto
+    flex flex-wrap gap-4
+    justify-center
+  ">
+
+    {/* К формату «Лагерь» — стрелка */}
+<Link
+  href="/formats/lager#format-events"
+  aria-label="К мероприятиям формата"
+  className="
+    px-6 py-3
+    border border-white rounded-lg
+    flex items-center justify-center
+    text-2xl font-bold
+    leading-none
+    hover:bg-white hover:text-black
+    transition
+  "
+>
+  ←
+</Link>
+
+    {/* К форматам */}
+    <Link
+      href="/#formats"
+      className="
+        px-6 py-3
+        border border-white rounded-lg
+        flex items-center justify-center
+        leading-none
+        hover:bg-white hover:text-black
+        transition
+      "
+    >
+      К форматам
+    </Link>
+
+    {/* Все мероприятия */}
+    <Link
+      href="/events"
+      className="
+        px-6 py-3
+        bg-white text-black rounded-lg
+        flex items-center justify-center
+        leading-none
+        hover:bg-gray-200
+        transition
+      "
+    >
+      Все мероприятия
+    </Link>
+
+  </div>
+</section>
+
+
+  
+      {/* Попап социальных сетей */}
+      <SocialPopup />
+
     </main>
   );
 }

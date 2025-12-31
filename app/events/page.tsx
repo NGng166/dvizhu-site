@@ -20,6 +20,7 @@ export default function AllEventsPage() {
     { title: "Встреча Нового года с ДвижУфой", date: "31.12.24 - 04.01.25", slug: "noviy-god-31-12", image: "/noviy-god-31-12/noviy-god-31-12.jpg" },
     { title: "DVIZH Лагерь", date: "15-17 ноября 2024 г.", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
     { title: "Анонс мерча", date: "7 ноября 2024 г.", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
+    { title: "Встречай лето 2022", date: "27 мая 2022 г.", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
   ];
 
   return (

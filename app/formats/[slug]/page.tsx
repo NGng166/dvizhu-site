@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import MediaGallery from "../../components/MediaGallery"; // относительный путь к компоненту
-import SocialPopup from "../../components/SocialPopup"; // <-- импортируем
+import MediaGallery from "../../components/MediaGallery";
+import SocialPopup from "../../components/SocialPopup";
 import { useState, useRef } from "react";
 
 // Данные форматов
@@ -21,7 +21,7 @@ const formatsData: Record<string, any> = {
         <li><span className="font-bold">SummerFest</span></li>
         <li><span className="font-bold">WinterCamp</span></li>
       </ul>,
-      <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - костры, музыка, баня и шашлыки. Люди приезжают из разных городов и стран (привет ребятам из Минска и Алматы)), и уже в первый день становятся частью команды.</p>,
+      <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - дискотека с лучшими диджеями или конкурсы. Люди приезжают из разных городов и стран (привет ребятам из Минска и Алматы)), и уже в первый день становятся частью команды.</p>,
       <p key="4"><span className="font-bold">Встречай лето</span> - короткие трёхдневные сборы в ожидании лета, с палатками, шашлыками, конкурсами и активностями на свежем воздухе.</p>,
       <p key="5"><span className="font-bold">SummerFest</span> - летний фестиваль с конкурсами, командными играми, активностями и развлечениями: пенная вечеринка, баня, танцы, сценки, стрельба из ружья и многое другое.</p>,
       <p key="6"><span className="font-bold">WinterCamp</span> и другие лагеря продолжают эту идею зимой: три дня, две ночи, костры, музыка, походы, вечерние игры и командные активности.</p>,
@@ -33,15 +33,18 @@ const formatsData: Record<string, any> = {
     },
     heroDesktop: {
       type: "image",
-      src: "/formats/lager-hero-desktop.webp",
+      src: "/formats/lager/lager-hero-desktop.webp",
     },
     heroMobile: {
       type: "video",
-      src: "/formats/lager-hero-mobile.mp4",
+      src: "/formats/lager/lager-hero-mobile.mp4",
     },
     heroImages: [
       "/formats/lager/photo1.jpg",
+      "/formats/lager/1.jpg",
+      "/formats/lager/7.jpg",
       "/formats/lager/photo2.jpg",
+      "/formats/lager/2.jpg",
     ],
     heroVideos: [
       "/formats/lager/video1.mp4",
@@ -51,22 +54,61 @@ const formatsData: Record<string, any> = {
       { title: "Dvizh Лагерь II смена", date: "15–17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
       { title: "Dvizh Лагерь I смена", date: "27–29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
       { title: "Winter Camp 2.0", date: "7–9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
+      { title: "Dvizh Лагерь 2024", date: "15-17 ноября г.", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
+      { title: "Встречай лето 2022", date: "27-29 мая 2022 г.", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
     ],
   },
   concerts: {
     title: "Концертные выезды",
     description:
-      "Другие города, сцены и дороги вместе - Bustour и концертные туры Dvizh.",
-    heroImage: "/formats/concerts-hero.jpg",
+      "Другие города, сцены и дороги вместе - концертные туры ДвижУфы.",
+    about: [
+      <p key="0">
+        Концертные выезды - это один из самых масштабных и массовых форматов в истории Движа. Именно с них для многих началось знакомство с нашим движением. С 2018 года мы организуем автобусные выезды в другие города и страны на концерты Макса Коржа. Это не просто дорога на концерт - это полноценное путешествие, где всё начинается задолго до сцены и заканчивается далеко после последнего трека.
+      </p>,
+      <p key="1">
+        Первый бас-тур Dvizh состоялся в 2018 году - выезд из Уфы в Челябинск. Тогда стало понятно: концерты Коржа - это не «приехать и послушать», это отдельный мир. Слэм, хоровое пение, абсолютная свобода и ощущение, что вокруг - свои. С этого момента выезды стали регулярными. Мы собирали автобусы, объединяли людей из разных городов, знакомили незнакомых между собой и создавали ту самую атмосферу, за которой люди возвращаются снова и снова.
+      </p>,
+      <p key="2">
+        За годы мы катались по всей России - Челябинск, Екатеринбург, Казань, Москва, Санкт-Петербург, Пермь, Пенза и другие города, а также за границу - Минск, Алматы, Астана. Мы участвовали в стадионных концертах на десятки тысяч человек и организовывали выезды сразу на несколько городов и стран за одну поездку.
+      </p>,
+      <p key="3">
+        Концертный выезд с Движем - это всегда больше, чем просто концерт: совместная дорога и знакомство в автобусе, атмосфера единой команды ещё до приезда, сам концерт - слэм, крики, песни в один голос, afterparty после концертов, прогулки по городам и новые знакомства.
+      </p>,
+      <p key="4">
+        Если ты хоть раз был с нами в таком выезде - ты знаешь, о чём речь. Если ещё нет - значит, всё впереди.
+      </p>,
+    ], 
+    heroDesktop: {
+      type: "image",
+      src: "/formats/concerts/concerts-hero-desktop.jpg",
+    },
+    heroMobile: {
+      type: "video",
+      src: "/formats/concerts/concerts-hero-mobile.mp4",
+    },
+    heroImages: [
+      "/formats/concerts/concerts1.jpg",
+      "/formats/concerts/concerts2.jpg",
+      "/formats/concerts/concerts3.jpg",
+      "/formats/concerts/concerts4.jpg",
+      "/formats/concerts/concerts5.jpg",
+      "/formats/concerts/concerts6.jpg",
+      "/formats/concerts/concerts7.jpg",
+    ],
+    wideMedia: {
+      type: "video",
+      src: "/formats/concerts/concert-wide.mp4"
+    },
     events: [
-      { title: "BUSTOUR | UFA - ALMATY", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/bustour-06-09/bustour-cover.jpg" },
-      { title: "Концерт Макса Коржа | Самара", date: "29–30 марта 2025", slug: "concert-samara-29-03", image: "/concert-samara-29-03.jpg" },
+      { title: "BUSTOUR | UFA - ALMATY", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/formats/concerts/bustour-06-09.jpg" },
+      { title: "Концерт Макса Коржа | Самара", date: "29–30 марта 2025", slug: "concert-samara-29-03", image: "/formats/concerts/concert-samara-29-03.jpg" },
     ],
   },
   tusy: {
     title: "Dvizh Тусы",
     description:
-      "Флэты, большие вечеринки и ночи без тормозов. Танцы, конкурсы и атмосфера Dvizh.",
+      "НАПИШИ ПРО ХЛЕБ Флэты, большие вечеринки и ночи без тормозов. Танцы, конкурсы и атмосфера Dvizh.",
     heroImage: "/formats/tusy-hero.jpg",
     events: [
       { title: "FLAT - DvizhUfa", date: "18 октября 2025", slug: "flat-18-10", image: "/flat-18-10/afish.jpg" },
@@ -76,7 +118,7 @@ const formatsData: Record<string, any> = {
   artists: {
     title: "Dvizh × Артисты",
     description:
-      "Особые события с музыкантами и гостями. Канги, селебы и уникальные тусовки Dvizh.",
+      "НАПИШИ ПРО ХЛЕБ (11.01.19) Особые события с музыкантами и гостями. Канги, селебы и уникальные тусовки Dvizh.",
     heroImage: "/formats/artists-hero.jpg",
     events: [
       { title: "Селебриум | Макс Корж", date: "лето 2025", slug: "celebrum-2025", image: "/artists/celebrum.jpg" },
@@ -182,8 +224,7 @@ export default function FormatPage() {
   </section>
 )}
 
-
-  {/* Описание */}
+{/* Описание */}
 <section className="py-4 px-6 sm:px-16 md:px-32">
   <div className="max-w-5xl mx-auto flex flex-col items-start">
     <p className="text-lg text-gray-200 text-left">
@@ -192,8 +233,6 @@ export default function FormatPage() {
   </div>
 </section>
 
-
-  {/* Подробно о формате с видео */}
 {/* Подробно о формате с видео */}
 {format.about && (
   <section className="py-4 px-6 sm:px-16 md:px-32">
@@ -228,12 +267,19 @@ export default function FormatPage() {
           {openWideVideo && (
             <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
               <div className="relative w-full max-w-3xl">
-                <button
-                  onClick={() => setOpenWideVideo(false)}
-                  className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-                >
-                  ✕
-                </button>
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    setOpenWideVideo(false);
+  }}
+  className="fixed top-6 right-6 z-50 w-12 h-12
+             bg-black/70 text-white text-3xl
+             rounded-full flex items-center justify-center
+             hover:bg-black/90 transition"
+>
+  ✕
+</button>
+
                 <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
                   <video
                     ref={wideVideoRef}
@@ -250,58 +296,83 @@ export default function FormatPage() {
         </div>
       )}
 
-      {/* Остальные абзацы начиная со второго */}
-{format.about.slice(1).map((item: React.ReactNode, i: number) => (
-  <div key={i + 1} className="w-full">{item}</div>
+{/* Остальные абзацы */}
+{format.about.map((item: React.ReactNode, i: number) => (
+  <div key={i} className="w-full">
+    {item}
+
+    {/* Фото после следующего абзаца (например, про атмосферу выезда) */}
+    {slug === 'concerts' && i === 0 && (
+      <img
+        src="/formats/concerts/concert-line0.jpg"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+
+    {/* Фото после абзаца про первый бас-тур */}
+    {slug === 'concerts' && i === 1 && (
+      <img
+        src="/formats/concerts/concert-line1.jpg"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+
+    {/* Фото после абзаца про поездки по городам */}
+    {slug === 'concerts' && i === 2 && (
+      <img
+        src="/formats/concerts/concert-line2.webp"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+  </div>
 ))}
-    </div>
-  </section>
-)}
-
-  {/* Мероприятия формата */}
-  <section className="px-6 sm:px-16 md:px-32 pb-16">
-    <h2 className="text-2xl font-bold my-8 text-center">
-      Мероприятия этого формата
-    </h2>
-    <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      {format.events.map((event: any, index: number) => (
-        <Link key={index} href={`/events/${event.slug}`}>
-          <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">
-            <img
-              src={event.image}
-              alt={event.title}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-2">
-              <p className="font-bold">{event.title}</p>
-              <p className="text-sm text-gray-400">{event.date}</p>
-            </div>
           </div>
-        </Link>
-      ))}
-    </div>
-  </section>
+        </section>
+      )}
 
-  {/* Навигация */}
-  <section className="pb-16 px-6 sm:px-16 md:px-32">
-    <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center md:justify-start">
-      <Link
-        href="/#formats"
-        className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
-      >
-        ← К форматам
-      </Link>
+      {/* Мероприятия формата */}
+      <section id="format-events" className="px-6 sm:px-16 md:px-32 pb-16 scroll-mt-24">
+        <h2 className="text-2xl font-bold my-8 text-center">Мероприятия этого формата</h2>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {format.events.map((event: any, index: number) => (
+            <Link key={index} href={`/events/${event.slug}`}>
+              <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-40 object-cover"
+                />
+                <div className="p-2">
+                  <p className="font-bold">{event.title}</p>
+                  <p className="text-sm text-gray-400">{event.date}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <Link
-        href="/events"
-        className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-      >
-        Все мероприятия
-      </Link>
-    </div>
-  </section>
-  
-      {/* Попап социальных сетей */}
+      {/* Навигация */}
+      <section className="pb-16 px-6 sm:px-16 md:px-32">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center md:justify-start">
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            ← К форматам
+          </Link>
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
       <SocialPopup />
 
     </main>
