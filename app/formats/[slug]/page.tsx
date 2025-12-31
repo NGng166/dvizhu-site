@@ -80,8 +80,8 @@ const formatsData: Record<string, any> = {
       </p>,
     ], 
     heroDesktop: {
-      type: "image",
-      src: "/formats/concerts/concerts-hero-desktop.jpg",
+      type: "video",
+      src: "/formats/concerts/hero.webm",
     },
     heroMobile: {
       type: "video",
@@ -102,7 +102,7 @@ const formatsData: Record<string, any> = {
     },
     events: [
       { title: "BUSTOUR | UFA - ALMATY", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/formats/concerts/bustour-06-09.jpg" },
-      { title: "Концерт Макса Коржа | Самара", date: "29–30 марта 2025", slug: "concert-samara-29-03", image: "/formats/concerts/concert-samara-29-03.jpg" },
+      { title: "Концерт Макса Коржа | Самара", date: "12 октября 2018", slug: "concert-samara-12-10", image: "/formats/concerts/concert-samara-12-10.jpg" },
     ],
   },
   tusy: {

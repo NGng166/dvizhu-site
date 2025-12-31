@@ -5,22 +5,23 @@ import SocialPopup from "../components/SocialPopup";
 
 export default function AllEventsPage() {
   const pastEvents = [
-    { title: "FLAT - DvizhUfa", date: "18 октября 2025 г.", slug: "flat-18-10", image: "/flat-18-10/afish.jpg" },
-    { title: "BEERPONG", date: "20 сентября 2025 г.", slug: "beerpong-20-09", image: "/beerpong-20-09/beerpong-20-09.jpg" },
-    { title: "BUSTOUR | UFA - ALMATY", date: "2-9 сентября 2025 г.", slug: "bustour-06-09", image: "/bustour-06-09/bustour-cover.jpg" },
-    { title: "DVIZH ЛАГЕРЬ II смена", date: "15-17 августа 2025 г.", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
-    { title: "Общий сбор в Дустаре", date: "14 августа 2025 г.", slug: "obshe-sbor-14-08", image: "/obshe-sbor-14-08/obshe-sbor-14-08.webp" },
-    { title: "Питбайки", date: "12 июля 2025 г.", slug: "pitbike-12-07", image: "/pitbike-12-07/pitbike-12-07.jpg" },
-    { title: "DVIZH ЛАГЕРЬ Iсмена", date: "27-29 июня 2025 г.", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
-    { title: "Квартирник", date: "27 апреля 2025 г.", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04/kvartirnik-27-04.jpg" },
-    { title: "BeerPong", date: "12 апреля 2025 г.", slug: "beerpong-12-04", image: "/beerpong-12-04/beerpong-12-04.jpg" },
-    { title: "Айгир", date: "1-2 марта 2025 г.", slug: "aygir-01-03", image: "/aygir-01-03/aygir-01-03.jpg" },
-    { title: "Квартирник", date: "16 февраля 2025 г.", slug: "kvartirnik-16-02", image: "/kvartirnik-16-02/kvartirnik-16-02.jpg" },
-    { title: "Winter Camp 2.0", date: "7-9 февраля 2025 г.", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
+    { title: "FLAT - DvizhUfa", date: "18 октября 2025", slug: "flat-18-10", image: "/flat-18-10/afish.jpg" },
+    { title: "BEERPONG", date: "20 сентября 2025", slug: "beerpong-20-09", image: "/beerpong-20-09/beerpong-20-09.jpg" },
+    { title: "BUSTOUR | UFA - ALMATY", date: "2-9 сентября 2025", slug: "bustour-06-09", image: "/bustour-06-09/bustour-cover.jpg" },
+    { title: "DVIZH ЛАГЕРЬ II смена", date: "15-17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
+    { title: "Общий сбор в Дустаре", date: "14 августа 2025", slug: "obshe-sbor-14-08", image: "/obshe-sbor-14-08/obshe-sbor-14-08.webp" },
+    { title: "Питбайки", date: "12 июля 2025", slug: "pitbike-12-07", image: "/pitbike-12-07/pitbike-12-07.jpg" },
+    { title: "DVIZH ЛАГЕРЬ Iсмена", date: "27-29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
+    { title: "Квартирник", date: "27 апреля 2025", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04/kvartirnik-27-04.jpg" },
+    { title: "BeerPong", date: "12 апреля 2025", slug: "beerpong-12-04", image: "/beerpong-12-04/beerpong-12-04.jpg" },
+    { title: "Айгир", date: "1-2 марта 2025", slug: "aygir-01-03", image: "/aygir-01-03/aygir-01-03.jpg" },
+    { title: "Квартирник", date: "16 февраля 2025", slug: "kvartirnik-16-02", image: "/kvartirnik-16-02/kvartirnik-16-02.jpg" },
+    { title: "Winter Camp 2.0", date: "7-9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
     { title: "Встреча Нового года с ДвижУфой", date: "31.12.24 - 04.01.25", slug: "noviy-god-31-12", image: "/noviy-god-31-12/noviy-god-31-12.jpg" },
-    { title: "DVIZH Лагерь", date: "15-17 ноября 2024 г.", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
-    { title: "Анонс мерча", date: "7 ноября 2024 г.", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
-    { title: "Встречай лето 2022", date: "27 мая 2022 г.", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
+    { title: "DVIZH Лагерь", date: "15-17 ноября 2024", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
+    { title: "Анонс мерча", date: "7 ноября 2024", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
+    { title: "Встречай лето 2022", date: "27 мая 2022", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
+    { title: "Концерт Макса Коржа | Самара", date: "12 октября 2018", slug: "concert-samara-12-10", image: "/formats/concerts/concert-samara-12-10.jpg" },
   ];
 
   return (
