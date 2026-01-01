@@ -21,8 +21,11 @@ export default function AllEventsPage() {
     { title: "DVIZH Лагерь", date: "15-17 ноября 2024", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
     { title: "Анонс мерча", date: "7 ноября 2024", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
     { title: "Встречай лето 2022", date: "27 мая 2022", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
+    { title: "Концерт Макса Коржа | Москва", date: "31 августа 2019", slug: "concert-moscow-31-08", image: "/concert-moscow-31-08/cover.jpg" },
+    { title: "Концерт Макса Коржа | Челябинск", date: "31 апреля 2019", slug: "concert-chel-31-05", image: "/concert-chel-31-05/cover.jpg" },
     { title: "Концерт Макса Коржа | Казань", date: "14 апреля 2019", slug: "concert-kazan-14-04", image: "/concert-kazan-14-04/cover.jpg" },
     { title: "Концерт Макса Коржа | Екатеринбург", date: "1 декабря 2018", slug: "concert-ekb-1-12", image: "/concert-ekb-1-12/cover.jpg" },
+    { title: "Концерт Макса Коржа | Уфа", date: "14 октября 2018", slug: "concert-ufa-14-10", image: "/concert-ufa-14-10/cover.jpg" },
     { title: "Концерт Макса Коржа | Самара", date: "12 октября 2018", slug: "concert-samara-12-10", image: "/concert-samara-12-10/cover.jpg" },
     { title: "Концерт Макса Коржа | Челябинск", date: "2 июня 2018", slug: "concert-chel-2-06", image: "/concert-chel-2-06/cover.jpg" },
   ];
