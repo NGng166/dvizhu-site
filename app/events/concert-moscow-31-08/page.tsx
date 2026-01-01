@@ -38,8 +38,8 @@ export default function ConcertMoscowPage() {
       </section>
 
       {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Не заставляли долго ждать — наш следующий выезд состоялся в столицу России!  
           Второй по величине стадион в стране, но людей оказалось в два раза больше, чем в Челябинске.  
           Мест в басе было всего 49, поэтому никто не хотел пропустить такой масштабный концерт.
@@ -78,8 +78,8 @@ export default function ConcertMoscowPage() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed text-center">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Концерт в Москве стал одним из самых масштабных выездов, которые мы организовывали.  
           Энергия, слэм, эмоции и впечатления останутся с нами надолго.
         </p>

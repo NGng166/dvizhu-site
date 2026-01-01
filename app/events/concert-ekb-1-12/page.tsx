@@ -39,8 +39,8 @@ export default function ConcertEkbPage() {
       </section>
 
       {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           1 декабря 2018 года мы отправились в Екатеринбург на третий официальный выезд из Уфы.
           Долгая поездка, крутая компания и море эмоций ждали нас на концерте Макса Коржа
           и на afterparty от наших друзей из ДвижЕкб с диджеем Selebrium!
@@ -102,8 +102,8 @@ export default function ConcertEkbPage() {
       )}
 
       {/* Про дорогу */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Дорога туда и обратно - это отдельная часть поездки. Разговоры, знакомство,
           смех, усталость и ощущение, что рядом - свои. Именно такие выезды делают нас
           настоящей командой.
@@ -118,7 +118,7 @@ export default function ConcertEkbPage() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
+      <section className="mb-12 max-w-3xl mx-auto">
         <p className="text-lg leading-relaxed text-center">
           Третий выезд из Уфы в Екатеринбург показал: большие поездки и концерты - это
           эмоции, впечатления и новые друзья. Дальше будет ещё больше! 🔥

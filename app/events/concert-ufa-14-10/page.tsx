@@ -38,13 +38,14 @@ export default function ConcertUfaPage() {
         </div>
       </section>
 
-      {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
-          14 октября 2018 года мы приняли у себя в Уфе концерт белорусского артиста Макса Коржа.  
-          Фанаты начали собираться возле ледового дворца уже с обеда, а атмосфера накалялась с каждым часом.
-        </p>
-      </section>
+{/* Вступление */}
+<section className="mb-12 max-w-3xl mx-auto">
+  <p className="text-lg leading-relaxed indent-6">
+    14 октября 2018 года мы приняли у себя в Уфе концерт белорусского артиста Макса Коржа.  
+    Фанаты начали собираться возле ледового дворца уже с обеда, а атмосфера накалялась с каждым часом.
+  </p>
+</section>
+
 
       {/* О концерте */}
       <section className="mb-12 max-w-3xl mx-auto">
@@ -105,8 +106,8 @@ export default function ConcertUfaPage() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed text-center">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Концерт в Уфе стал настоящим праздником для фанатов Коржа.  
           Атмосфера, эмоции и энергия сцены сделали этот день незабываемым.
         </p>

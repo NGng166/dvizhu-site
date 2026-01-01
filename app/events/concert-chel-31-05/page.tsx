@@ -38,8 +38,8 @@ export default function ConcertChel2Page() {
       </section>
 
       {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Второй раз мы отправились покорять Челябинск, и на этот раз было ещё жарче!  
           Больше площадка, больше народа и море эмоций. Как всегда, отложили все дела, взяли выходной и поехали толпой угореть на концерт Макса Коржа.
         </p>
@@ -53,8 +53,8 @@ export default function ConcertChel2Page() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed text-center">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Второй бас-тур в Челябинск стал ещё более ярким и насыщенным, с большим количеством эмоций и впечатлений.  
           Каждый смог погрузиться в атмосферу концерта и тусовки вместе с командой.
         </p>

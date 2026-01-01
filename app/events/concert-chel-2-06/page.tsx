@@ -40,8 +40,8 @@ export default function ConcertChelPage() {
       </section>
 
       {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           2 июня 2018 года мы съездили на концерт Макса Коржа в Челябинск.
           Для нашего движа это был первый бас-тур: выезд из Уфы, ночь в дороге,
           концерт и возвращение обратно одной командой.
@@ -60,48 +60,22 @@ export default function ConcertChelPage() {
         </p>
       </section>
 
-      {/* Видео */}
-      <section className="mb-12">
-        <div
-          className="relative cursor-pointer max-w-3xl mx-auto"
-          onClick={() => setOpenVideo(true)}
-        >
-          <img
-            src="/concert-chel-2-06/video-preview.jpg"
-            alt="Видео с концерта"
-            className="rounded-lg shadow-lg"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black/60 px-6 py-3 rounded-lg text-lg">
-              Смотреть видео
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Модалка видео */}
-      {openVideo && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
-          onClick={() => {
-            setOpenVideo(false);
-            videoRef.current?.pause();
-          }}
-        >
-          <video
-            ref={videoRef}
-            src="/concert-chel-2-06/concert.mp4"
-            controls
-            autoPlay
-            className="max-w-full max-h-full rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+<section className="mb-12 max-w-3xl mx-auto">
+  <h2 className="text-2xl font-semibold mb-4">Видео с концерта</h2>
+  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+    <iframe
+      src="https://vk.com/video-160591040_456239018"
+      className="absolute top-0 left-0 w-full h-full"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    ></iframe>
+  </div>
+</section>
 
       {/* Про дорогу */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Дорога туда и обратно стала отдельной частью поездки.
           Разговоры, знакомство, усталость и ощущение, что рядом - свои.
           Именно с этого выезда стало понятно, что такие поездки -
@@ -117,8 +91,8 @@ export default function ConcertChelPage() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed text-center">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           Этот бас-тур стал отправной точкой.
           После Челябинска выезды начали становиться регулярными,
           а формат - привычным.

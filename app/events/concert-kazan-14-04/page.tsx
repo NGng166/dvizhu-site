@@ -22,7 +22,7 @@ export default function ConcertKazanPage() {
 
       {/* Заголовок */}
       <section className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-2">
           Концерт Макса Коржа | Казань
         </h1>
         <p className="text-lg sm:text-xl leading-relaxed">
@@ -39,27 +39,27 @@ export default function ConcertKazanPage() {
       </section>
 
       {/* Вступление */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6">
           14 апреля 2019 года мы отправились в Казань на очередной выезд из Уфы.  
           Тёплая атмосфера, новые знакомства и безумный концерт Макса Коржа ждали нас на этом масштабном событии.
         </p>
-        <p className="text-lg leading-relaxed mt-2">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Цена поездки - 3300 ₽, в стоимость входили трансфер туда и обратно, билет на концерт и билет на afterparty. Выезд утром 14 апреля, возвращение 15 апреля днём.
         </p>
       </section>
 
       {/* О концерте */}
       <section className="mb-12 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">О концерте</h2>
-        <p className="text-lg leading-relaxed indent-6 mb-4">
+        <h2 className="text-2xl font-semibold mb-2">О концерте</h2>
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Концерт прошёл в «Татнефть Арене» и собрал около 10 000 зрителей.  
           Макс Корж объединил всех в одну атмосферу - от первых аккордов до последней песни.
         </p>
-        <p className="text-lg leading-relaxed indent-6 mb-4">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Наш выезд включал около 100 человек из Уфы и несколько десятков автобусов из других городов. Мощный слэм, море эмоций и afterparty сделали этот день незабываемым.
         </p>
-        <p className="text-lg leading-relaxed indent-6">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Казань показала, что большие концерты - это не только музыка, но и люди, которые едут вместе, чтобы создавать атмосферу настоящего движа.
         </p>
       </section>
@@ -104,8 +104,8 @@ export default function ConcertKazanPage() {
       )}
 
       {/* Про дорогу */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Дорога туда и обратно - это отдельная часть поездки: разговоры, новые знакомства, смех и ощущение, что рядом - свои люди.
           Именно это делает наши выезды такими запоминающимися.
         </p>
@@ -119,8 +119,8 @@ export default function ConcertKazanPage() {
       </section>
 
       {/* Итог */}
-      <section className="mb-12">
-        <p className="text-lg leading-relaxed text-center">
+      <section className="mb-12 max-w-3xl mx-auto">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Концерт в Казани стал одним из крупнейших выездов из Уфы - 100 участников и незабываемая атмосфера.  
           Дальше ждут новые города и новые впечатления! 🔥
         </p>
