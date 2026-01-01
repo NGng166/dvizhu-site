@@ -62,44 +62,21 @@ export default function ConcertEkbPage() {
         </p>
       </section>
 
-      {/* Видео */}
-      <section className="mb-12">
-        <div
-          className="relative cursor-pointer max-w-3xl mx-auto"
-          onClick={() => setOpenVideo(true)}
-        >
-          <img
-            src="/concert-ekb-1-12/video-preview.jpg"
-            alt="Видео с концерта"
-            className="rounded-lg shadow-lg"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black/60 px-6 py-3 rounded-lg text-lg">
-              Смотреть видео
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Видео с концерта */}
+<section className="mb-12 max-w-3xl mx-auto">
+  <h2 className="text-2xl font-semibold mb-4"></h2>
 
-      {/* Модалка видео */}
-      {openVideo && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center px-4"
-          onClick={() => {
-            setOpenVideo(false);
-            videoRef.current?.pause();
-          }}
-        >
-          <video
-            ref={videoRef}
-            src="/concert-ekb-1-12/concert.mp4"
-            controls
-            autoPlay
-            className="max-w-full max-h-full rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+    <iframe
+      src="https://vk.com/video_ext.php?oid=-60753811&id=456239557"
+      className="absolute top-0 left-0 w-full h-full"
+      frameBorder="0"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+</section>
+
 
       {/* Про дорогу */}
       <section className="mb-12 max-w-3xl mx-auto">

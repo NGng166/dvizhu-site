@@ -61,15 +61,16 @@ export default function ConcertChelPage() {
       </section>
 
 <section className="mb-12 max-w-3xl mx-auto">
-  <h2 className="text-2xl font-semibold mb-4">Видео с концерта</h2>
-  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+  <h2 className="text-2xl font-semibold mb-4"></h2>
+
+  <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg bg-black">
     <iframe
-      src="https://vk.com/video-160591040_456239018"
+      src="https://vk.com/video_ext.php?oid=-160591040&id=456239018"
       className="absolute top-0 left-0 w-full h-full"
       frameBorder="0"
-      allow="autoplay; encrypted-media"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
       allowFullScreen
-    ></iframe>
+    />
   </div>
 </section>
 
