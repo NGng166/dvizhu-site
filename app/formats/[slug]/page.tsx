@@ -26,7 +26,7 @@ const formatsData: Record<string, any> = {
     wideMedia: { type: "video", src: "/formats/lager/lager-wide.mp4" },
     heroDesktop: { type: "image", src: "/formats/lager/lager-hero-desktop.webp" },
     heroMobile: { type: "video", src: "/formats/lager/lager-hero-mobile-540.mp4" },
-    heroImages: ["/formats/lager/photo1.jpg","/formats/lager/1.jpg","/formats/lager/7.jpg","/formats/lager/photo2.jpg","/formats/lager/2.jpg"],
+    heroImages: ["/formats/lager/1.jpg","/formats/lager/photo1.jpg","/formats/lager/7.jpg","/formats/lager/photo2.jpg","/formats/lager/2.jpg"],
     heroVideos: ["/formats/lager/video1.mp4","/formats/lager/video2.mp4"],
     events: [
       { title: "Dvizh Лагерь II смена", date: "15–17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },

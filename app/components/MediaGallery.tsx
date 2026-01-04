@@ -64,7 +64,7 @@ export default function MediaGallery({ media }: MediaGalleryProps) {
 
       {/* Градиент справа */}
       {canScrollRight && (
-        <div className="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-gray-900 to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-gray-900/90 to-transparent" style={{ zIndex: 10 }}/> 
       )}
 
       {/* Лайтбокс */}
