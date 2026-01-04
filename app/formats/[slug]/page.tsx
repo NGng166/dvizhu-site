@@ -141,7 +141,7 @@ export default function FormatPage() {
     className="w-full h-full object-cover"
   >
     <source
-      src="/formats/lager/lager-hero-mobile-540.mp4"
+      src={format.heroMobile.src} // вот это важно — берём динамически из данных формата
       type="video/mp4"
     />
   </video>
@@ -172,7 +172,7 @@ export default function FormatPage() {
           <div className="max-w-5xl mx-auto">
             <MediaGallery
               media={[
-                ...(format.heroImages?.map((src: string) => ({ type: "image", src })) || []),
+                ...(format.heroImages?.map((src: string) => ({ type: "image", src, loading: "lazy" })) || []),
                 ...(format.heroVideos?.map((src: string) => ({ type: "video", src })) || []),
               ]}
             />

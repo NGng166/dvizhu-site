@@ -20,9 +20,21 @@ export default function MediaGallery({ media }: MediaGalleryProps) {
             onClick={() => setActiveIndex(index)}
           >
             {item.type === "image" ? (
-              <img src={item.src} alt={`media-${index}`} className="w-full h-full object-cover" />
+              <img
+                src={item.src}
+                alt={`media-${index}`}
+                className="w-full h-full object-cover"
+                loading="lazy" // ✅ ленивый рендер
+              />
             ) : (
-              <video src={item.src} className="w-full h-full object-cover" />
+              <video
+                src={item.src}
+                className="w-full h-full object-cover"
+                preload="metadata" // ✅ не грузим полностью, только метаданные
+                muted
+                loop
+                playsInline
+              />
             )}
           </div>
         ))}
@@ -35,9 +47,18 @@ export default function MediaGallery({ media }: MediaGalleryProps) {
           onClick={() => setActiveIndex(null)}
         >
           {media[activeIndex].type === "image" ? (
-            <img src={media[activeIndex].src} className="max-h-full max-w-full" />
+            <img
+              src={media[activeIndex].src}
+              className="max-h-full max-w-full"
+              loading="eager" // загружаем сразу, когда открыт лайтбокс
+            />
           ) : (
-            <video src={media[activeIndex].src} className="max-h-full max-w-full" controls autoPlay />
+            <video
+              src={media[activeIndex].src}
+              className="max-h-full max-w-full"
+              controls
+              autoPlay
+            />
           )}
         </div>
       )}
