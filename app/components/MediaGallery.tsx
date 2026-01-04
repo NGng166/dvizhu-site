@@ -8,37 +8,39 @@ interface MediaGalleryProps {
 
 export default function MediaGallery({ media }: MediaGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [scrollIndex, setScrollIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Проверяем, можно ли скроллить вправо
-  const updateScrollRight = () => {
+  const CARD_WIDTH = 160 + 16; // ширина карточки + gap (tailwind w-40 + gap-4)
+
+  // Обновляем scrollIndex при скролле
+  const onScroll = () => {
     if (!scrollRef.current) return;
-    const el = scrollRef.current;
-    setCanScrollRight(el.scrollWidth > el.clientWidth + el.scrollLeft + 1);
+    const index = Math.round(scrollRef.current.scrollLeft / CARD_WIDTH);
+    setScrollIndex(index);
   };
 
-  useEffect(() => {
-    updateScrollRight();
-    window.addEventListener("resize", updateScrollRight);
-    return () => window.removeEventListener("resize", updateScrollRight);
-  }, []);
+  // Скролл по клику на рельсу
+  const scrollToIndex = (i: number) => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollTo({ left: i * CARD_WIDTH, behavior: "smooth" });
+  };
 
-  const handleScroll = () => updateScrollRight();
+  // Кол-во «страниц» для рельс
+  const pages = Math.ceil(media.length);
 
   return (
     <div className="my-6 relative">
-      {/* Горизонтальная прокрутка с scroll snap */}
+      {/* Горизонтальная прокрутка */}
       <div
         ref={scrollRef}
-        onScroll={handleScroll}
-        className="flex gap-4 overflow-x-auto px-2 py-2 scroll-smooth snap-x snap-mandatory"
-        style={{ paddingRight: "1rem" }} // немного отступа справа
+        onScroll={onScroll}
+        className="flex gap-4 overflow-x-auto px-2 py-2 scroll-smooth"
       >
         {media.map((item, index) => (
           <div
             key={index}
-            className="flex-shrink-0 cursor-pointer rounded-lg shadow-lg overflow-hidden w-40 h-40 bg-black snap-start"
+            className="flex-shrink-0 cursor-pointer rounded-lg shadow-lg overflow-hidden w-40 h-40 bg-black"
             onClick={() => setActiveIndex(index)}
           >
             {item.type === "image" ? (
@@ -63,9 +65,20 @@ export default function MediaGallery({ media }: MediaGalleryProps) {
       </div>
 
       {/* Градиент справа */}
-      {canScrollRight && (
-        <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-gray-900/90 to-transparent" style={{ zIndex: 10 }}/> 
-      )}
+      <div className="pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-gray-900/90 to-transparent z-10" />
+
+      {/* Рельсы под слайдером */}
+      <div className="flex justify-center mt-2 gap-2">
+        {Array.from({ length: pages }).map((_, i) => (
+          <button
+            key={i}
+            className={`w-8 h-2 rounded-full transition-colors ${
+              i === scrollIndex ? "bg-white" : "bg-gray-500/50"
+            }`}
+            onClick={() => scrollToIndex(i)}
+          />
+        ))}
+      </div>
 
       {/* Лайтбокс */}
       {activeIndex !== null && (
