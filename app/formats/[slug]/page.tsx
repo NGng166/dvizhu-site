@@ -25,7 +25,7 @@ const formatsData: Record<string, any> = {
     ],
     wideMedia: { type: "video", src: "/formats/lager/lager-wide.mp4" },
     heroDesktop: { type: "image", src: "/formats/lager/lager-hero-desktop.webp" },
-    heroMobile: { type: "video", src: "/formats/lager/lager-hero-mobile.mp4" },
+    heroMobile: { type: "video", src: "/formats/lager/lager-hero-mobile-540.mp4" },
     heroImages: ["/formats/lager/photo1.jpg","/formats/lager/1.jpg","/formats/lager/7.jpg","/formats/lager/photo2.jpg","/formats/lager/2.jpg"],
     heroVideos: ["/formats/lager/video1.mp4","/formats/lager/video2.mp4"],
     events: [
@@ -130,11 +130,29 @@ export default function FormatPage() {
       {/* Hero */}
       <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 sm:hidden">
-          {format.heroMobile?.type === "video" ? (
-            <video src={format.heroMobile.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-          ) : (
-            <img src={format.heroMobile?.src} alt={format.title} className="w-full h-full object-cover" />
-          )}
+{format.heroMobile?.type === "video" ? (
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    poster="/formats/lager/lager-hero-poster.jpg"
+    className="w-full h-full object-cover"
+  >
+    <source
+      src="/formats/lager/lager-hero-mobile-540.mp4"
+      type="video/mp4"
+    />
+  </video>
+) : (
+  <img
+    src={format.heroMobile?.src}
+    alt={format.title}
+    className="w-full h-full object-cover"
+  />
+)}
+
         </div>
         <div className="absolute inset-0 hidden sm:block">
           {format.heroDesktop?.type === "video" ? (
@@ -163,9 +181,14 @@ export default function FormatPage() {
       )}
 
       {/* Описание формата */}
-<section className="mb-6 max-w-3xl mx-auto px-6 sm:px-16 md:px-32">
-  <p className="text-lg leading-relaxed indent-6 text-justify">{format.description}</p>
+<section className="mb-6 px-6 sm:px-16 md:px-32">
+  <div className="max-w-3xl mx-auto">
+    <p className="text-lg leading-relaxed indent-6 text-justify">
+      {format.description}
+    </p>
+  </div>
 </section>
+
 
       {/* Подробно о формате с видео */}
       {format.about && (
