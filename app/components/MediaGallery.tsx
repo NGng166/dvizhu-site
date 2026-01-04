@@ -32,11 +32,11 @@ export default function MediaGallery({ media }: MediaGalleryProps) {
   return (
     <div className="my-6 relative">
       {/* Горизонтальная прокрутка */}
-      <div
-        ref={scrollRef}
-        onScroll={onScroll}
-        className="flex gap-4 overflow-x-auto px-2 py-2 scroll-smooth"
-      >
+<div
+  ref={scrollRef}
+  onScroll={onScroll}
+  className="flex gap-4 overflow-x-auto px-2 py-2 scroll-smooth relative scrollbar-none"
+>
         {media.map((item, index) => (
           <div
             key={index}
