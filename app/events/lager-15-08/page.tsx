@@ -16,7 +16,7 @@ export default function LagerPage() {
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
       {/* Заголовок */}
-      <section className="mb-12 text-center max-w-3xl mx-auto">
+      <section className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
           Лагерь
         </h1>
@@ -26,7 +26,11 @@ export default function LagerPage() {
       </section>
 
       {/* Общее фото лагеря */}
-      <section className="mb-16 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
+      <section className="
+  mb-8 sm:mb-16
+  max-w-3xl mx-auto
+  overflow-hidden rounded-xl shadow-lg
+">
         <img
           src="/lager-15-08/hero.jpg"
           alt="Лагерь"
@@ -35,7 +39,12 @@ export default function LagerPage() {
       </section>
 
       {/* Основной текст */}
-      <section className="max-w-3xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
+      <section className="
+  max-w-3xl mx-auto
+  mb-12 sm:mb-20
+  space-y-4 sm:space-y-6
+  text-lg leading-relaxed text-justify
+">
         <p className="indent-6">
           Эта смена стала настоящей перезагрузкой лета. Новая площадка, живописный берег реки Белая, корпус или палатка на выбор - всё для того, чтобы уехать от города и полностью погрузиться в атмосферу лагеря.
         </p>
@@ -55,7 +64,7 @@ export default function LagerPage() {
       </section>
 
       {/* Финальная строка */}
-      <section className="text-center mt-8 text-lg text-gray-300">
+      <section className="text-center mt-8 mb-8 sm:mb-12 text-lg text-gray-300">
         Лето, друзья и лагерь - лучшее сочетание 🔥
       </section>
 
