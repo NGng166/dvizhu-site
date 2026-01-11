@@ -93,7 +93,6 @@ export default function DvizhLagerPage() {
 
       {/* Видео-луп с кнопкой полного просмотра */}
       <section className="mb-8 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Видео</h2>
         <div className="w-full max-w-md mx-auto">
           <div
             className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
@@ -153,7 +152,6 @@ export default function DvizhLagerPage() {
 
       {/* Итоги */}
       <section className="mb-8 max-w-3xl mx-auto" style={{ textAlign: "justify" }}>
-        <h2 className="text-2xl font-semibold mb-2">Итоги и отзывы</h2>
         <p className="text-lg leading-relaxed indent-6">
           Лагерь прошел ярко, тепло, драйвово. Участники увезли новые знакомства,  
           эмоции и творческую энергию.
