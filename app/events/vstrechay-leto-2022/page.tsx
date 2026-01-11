@@ -7,7 +7,7 @@ import SocialPopup from "../../components/SocialPopup";
 const photos = [
   { src: "/vstrechay-leto-2022/3.jpg", alt: "Молодежь у таблички" },
   { src: "/vstrechay-leto-2022/2.jpg", alt: "Тусовка" },
-  { src: "/vstrechay-leto-2022/2-1.jpg", alt: "Никольская пещера" },
+  { src: "/vstrechay-leto-2022/8.jpg", alt: "Никольская пещера" },
   { src: "/vstrechay-leto-2022/4.jpg", alt: "Никольский мост" },
   { src: "/vstrechay-leto-2022/5.jpg", alt: "Высота, горы" },
   { src: "/vstrechay-leto-2022/6.jpg", alt: "Скала Никольская, Миньяр" },
