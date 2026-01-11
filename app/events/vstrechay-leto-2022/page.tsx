@@ -21,11 +21,11 @@ export default function LagerPage() {
       {/* Заголовок */}
       <section className="mb-12 text-center max-w-3xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
-          Встречай лето
+          Встречай лето · 2022
         </h1>
-        <p className="text-lg text-gray-300">
-          27-29 мая 2022
-        </p>
+<p className="text-lg text-gray-300 italic">
+  27–29 мая 2022
+</p>
       </section>
 
       {/* Общее фото лагеря */}

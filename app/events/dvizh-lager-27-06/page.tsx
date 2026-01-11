@@ -24,21 +24,21 @@ export default function DvizhLagerJunePage() {
   ];
 
   const v1to3: VideoItem[] = [
-    { loop: "/dvizh-lager-27-06/v1-loop.mp4", full: "/dvizh-lager-27-06/v1.mp4" },
-    { loop: "/dvizh-lager-27-06/v2-loop.mp4", full: "/dvizh-lager-27-06/v2.mp4" },
-    { loop: "/dvizh-lager-27-06/v3-loop.mp4", full: "/dvizh-lager-27-06/v3.mp4" },
+    { loop: "/dvizh-lager-27-06/v1 (1).mp4", full: "/dvizh-lager-27-06/v1.mp4" },
+    { loop: "/dvizh-lager-27-06/v2 (1).mp4", full: "/dvizh-lager-27-06/v2.mp4" },
+    { loop: "/dvizh-lager-27-06/v3 (1).mp4", full: "/dvizh-lager-27-06/v3.mp4" },
   ];
 
   const v4to6: VideoItem[] = [
-    { loop: "/dvizh-lager-27-06/v4-loop.mp4", full: "/dvizh-lager-27-06/v4.mp4" },
-    { loop: "/dvizh-lager-27-06/v5-loop.mp4", full: "/dvizh-lager-27-06/v5.mp4" },
-    { loop: "/dvizh-lager-27-06/v6-loop.mp4", full: "/dvizh-lager-27-06/v6.mp4" },
+    { loop: "/dvizh-lager-27-06/v4 (1).mp4", full: "/dvizh-lager-27-06/v4.mp4" },
+    { loop: "/dvizh-lager-27-06/v5 (1).mp4", full: "/dvizh-lager-27-06/v5.mp4" },
+    { loop: "/dvizh-lager-27-06/v6 (1).mp4", full: "/dvizh-lager-27-06/v6.mp4" },
   ];
 
   const progrevs: VideoItem[] = [
-    { loop: "/dvizh-lager-27-06/progrev1-loop.mp4", full: "/dvizh-lager-27-06/progrev1.mp4" },
-    { loop: "/dvizh-lager-27-06/progrev2-loop.mp4", full: "/dvizh-lager-27-06/progrev2.mp4" },
-    { loop: "/dvizh-lager-27-06/progrev3-loop.mp4", full: "/dvizh-lager-27-06/progrev3.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev1 (1).mp4", full: "/dvizh-lager-27-06/progrev1.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev2 (1).mp4", full: "/dvizh-lager-27-06/progrev2.mp4" },
+    { loop: "/dvizh-lager-27-06/progrev3 (1).mp4", full: "/dvizh-lager-27-06/progrev3.mp4" },
   ];
 
   const renderDesktopGrid = (videos: VideoItem[]) => (
@@ -78,10 +78,14 @@ export default function DvizhLagerJunePage() {
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
-      {/* ЗАГОЛОВОК */}
-      <section className="max-w-3xl mx-auto mb-16 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-3">DvizhЛагерь</h1>
-        <p className="text-lg text-gray-300">I смена · 27–29 июня 2025</p>
+      {/* Заголовок */}
+      <section className="mb-12 text-center max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+          Лагерь – встреча выпускников
+        </h1>
+        <p className="text-lg text-gray-300 italic">
+          27–29 июня 2025
+        </p>
       </section>
 
       {/* ВСТУП */}

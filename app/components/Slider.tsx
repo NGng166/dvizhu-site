@@ -32,44 +32,53 @@ export default function Slider({ photos = [] }: SliderProps) {
   };
 
   return (
-    <div
-      className="relative w-full overflow-hidden"
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-    >
+<div
+  className="relative w-full overflow-hidden"
+  onTouchStart={onTouchStart}
+  onTouchEnd={onTouchEnd}
+>
+  <div
+    className="flex transition-transform duration-300"
+    style={{ transform: `translateX(-${index * 100}%)` }}
+  >
+    {photos.map((p, i) => (
       <div
-        className="flex transition-transform duration-300"
-        style={{ transform: `translateX(-${index * 100}%)` }}
+        key={i}
+        className="
+          flex-shrink-0 w-full px-2
+          h-auto sm:max-h-[550px] sm:flex sm:justify-center
+        "
       >
-        {photos.map((p, i) => (
-          <div key={i} className="flex-shrink-0 w-full px-2">
-            <img
-              src={p.src}
-              alt={p.alt}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-        ))}
+        <img
+          src={p.src}
+          alt={p.alt}
+          className="
+            w-full h-auto rounded-lg
+            sm:w-auto sm:max-w-full sm:max-h-full sm:object-contain
+          "
+        />
       </div>
+    ))}
+  </div>
 
-      {/* кнопки */}
-      <button
-        onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2
-          w-10 h-10 bg-black/60 text-white text-2xl rounded-full
-          flex items-center justify-center z-10"
-      >
-        ‹
-      </button>
+  {/* кнопки */}
+  <button
+    onClick={prev}
+    className="absolute left-2 top-1/2 -translate-y-1/2
+      w-10 h-10 bg-black/60 text-white text-2xl rounded-full
+      flex items-center justify-center z-10"
+  >
+    ‹
+  </button>
 
-      <button
-        onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2
-          w-10 h-10 bg-black/60 text-white text-2xl rounded-full
-          flex items-center justify-center z-10"
-      >
-        ›
-      </button>
-    </div>
+  <button
+    onClick={next}
+    className="absolute right-2 top-1/2 -translate-y-1/2
+      w-10 h-10 bg-black/60 text-white text-2xl rounded-full
+      flex items-center justify-center z-10"
+  >
+    ›
+  </button>
+</div>
   );
 }
