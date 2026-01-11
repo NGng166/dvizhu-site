@@ -15,12 +15,12 @@ export default function DvizhLagerJunePage() {
   const [openVideo, setOpenVideo] = useState<string | null>(null);
 
   const photos = [
+    { src: "/dvizh-lager-27-06/p6.jpg", alt: "Друзья, игры" },
     { src: "/dvizh-lager-27-06/p1.jpg", alt: "Друзья" },
     { src: "/dvizh-lager-27-06/p2.jpg", alt: "Утро - палатка" },
     { src: "/dvizh-lager-27-06/p3.jpg", alt: "Улыбки" },
     { src: "/dvizh-lager-27-06/p4.jpg", alt: "Озеро, плавание" },
     { src: "/dvizh-lager-27-06/p5.jpg", alt: "Мерч" },
-    { src: "/dvizh-lager-27-06/p6.jpg", alt: "Друзья, игры" },
   ];
 
   const v1to3: VideoItem[] = [
@@ -78,7 +78,7 @@ export default function DvizhLagerJunePage() {
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
-      {/* Заголовок */}
+      {/* Header */}
       <section className="mb-12 text-center max-w-3xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
           Лагерь – встреча выпускников
@@ -88,46 +88,46 @@ export default function DvizhLagerJunePage() {
         </p>
       </section>
 
-      {/* ВСТУП */}
-      <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-20">
+      {/* Intro */}
+      <section className="max-w-3xl mx-auto space-y-3 text-lg leading-snug text-justify mb-10">
         <p className="indent-6">
           В конце июня мы снова собрались в лагере. Палатки, костёр, озеро, гитара и разговоры до утра - всё то, за что мы так любим DvizhЛагерь.
         </p>
-        <p className="indent-6">
+        <p className="indent-6 mb-4">
           Эта смена была тематической - «Встреча выпускников». Днём - активности и купание, вечером - костёр, песни и долгие разговоры.
         </p>
       </section>
 
-      {/* ФОТО */}
+      {/* Photos */}
       <section className="mb-24">
         <div className="max-w-4xl mx-auto">
           <Slider photos={photos} />
         </div>
       </section>
 
-      {/* ТЕКСТ */}
-      <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
+      {/* Additional text */}
+      <section className="max-w-3xl mx-auto space-y-3 text-lg leading-snug text-justify mb-16">
         <p className="indent-6">
           Лагерь снова напомнил, что Dvizh - это люди, атмосфера и моменты, когда всё просто хорошо.
         </p>
       </section>
 
-      {/* ВИДЕО v1–v3 */}
+      {/* Videos v1–v3 */}
       <VideoMobileSlider videos={v1to3} />
       {renderDesktopGrid(v1to3)}
 
-      <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
+      <section className="max-w-3xl mx-auto space-y-3 text-lg leading-snug text-justify mb-16">
         <p className="indent-6">
           Эти видео - про то, как всё было на самом деле.
         </p>
       </section>
 
-      {/* ВИДЕО v4–v6 */}
+      {/* Videos v4–v6 */}
       <VideoMobileSlider videos={v4to6} />
       {renderDesktopGrid(v4to6)}
 
-      {/* ПРОГРЕВЫ */}
-      <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-16">
+      {/* Progrevs */}
+      <section className="max-w-3xl mx-auto space-y-3 text-lg leading-snug text-justify mb-16">
         <p className="font-semibold">Подготовка тоже была частью лагеря</p>
         <p className="indent-6">
           Видео-прогревы получились живыми и смешными - мы решили сохранить их здесь как часть истории.
@@ -137,11 +137,11 @@ export default function DvizhLagerJunePage() {
       <VideoMobileSlider videos={progrevs} />
       {renderDesktopGrid(progrevs)}
 
-      <p className="col-span-3 text-center text-gray-400 mt-6">
+      <p className="col-span-3 text-center text-gray-400 italic mb-8">
         Лагерь начинается задолго до первого костра 😉
       </p>
 
-      {/* МОДАЛКА */}
+      {/* Modal */}
       {openVideo && (
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
           <button
@@ -156,68 +156,32 @@ export default function DvizhLagerJunePage() {
         </div>
       )}
 
+      {/* Navigation */}
+      <section className="pb-16 px-6 sm:px-16 md:px-32">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/formats/lager#format-events"
+            aria-label="К мероприятиям формата"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          >
+            ←
+          </Link>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center leading-none hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center leading-none hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
 
-{/* Навигация */}
-<section className="pb-16 px-6 sm:px-16 md:px-32">
-  <div className="
-    max-w-5xl mx-auto
-    flex flex-wrap gap-4
-    justify-center
-  ">
-
-    {/* К формату «Лагерь» — стрелка */}
-<Link
-  href="/formats/lager#format-events"
-  aria-label="К мероприятиям формата"
-  className="
-    px-6 py-3
-    border border-white rounded-lg
-    flex items-center justify-center
-    text-2xl font-bold
-    leading-none
-    hover:bg-white hover:text-black
-    transition
-  "
->
-  ←
-</Link>
-
-    {/* К форматам */}
-    <Link
-      href="/#formats"
-      className="
-        px-6 py-3
-        border border-white rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-white hover:text-black
-        transition
-      "
-    >
-      К форматам
-    </Link>
-
-    {/* Все мероприятия */}
-    <Link
-      href="/events"
-      className="
-        px-6 py-3
-        bg-white text-black rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-gray-200
-        transition
-      "
-    >
-      Все мероприятия
-    </Link>
-
-  </div>
-</section>
-
-
-  
-      {/* Попап социальных сетей */}
+      {/* Social popup */}
       <SocialPopup />
 
     </main>
