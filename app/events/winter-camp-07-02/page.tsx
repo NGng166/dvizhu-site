@@ -21,17 +21,20 @@ export default function WinterCampPage() {
 
       {/* ШАПКА / Hero-блок */}
       <section className="mb-12 text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-6">
-          Окунись вновь в детство ❄️
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+          Winter Camp 2.0
         </h1>
-        <p className="text-lg sm:text-xl leading-relaxed text-gray-200">
-          С 7 по 9 февраля мы провели Winter Camp 2.0 - лагерь, где взрослые могли выдохнуть,
+        <p className="mb-6 text-lg text-gray-300 italic">
+          7–9 февраля 2025
+        </p>
+        <p className="text-lg sm:text-xl leading-relaxed text-gray-200 text-justify indent-6 mb-2">
+          Winter Camp 2.0 - лагерь, где взрослые могли выдохнуть,
           перезагрузиться и почувствовать себя легко, как в детстве. 😍
         </p>
       </section>
 
       {/* ВИДЕО-ЛУП */}
-      <section className="mb-20">
+      <section className="mb-16">
         <div className="max-w-md sm:max-w-lg mx-auto">
           <div
             className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group"
@@ -55,7 +58,7 @@ export default function WinterCampPage() {
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-400 mt-3">
+          <p className="text-center text-sm text-gray-400 mt-2">
             Нажмите, чтобы посмотреть видео со звуком
           </p>
         </div>
@@ -93,102 +96,57 @@ export default function WinterCampPage() {
       )}
 
       {/* Идея лагеря */}
-      <section className="mb-14 max-w-3xl mx-auto">
-        <p className="text-lg leading-relaxed indent-6 mb-4">
+      <section className="mb-8 max-w-3xl mx-auto text-justify">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Этот лагерь - маленький остров детства для взрослых.  
           Отрядная жизнь, зимние забавы, тематическая смена, вечеринки и уютные моменты  
           создавали пространство, где можно было быть собой и наслаждаться простыми радостями.
         </p>
-      </section>
-
-      {/* Атмосфера */}
-      <section className="mb-14 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4"></h2>
-        <p className="text-lg leading-relaxed indent-6 mb-4">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Мы пели, играли, смеялись, устраивали препати перед лагерем в баре,  
           делились историями и просто были рядом друг с другом.  
         </p>
-        <p className="text-lg leading-relaxed indent-6">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Те мгновения, когда время как будто останавливается - вот что делало лагерь особенным.
         </p>
-      </section>
-
-      {/* Слайдер фото 
-      <section className="mb-16 max-w-3xl mx-auto">
-        <Slider photos={photos} />
-      </section>**/}
-
-      {/* Финал */}
-      <section className="mb-20 max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl font-semibold mb-4"></h2>
-        <p className="text-lg leading-relaxed mb-4">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Winter Camp 2.0 стал настоящим перезагрузочным островком: тёплая атмосфера,  
           душевное общение и ощущение свободы, как в детстве.
         </p>
-        <p className="text-lg leading-relaxed">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Эта смена напомнила нам, что Dvizh - это люди, моменты и тепло,  
           которые хочется хранить в памяти ❄️💛
         </p>
+        <p className="text-lg leading-relaxed indent-6 italic mb-6 text-center text-gray-400">
+          Лагерь начинается задолго до первого костра 😉
+        </p>
       </section>
 
-{/* Навигация */}
-<section className="pb-16 px-6 sm:px-16 md:px-32">
-  <div className="
-    max-w-5xl mx-auto
-    flex flex-wrap gap-4
-    justify-center
-  ">
+      {/* Навигация */}
+      <section className="pb-16 px-6 sm:px-16 md:px-32">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/formats/lager#format-events"
+            aria-label="К мероприятиям формата"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          >
+            ←
+          </Link>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center leading-none hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center leading-none hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
 
-    {/* К формату «Лагерь» — стрелка */}
-<Link
-  href="/formats/lager#format-events"
-  aria-label="К мероприятиям формата"
-  className="
-    px-6 py-3
-    border border-white rounded-lg
-    flex items-center justify-center
-    text-2xl font-bold
-    leading-none
-    hover:bg-white hover:text-black
-    transition
-  "
->
-  ←
-</Link>
-
-    {/* К форматам */}
-    <Link
-      href="/#formats"
-      className="
-        px-6 py-3
-        border border-white rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-white hover:text-black
-        transition
-      "
-    >
-      К форматам
-    </Link>
-
-    {/* Все мероприятия */}
-    <Link
-      href="/events"
-      className="
-        px-6 py-3
-        bg-white text-black rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-gray-200
-        transition
-      "
-    >
-      Все мероприятия
-    </Link>
-
-  </div>
-</section>
-  
       {/* Попап социальных сетей */}
       <SocialPopup />
 
