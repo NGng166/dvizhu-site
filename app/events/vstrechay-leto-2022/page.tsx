@@ -23,13 +23,13 @@ export default function LagerPage() {
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
           Встречай лето · 2022
         </h1>
-<p className="text-lg text-gray-300 italic">
-  27–29 мая 2022
-</p>
+        <p className="text-lg text-gray-300 italic">
+          27–29 мая 2022
+        </p>
       </section>
 
-      {/* Общее фото лагеря */}
-      <section className="mb-16 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
+      {/* Основное фото лагеря */}
+      <section className="mb-12 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
         <img
           src="/vstrechay-leto-2022/vstrechay-leto-2022.jpg"
           alt="Горы, красивый вид"
@@ -38,98 +38,68 @@ export default function LagerPage() {
       </section>
 
       {/* Основной текст */}
-      <section className="max-w-3xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
+      <section className="max-w-3xl mx-auto mb-16 text-lg leading-relaxed space-y-4 text-justify">
         <p className="indent-6">
           Это мероприятие родилось случайно, когда уфимский движ решил собраться где-нибудь в классном месте и вместе встретить наступающее лето. Место было выбрано не случайно, давно планировали туда поехать - поляна близ г. Миньяр, ж/д ст. Снежинка (1753 км) известная знаменитым Никольким мостом и одноименной пещерой.
         </p>
 
-      {/* Общее фото лагеря */}
-      <section className="mb-16 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
-        <img
-          src="/vstrechay-leto-2022/most+peshera.webp"
-          alt="Горы, красивый вид"
-          className="w-full h-auto object-cover rounded-xl"
-        />
-      </section>
+        {/* Второе фото */}
+        <div className="mb-4 overflow-hidden rounded-xl shadow-lg">
+          <img
+            src="/vstrechay-leto-2022/most+peshera.webp"
+            alt="Горы, красивый вид"
+            className="w-full h-auto object-cover rounded-xl"
+          />
+        </div>
 
         <p className="indent-6">
           Тогда то и появилось полюбившееся нам название - "Встречай лето". Мероприятие, открывающее сезон летних, самых ярких ивентов и сборов в кругу друзей и близких.
         </p>
 
         <p className="indent-6">
-          В этом выезде мы успели многое - приехать до станции, разложить палатки, подняться на вершину и спуститься в пещеру. Хоть погода и не порадовала, дожди не помешали приготовить вкусную походную пищу на костре и посидеть с гитарой. 
+          В этом выезде мы успели многое - приехать до станции, разложить палатки, подняться на вершину и спуститься в пещеру. Хоть погода и не порадовала, дожди не помешали приготовить вкусную походную пищу на костре и посидеть с гитарой.
         </p>
+      </section>
 
-        {/* Слайдер фото */}
-        <div className="mt-8">
-          <Slider photos={photos} />
-        </div>
+      {/* Слайдер фото */}
+      <section className="mb-16">
+        <Slider photos={photos} />
       </section>
 
       {/* Финальная строка */}
-      <section className="text-center mt-8 text-lg text-gray-300">
-         Встречайте лето вместе с нами! 🔥
-      </section>
-      <section className="text-center mt-8 text-lg text-gray-300">
+      <section className="text-center mt-8 text-lg text-gray-300 italic">
+        Встречайте лето вместе с нами! 🔥
       </section>
 
-{/* Навигация */}
-<section className="pb-16 px-6 sm:px-16 md:px-32">
-  <div className="
-    max-w-5xl mx-auto
-    flex flex-wrap gap-4
-    justify-center
-  ">
+      {/* Навигация */}
+      <section className="pb-16 px-6 sm:px-16 md:px-32">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
 
-    {/* К формату «Лагерь» — стрелка */}
-<Link
-  href="/formats/lager#format-events"
-  aria-label="К мероприятиям формата"
-  className="
-    px-6 py-3
-    border border-white rounded-lg
-    flex items-center justify-center
-    text-2xl font-bold
-    leading-none
-    hover:bg-white hover:text-black
-    transition
-  "
->
-  ←
-</Link>
-    {/* К форматам */}
-    <Link
-      href="/#formats"
-      className="
-        px-6 py-3
-        border border-white rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-white hover:text-black
-        transition
-      "
-    >
-      К форматам
-    </Link>
+          <Link
+            href="/formats/lager#format-events"
+            aria-label="К мероприятиям формата"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          >
+            ←
+          </Link>
 
-    {/* Все мероприятия */}
-    <Link
-      href="/events"
-      className="
-        px-6 py-3
-        bg-white text-black rounded-lg
-        flex items-center justify-center
-        leading-none
-        hover:bg-gray-200
-        transition
-      "
-    >
-      Все мероприятия
-    </Link>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center leading-none hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
 
-  </div>
-</section>
-  
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center leading-none hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+
+        </div>
+      </section>
+
       {/* Попап социальных сетей */}
       <SocialPopup />
 
