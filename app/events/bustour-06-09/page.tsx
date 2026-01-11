@@ -48,7 +48,7 @@ export default function BustourPage() {
 
         {/* Краткое описание */}
         <section className="mb-12">
-          <p className="text-lg leading-relaxed indent-6">
+          <p className="text-lg leading-relaxed indent-6 text-justify">
             Бастур - это когда толпа фанатов, единомышленников и друзей отправляется в другой город на концерт любимого исполнителя. В сентябре 2025 года мы рванули в Казахстан: два автобуса, битком забитых фанатами, зажигательные тусовки в пути и города по маршруту - Астана и Алматы. Энергетику бастура не передать словами - это свобода, драйв и музыка, объединяющие людей со всего мира.
           </p>
         </section>
@@ -57,11 +57,11 @@ export default function BustourPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-2">О поездке</h2>
 
-          <p className="text-lg leading-relaxed indent-6 mb-4">
+          <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
             Бастур - это не обычный «Бла-бла-кар», а настоящая дружеская экспедиция:
           </p>
 
-          <ul className="list-disc list-inside text-lg space-y-1 mb-6">
+          <ul className="list-disc list-inside text-lg space-y-1 mb-6 text-justify">
             <li>50 единомышленников в каждом автобусе, мощная колонка, атмосфера праздника;</li>
             <li>За рулем - энергия фанатов, которые готовы отрываться на полную.</li>
           </ul>
@@ -76,11 +76,11 @@ export default function BustourPage() {
             className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
           />
 
-          <p className="text-lg leading-relaxed indent-6 font-semibold mb-2">
+          <p className="text-lg leading-relaxed indent-6 font-semibold mb-2 text-justify">
             По маршруту:
           </p>
 
-          <ul className="list-disc list-inside text-lg space-y-1">
+          <ul className="list-disc list-inside text-lg space-y-1 text-justify">
             <li>2.09 - выезд из Уфы. Торжественное открытие, раздача welcome-подарков, знакомство участников и первые автобусные вечеринки.</li>
             <li>3.09 - Астана. Ночной переход через границу, прибытие в город, остановка в гостинице, отдых и возможность осмотреть город.</li>
             <li>4.09 - Алматы. Дорога сквозь красоты Казахстана, виды на горы, подготовка к концерту.</li>
@@ -106,7 +106,7 @@ export default function BustourPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-2">Особенности тура</h2>
 
-          <ul className="list-disc list-inside text-lg space-y-1">
+          <ul className="list-disc list-inside text-lg space-y-1 text-justify">
             <li>Трансфер Уфа ↔ Алматы на комфортабельных автобусах;</li>
             <li>Проживание в гостиницах в Астане и Алматы (3* и выше);</li>
             <li>Билет на концерт (танцпол / фанзона);</li>
@@ -170,7 +170,7 @@ export default function BustourPage() {
                   </div>
                 </div>
 
-                <p className="mt-2 text-center text-lg leading-relaxed indent-6">
+                <p className="mt-2 text-center text-lg leading-relaxed indent-6 text-justify">
                   {video.caption}
                 </p>
               </div>
@@ -182,7 +182,7 @@ export default function BustourPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-2">Итоги и впечатления</h2>
 
-          <p className="text-lg leading-relaxed indent-6">
+          <p className="text-lg leading-relaxed indent-6 text-justify">
             Бастур - это дружба, эмоции, музыка и новые знакомства. Каждая поездка превращается в легенду, которую участники вспоминают долго. Это энергия, драйв и незабываемые моменты, когда каждый день - праздник.
           </p>
         </section>
