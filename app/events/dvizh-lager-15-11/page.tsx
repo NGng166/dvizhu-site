@@ -27,41 +27,42 @@ export default function DvizhLagerPage() {
 
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
-      {/* Заголовок */}
-      <h1 className="text-4xl sm:text-5xl font-bold mb-2 text-center text-orange-400">
-        DVIZH Лагерь
-      </h1>
-      <p className="text-center text-lg mb-8">15–17 ноября 2024 г.</p>
 
-      {/* Краткое описание */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2">Краткое описание</h2>
-        <p className="text-lg leading-relaxed indent-6">
-          Лагерь для взрослых, где «Возраст - не повод взрослеть!» ❤️
-          Комфортные корпуса, отрядная жизнь, тематическая смена, спортивные состязания,
-          песни у костра, творческие номера - и атмосфера настоящего школьного лагеря, но уже по-взрослому.
+      {/* Header */}
+      <section className="mb-10 text-center max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-3">
+          ДвижЛагерь
+        </h1>
+        <p className="text-2xl sm:text-3xl text-white font-semibold mb-2">
+          "Монополия"
+        </p>        
+        <p className="text-lg text-gray-300 italic">
+          15–17 ноября 2025
         </p>
       </section>
 
-      {/* О мероприятии */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-2">О мероприятии</h2>
+      {/* Краткое описание */}
+      <section className="mb-8 max-w-3xl mx-auto" style={{ textAlign: "justify" }}>
+        <p className="text-lg leading-relaxed indent-6 mb-2">
+          Лагерь для взрослых, где «Возраст — не повод взрослеть!» ❤️  
+          Комфортные корпуса, отрядная жизнь, тематическая смена, спортивные состязания,  
+          песни у костра, творческие номера — и атмосфера настоящего школьного лагеря, но уже по-взрослому.
+        </p>
         <p className="text-lg leading-relaxed indent-6">
-          Атмосфера детских каникул, но уже зрелая: новые знакомства, вечеринки, конкурсы,
-          творческие номера и много спорта. Особое событие - дискотека <strong>RUSSIAN STYLE</strong> 
+          Атмосфера детских каникул, но уже зрелая: новые знакомства, вечеринки, конкурсы,  
+          творческие номера и много спорта. Особое событие — дискотека <strong>RUSSIAN STYLE </strong>  
           конца 90-х – начала 2000-х.
         </p>
       </section>
 
       {/* Дресс-код */}
-      <section className="mb-12">
+      <section className="mb-8 max-w-3xl mx-auto" style={{ textAlign: "justify" }}>
         <h2 className="text-2xl font-semibold mb-2">Дресс-код</h2>
-        <ul className="list-disc list-inside text-lg space-y-1">
-          <li>Меховые шапки, пальто, кожанки, очки - стиль конца 90-х.</li>
-          <li>Мужчинам - приветствуются усы 😎.</li>
+        <ul className="list-disc list-inside text-lg space-y-1 mb-2">
+          <li>Меховые шапки, пальто, кожанки, очки — стиль конца 90-х.</li>
+          <li>Мужчинам — приветствуются усы 😎.</li>
         </ul>
-
-        <div className="mt-4 w-full max-w-xl mx-auto">
+        <div className="mt-2 w-full max-w-xl mx-auto">
           <img
             src="/dvizh-lager-15-11/dc.jpg"
             alt="Дресс-код"
@@ -71,9 +72,9 @@ export default function DvizhLagerPage() {
       </section>
 
       {/* Тематика лагеря */}
-      <section className="mb-12">
+      <section className="mb-8 max-w-3xl mx-auto" style={{ textAlign: "justify" }}>
         <h2 className="text-2xl font-semibold mb-2">Тематика лагеря</h2>
-        <p className="text-lg leading-relaxed indent-6">
+        <p className="text-lg leading-relaxed indent-6 mb-2">
           Смена была посвящена культовой игре <strong>«Монополия»</strong>. Участники:
         </p>
         <ul className="list-disc list-inside text-lg space-y-1">
@@ -85,144 +86,106 @@ export default function DvizhLagerPage() {
       </section>
 
       {/* Галерея фото */}
-      <section className="mb-12">
+      <section className="mb-8 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Фото</h2>
         <Slider photos={photos} />
       </section>
 
- {/* Видео-луп с кнопкой полного просмотра */}
-<section className="mb-12">
-  <h2 className="text-2xl font-semibold mb-4">Видео</h2>
+      {/* Видео-луп с кнопкой полного просмотра */}
+      <section className="mb-8 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-semibold mb-4">Видео</h2>
+        <div className="w-full max-w-md mx-auto">
+          <div
+            className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
+            style={{ aspectRatio: "9/16" }}
+            onClick={() => setOpenVideo(true)}
+          >
+            <video
+              src="/dvizh-lager-15-11/vid1.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
+              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+                ▶
+              </div>
+            </div>
+          </div>
 
-  <div className="w-full max-w-md mx-auto">
-    {/* Луп-видео */}
-    <div
-      className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group"
-      style={{ aspectRatio: "9/16" }} // вертикальный формат
-      onClick={() => setOpenVideo(true)}
-    >
-      <video
-        src="/dvizh-lager-15-11/vid1.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover rounded-lg"
-      />
-      {/* Play overlay */}
-      <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
-        <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
-          ▶
+          <p className="mt-2 text-center text-lg">
+            Отдельное спасибо за крутой рилс{" "}
+            <a
+              href="https://t.me/linalense_life"
+              target="_blank"
+              className="text-orange-400 underline"
+            >
+              Полине
+            </a>
+            .
+          </p>
         </div>
-      </div>
-    </div>
 
-    <p className="mt-2 text-center text-lg">
-      Отдельное спасибо за крутой рилс{" "}
-      <a
-        href="https://t.me/linalense_life"
-        target="_blank"
-        className="text-orange-400 underline"
-      >
-        Полине
-      </a>
-      .
-    </p>
-  </div>
-
-  {/* Модалка с полным видео */}
-{openVideo && (
-  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-    <div className="relative w-full max-w-md sm:max-w-lg">
-      <button
-        onClick={() => setOpenVideo(false)}
-        className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-      >
-        ✕
-      </button>
-      <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "9/16" }}>
-        <video
-          src="/dvizh-lager-15-11/vid1-full.mp4"
-          controls
-          autoPlay
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-)}
-
-</section>
-
+        {/* Модалка с полным видео */}
+        {openVideo && (
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+            <div className="relative w-full max-w-md sm:max-w-lg">
+              <button
+                onClick={() => setOpenVideo(false)}
+                className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+              >
+                ✕
+              </button>
+              <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "9/16" }}>
+                <video
+                  src="/dvizh-lager-15-11/vid1-full.mp4"
+                  controls
+                  autoPlay
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
 
       {/* Итоги */}
-      <section className="mb-12">
+      <section className="mb-8 max-w-3xl mx-auto" style={{ textAlign: "justify" }}>
         <h2 className="text-2xl font-semibold mb-2">Итоги и отзывы</h2>
         <p className="text-lg leading-relaxed indent-6">
-          Лагерь прошел ярко, тепло, драйвово. Участники увезли новые знакомства,
+          Лагерь прошел ярко, тепло, драйвово. Участники увезли новые знакомства,  
           эмоции и творческую энергию.
         </p>
       </section>
 
+      {/* Навигация */}
+      <section className="pb-16 px-6 sm:px-16 md:px-32">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/formats/lager#format-events"
+            aria-label="К мероприятиям формата"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          >
+            ←
+          </Link>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
 
-{/* Навигация */}
-<section className="pb-16 px-6 sm:px-16 md:px-32">
-  <div className="
-    max-w-5xl mx-auto
-    flex flex-wrap gap-4
-    justify-center
-  ">
-
-    {/* К формату «Лагерь» — стрелка */}
-<Link
-  href="/formats/lager#format-events"
-  aria-label="К мероприятиям формата"
-  className="
-    px-6 py-3
-    border border-white rounded-lg
-    flex items-center justify-center
-    text-2xl font-bold
-    leading-none
-    hover:bg-white hover:text-black
-    transition
-  "
->
-  ←
-</Link>
-
-
-
-    {/* К форматам */}
-    <Link
-      href="/#formats"
-      className="
-        px-6 py-3
-        border border-white rounded-lg
-        hover:bg-white hover:text-black
-        transition
-      "
-    >
-      К форматам
-    </Link>
-
-    {/* Все мероприятия */}
-    <Link
-      href="/events"
-      className="
-        px-6 py-3
-        bg-white text-black rounded-lg
-        hover:bg-gray-200
-        transition
-      "
-    >
-      Все мероприятия
-    </Link>
-
-  </div>
-</section>
-
-  
-      {/* Попап социальных сетей */}
+      {/* Попап соцсетей */}
       <SocialPopup />
 
     </main>

@@ -81,8 +81,11 @@ export default function DvizhLagerJunePage() {
       {/* Header */}
       <section className="mb-12 text-center max-w-3xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
-          Лагерь – встреча выпускников
+          ДвижЛагерь
         </h1>
+                <p className="text-2xl sm:text-3xl text-white font-semibold mb-2">
+          "Встреча выпускников"
+        </p>
         <p className="text-lg text-gray-300 italic">
           27–29 июня 2025
         </p>
