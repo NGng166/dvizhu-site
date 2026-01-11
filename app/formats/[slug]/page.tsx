@@ -14,7 +14,7 @@ const formatsData: Record<string, any> = {
       "Каждый год мы проводим серию мероприятий, объединённых общим форматом: встречи на природе, летние и зимние фестивали, лагеря и небольшие сборы друзей. Все они дают возможность провести время вместе, активно и интересно, независимо от того, приезжаешь ли ты один или с компанией",
     about: [
       <p key="0">Мероприятия этого формата могут быть разными: от трёхдневных лагерей с кострами, походами и вечерними играми, до летних фестивалей с конкурсами, командными заданиями и активностями на любой вкус - от дегустаций фирменных настоек до пенной вечеринки.</p>,
-      <p key="1">Основные направления:</p>,
+      <p key="1" className="font-bold">Основные направления:</p>,
       <ul key="2" className="list-disc list-inside text-lg text-gray-200 space-y-1 text-left">
       </ul>,
       <p key="3"><span className="font-bold">Dvizh Лагерь</span> - это несколько дней на природе, где днём проходят активности и разговоры, а вечером - дискотека с лучшими диджеями или конкурсы. Люди приезжают из разных городов и стран, и уже в первый день становятся частью команды.</p>,
@@ -201,10 +201,12 @@ export default function FormatPage() {
                   {format.about.map((item: React.ReactNode, i: number) => (
         <section key={i} className="mb-2 max-w-3xl w-full text-left">
           {typeof item === "string" ? (
-            <p className="text-lg leading-relaxed indent-6 text-gray-200">{item}</p>
+            <p className="text-lg leading-relaxed indent-6 text-gray-200 text-justify">{item}</p>
           ) : (
             // Если item уже JSX (<p> или <ul>), вставляем напрямую
-            <div className="text-lg leading-relaxed indent-6 text-gray-200">{item}</div>
+            <div className="text-lg leading-relaxed indent-6 text-gray-200 text-justify">
+  {item}
+</div>
           )}
 
                 {/* Фото после определённых абзацев */}
