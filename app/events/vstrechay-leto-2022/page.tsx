@@ -67,7 +67,7 @@ export default function LagerPage() {
       </section>
 
       {/* Финальная строка */}
-      <section className="text-center mt-8 text-lg text-gray-300 italic">
+      <section className="mb-8 text-center mt-8 text-lg text-gray-300 italic">
         Встречайте лето вместе с нами! 🔥
       </section>
 
