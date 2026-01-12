@@ -33,7 +33,7 @@ export default function FormatsDvizh() {
     },
     {
       title: "Dvizh Тусы",
-      description: "Флэты, вечеринки: когда выбираешь эмоции, а не сон",
+      description: "Вечеринки и клубы, когда выбираешь эмоции, а не сон",
       slug: "tusy",
       media: [
         { type: "image", src: "/formats/tusy/tusy1.jpg" },
@@ -48,8 +48,12 @@ export default function FormatsDvizh() {
       description: "Особые события с музыкантами и гостями",
       slug: "artists",
       media: [
-        { type: "image", src: "/formats/artists/artists1.jpg" },
-        { type: "image", src: "/formats/artists/artists2.jpg" },
+        { type: "image", src: "/formats/artists/hleb1.jpg" },
+        { type: "image", src: "/formats/artists/hleb2.jpeg" },
+        { type: "image", src: "/formats/artists/selebr1.jpg" },
+        { type: "image", src: "/formats/artists/kangi1.jpg" },
+        { type: "image", src: "/formats/artists/kangi2.jpg" },
+        { type: "image", src: "/formats/artists/selebr3.jpg" },
       ],
     },
     {

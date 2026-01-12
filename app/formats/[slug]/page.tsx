@@ -87,26 +87,64 @@ about: [
       { title: "Макс Корж | Челябинск", date: "2 июня 2018", slug: "concert-chel-2-06", image: "/concert-chel-2-06/cover.jpg" },
     ],
   },
-  tusy: {
-    title: "Dvizh Тусы",
-    description:
-      "НАПИШИ ПРО ХЛЕБ Флэты, большие вечеринки и ночи без тормозов. Танцы, конкурсы и атмосфера Dvizh.",
-    heroImage: "/formats/tusy-hero.jpg",
-    events: [
-      { title: "FLAT - DvizhUfa", date: "18 октября 2025", slug: "flat-18-10", image: "/flat-18-10/afish.jpg" },
-      { title: "FLAT by Samara", date: "29–30 марта 2025", slug: "flat-samara-29-03", image: "/flat-samara-29-03.jpg" },
-    ],
-  },
-  artists: {
-    title: "Dvizh × Артисты",
-    description:
-      "НАПИШИ ПРО ХЛЕБ (11.01.19) Особые события с музыкантами и гостями. Канги, селебы и уникальные тусовки Dvizh.",
-    heroImage: "/formats/artists-hero.jpg",
-    events: [
-      { title: "Селебриум | Макс Корж", date: "лето 2025", slug: "celebrum-2025", image: "/artists/celebrum.jpg" },
-      { title: "Канги Live", date: "2025", slug: "kangi-2025", image: "/artists/kangi.jpg" },
-    ],
-  },
+tusy: {
+  title: "Dvizh Тусы",
+  description:
+    "- это вечеринки для своих. Клубы, концертные площадки, андеграунд-пространства и коттеджи, где собираются люди на одной волне - ради музыки, эмоций и ночей, которые остаются в памяти.",
+  about: [
+    "Мы арендуем площадку и превращаем её в движ - без случайной публики, без формальностей и лишнего пафоса. Здесь приходят не смотреть со стороны, а быть частью происходящего.",
+    "В центре всего - музыка. От локальных диджеев и приглашённых артистов до официальных диджеев известных исполнителей. Сеты строятся так, чтобы не отпускать ни на минуту: хип-хоп, хаус, трэп, r’n’b и плотное клубное звучание смешиваются в единый поток. Здесь танцуют, орут любимые треки, ловят вайб и полностью отдаются моменту.",
+    "Но Dvizh - это не только сцена. Это общение, новые знакомства, совместные моменты, ощущение, что ты часть чего-то общего.",
+    "Мы ценим стиль и самовыражение. Мерч, образы, свет, визуал, атмосфера андеграунда или большого концертного зала - каждая тусовка имеет свой характер, но всегда с максимальной энергией.",
+    "Наши вечеринки собирают людей, которые ценят живые эмоции, громкий звук и свободу. Это не про статус, это про момент.",
+    "Если тебе близка атмосфера концертов и настоящего движения, если хочется не просто сходить куда-то, а прожить ночь - ты точно с нами. Увидимся на танцполе)"
+  ],
+  heroImage: "/formats/tusy-hero.jpg",
+  heroImages: [
+    "/formats/tusy/tusy1.jpg",
+    "/formats/tusy/tusy2.jpg",
+    "/formats/tusy/tusy3.jpg",
+    "/formats/tusy/tusy5.jpg",
+    "/formats/tusy/2.jpg",
+    "/formats/tusy/3.jpg",
+  ],
+  events: [
+    { title: "DvizhTusa 1", date: "xx xx 2025", slug: "xx", image: "/xx/afish.jpg" },
+    { title: "DvizhTusa 2", date: "xx xx 2025", slug: "xx", image: "/xx/afish.jpg" },
+  ]
+},
+
+artists: {
+  title: "Dvizh × Артисты",
+  description:
+    "Особые события с музыкантами и гостями. Да, мы - фанаты Макса Коржа, но дружим и с другими артистами - Канги, DJ Selebrium, группой Хлеб и многими другими. Здесь мы собираемся всей командой на концерты, афтепати и поддерживаем локальных талантливых музыкантов из Уфы.",
+  about: [
+    "Главный наш любимый исполнитель - Макс Корж. Мы ездим на его концерты толпой, создавая неповторимую атмосферу: смех, песни, совместные моменты и эмоции, которые остаются надолго.",
+    "Но Dvizh - это не только Корж. Мы дружим с Канги, посещаем его концерты всей командой, обсуждаем и договариваемся заранее через общие чаты. Канги - душа современной молодежи, его творчество о любви, жизни и мечтах трогает каждого.",
+    "На наших афтепати и выездах выступали официальные диджеи артистов, например, DJ Selebrium от Макса Коржа, а также тайные гости и локальные музыканты. Атмосфера всегда дружелюбная, но энергичная - как и должно быть на настоящем движении.",
+    "Мы даже съездили на концерт группы Хлеб в Екатеринбург с афтепати и живыми сетами DJ Badbasyaaa. Всегда собираемся всей командой, чтобы вместе веселиться и поддерживать артистов.",
+    "У нас в движке много творческих ребят: кто-то пишет песни, кто-то уже устраивал концерты - привет, ВАНФИ!)). Они уже звучат у нас в наушниках, но скоро и вы о них услышите!",
+    "Формат Dvizh × Артисты - это возможность быть частью музыкальной семьи, увидеть любимых артистов, поддержать локальные таланты и создать вместе незабываемые воспоминания."
+  ],
+  heroImage: "/formats/artists-hero.jpg",
+  heroImages: [
+    "/formats/artists/hleb1.jpg",
+    "/formats/artists/hleb2.jpeg",
+    "/formats/artists/hleb3.jpg",
+    "/formats/artists/kangi1.jpg",
+    "/formats/artists/kangi2.jpg",
+    "/formats/artists/kangi3.webp",
+    "/formats/artists/selebr1.jpg",
+    "/formats/artists/selebr2.jpg",
+    "/formats/artists/selebr3.jpg"
+  ],
+  events: [
+    { title: "Выезд на Хлеб | Екатеринбург", date: "xx.xx.2025", slug: "hleb-ekb", image: "/formats/artists/hleb.jpg" },
+    { title: "Концерт Канги | Ufa", date: "02.12.2025", slug: "kangi-ufa-02-12", image: "/formats/artists/kangi.jpg" },
+    { title: "АТЛ | Выезд всей командой", date: "xx.xx.2025", slug: "atl-excursion", image: "/formats/artists/atl.jpg" },
+    { title: "DJ Selebrium | Афтепати", date: "xx.xx.2025", slug: "dj-selebrium", image: "/formats/artists/selebrium.jpg" }
+  ]
+},
   mountains: {
     title: "Горы & походы",
     description:
@@ -193,91 +231,133 @@ export default function FormatPage() {
       )}
 
       {/* Описание формата */}
-<section className="mb-6 px-6 sm:px-16 md:px-32">
-  <div className="max-w-3xl mx-auto">
-    <p className="text-lg leading-relaxed indent-6 text-justify">
-      {format.description}
-    </p>
-  </div>
-</section>
+{format.description && (
+  <section className="mb-6 px-6 sm:px-16 md:px-32">
+    <div className="max-w-3xl mx-auto">
+      <p
+        className={`text-lg leading-relaxed text-justify ${
+          slug === "tusy" ? "indent-0" : "indent-6"
+        }`}
+      >
+        {format.description}
+      </p>
+    </div>
+  </section>
+)}
 
+{/* Подробно о формате с видео */}
+{format.about && (
+  <section className="py-4 px-6 sm:px-16 md:px-32">
+    <div className="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-gray-200 leading-relaxed">
 
-      {/* Подробно о формате с видео */}
-      {format.about && (
-        <section className="py-4 px-6 sm:px-16 md:px-32">
-          <div className="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-gray-200 leading-relaxed">
+      <h2 className="text-2xl font-bold mb-4 w-full text-center">Что это за формат?</h2>
 
-            <h2 className="text-2xl font-bold mb-4 w-full text-center">Что это за формат?</h2>
-
-            {/* Абзацы из about */}
-                  {format.about.map((item: React.ReactNode, i: number) => (
+      {/* Абзацы из about */}
+      {format.about.map((item: React.ReactNode, i: number) => (
         <section key={i} className="mb-2 max-w-3xl w-full text-left">
           {typeof item === "string" ? (
-            <p className="text-lg leading-relaxed indent-6 text-gray-200 text-justify">{item}</p>
+            <p className={`text-lg leading-relaxed text-gray-200 text-justify indent-6`}>
+              {item}
+            </p>
           ) : (
-            // Если item уже JSX (<p> или <ul>), вставляем напрямую
-            <div className="text-lg leading-relaxed indent-6 text-gray-200 text-justify">
-  {item}
-</div>
+            <div className="text-lg leading-relaxed text-gray-200 text-justify indent-6">
+              {item}
+            </div>
           )}
 
-                {/* Фото после определённых абзацев */}
-                {slug === 'concerts' && i === 0 && (
-                  <img
-                    src="/formats/concerts/concert-line0.jpg"
-                    alt="Концертные выезды"
-                    className="w-full my-6 rounded-xl object-cover"
-                  />
-                )}
-                {slug === 'concerts' && i === 1 && (
-                  <img
-                    src="/formats/concerts/concert-line1.jpg"
-                    alt="Концертные выезды"
-                    className="w-full my-6 rounded-xl object-cover"
-                  />
-                )}
-                {slug === 'concerts' && i === 2 && (
-                  <img
-                    src="/formats/concerts/concert-line2.webp"
-                    alt="Концертные выезды"
-                    className="w-full my-6 rounded-xl object-cover"
-                  />
-                )}
-              </section>
-            ))}
+    {/* Фото перед "На наших афтепати и выездах выступали" */}
+    {slug === "artists" && i === 2 && (
+      <img
+        src="/formats/artists/artists1.jpg"
+        alt="Dvizh × Артисты"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
 
-            {/* Видео широкий блок после первого абзаца */}
-            {format.wideMedia && format.wideMedia.type === "video" && (
-              <div
-                className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
-                style={{ aspectRatio: "16/9" }}
-                onClick={() => setOpenWideVideo(true)}
-              >
-                <video src={format.wideMedia.src} autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl" />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition rounded-2xl">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">▶</div>
-                </div>
+    {/* Фото после "У нас в движке много творческих" */}
+    {slug === "artists" && i === 4 && (
+      <img
+        src="/formats/artists/artists2.jpg"
+        alt="Dvizh × Артисты"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
 
-                {openWideVideo && (
-                  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-                    <div className="relative w-full max-w-3xl">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setOpenWideVideo(false); }}
-                        className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-                      >
-                        ✕
-                      </button>
-                      <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
-                        <video ref={wideVideoRef} src={format.wideMedia.src} controls autoPlay muted={false} className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+          {/* Фото после "а быть частью происходящего" для tusy */}
+          {slug === "tusy" && i === 1 && (
+            <img
+              src="/formats/tusy/tusy4.jpg"
+              alt="Dvizh Тусы"
+              className="w-full my-6 rounded-xl object-cover"
+            />
+          )}
+
+          {/* Горизонтальное фото перед "Но Dvizh - это не только сцена" */}
+          {slug === "tusy" && i === 2 && (
+            <img
+              src="/formats/tusy/1.jpg"
+              alt="Dvizh Тусы"
+              className="w-full my-6 rounded-xl object-cover"
+            />
+          )}
+
+          {/* Существующие фото для concerts */}
+          {slug === 'concerts' && i === 0 && (
+            <img
+              src="/formats/concerts/concert-line0.jpg"
+              alt="Концертные выезды"
+              className="w-full my-6 rounded-xl object-cover"
+            />
+          )}
+          {slug === 'concerts' && i === 1 && (
+            <img
+              src="/formats/concerts/concert-line1.jpg"
+              alt="Концертные выезды"
+              className="w-full my-6 rounded-xl object-cover"
+            />
+          )}
+          {slug === 'concerts' && i === 2 && (
+            <img
+              src="/formats/concerts/concert-line2.webp"
+              alt="Концертные выезды"
+              className="w-full my-6 rounded-xl object-cover"
+            />
+          )}
         </section>
+      ))}
+
+      {/* Видео широкий блок после первого абзаца */}
+      {format.wideMedia && format.wideMedia.type === "video" && (
+        <div
+          className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
+          style={{ aspectRatio: "16/9" }}
+          onClick={() => setOpenWideVideo(true)}
+        >
+          <video src={format.wideMedia.src} autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl" />
+          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition rounded-2xl">
+            <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">▶</div>
+          </div>
+
+          {openWideVideo && (
+            <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+              <div className="relative w-full max-w-3xl">
+                <button
+                  onClick={(e) => { e.stopPropagation(); setOpenWideVideo(false); }}
+                  className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
+                >
+                  ✕
+                </button>
+                <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                  <video ref={wideVideoRef} src={format.wideMedia.src} controls autoPlay muted={false} className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       )}
+    </div>
+  </section>
+)}
 
       {/* Мероприятия формата */}
       <section id="format-events" className="px-6 sm:px-16 md:px-32 pb-16 scroll-mt-24">
