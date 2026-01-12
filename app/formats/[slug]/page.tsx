@@ -126,16 +126,17 @@ artists: {
     "У нас в движке много творческих ребят: кто-то пишет песни, кто-то уже устраивал концерты - привет, ВАНФИ!)). Они уже звучат у нас в наушниках, но скоро и вы о них услышите!",
     "Формат Dvizh × Артисты - это возможность быть частью музыкальной семьи, увидеть любимых артистов, поддержать локальные таланты и создать вместе незабываемые воспоминания."
   ],
-  heroImage: "/formats/artists-hero.jpg",
+  heroDesktop: { type: "video", src: "/formats/artists/artists-hero.mp4" },
+  heroMobile: { type: "video", src: "/formats/artists/artists-herom-optimized.mp4" },
   heroImages: [
     "/formats/artists/hleb1.jpg",
-    "/formats/artists/hleb2.jpeg",
-    "/formats/artists/hleb3.jpg",
     "/formats/artists/kangi1.jpg",
-    "/formats/artists/kangi2.jpg",
-    "/formats/artists/kangi3.webp",
-    "/formats/artists/selebr1.jpg",
     "/formats/artists/selebr2.jpg",
+    "/formats/artists/hleb2.jpeg",
+    "/formats/artists/kangi2.jpg",
+    "/formats/artists/selebr1.jpg",
+    "/formats/artists/hleb3.jpg",
+    "/formats/artists/kangi3.webp",
     "/formats/artists/selebr3.jpg"
   ],
   events: [
@@ -177,44 +178,61 @@ export default function FormatPage() {
   return (
     <main className="bg-gray-900 text-white min-h-screen">
 
-      {/* Hero */}
-      <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
-        <div className="absolute inset-0 sm:hidden">
-{format.heroMobile?.type === "video" ? (
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    poster="/formats/lager/lager-hero-poster.jpg"
-    className="w-full h-full object-cover"
-  >
-    <source
-      src={format.heroMobile.src} // вот это важно - берём динамически из данных формата
-      type="video/mp4"
-    />
-  </video>
-) : (
-  <img
-    src={format.heroMobile?.src}
-    alt={format.title}
-    className="w-full h-full object-cover"
-  />
-)}
+{/* Hero */}
+<section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
+  {/* Мобильное видео */}
+  <div className="absolute inset-0 sm:hidden">
+    {format.heroMobile?.type === "video" ? (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/formats/artists/artists-herom-poster.jpg"
+        className="w-full h-full object-cover"
+      >
+        <source src={format.heroMobile.src} type="video/mp4" />
+      </video>
+    ) : (
+      <img
+        src={format.heroMobile?.src}
+        alt={format.title}
+        className="w-full h-full object-cover"
+      />
+    )}
+  </div>
 
-        </div>
-        <div className="absolute inset-0 hidden sm:block">
-          {format.heroDesktop?.type === "video" ? (
-            <video src={format.heroDesktop.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-          ) : (
-            <img src={format.heroDesktop?.src} alt={format.title} className="w-full h-full object-cover" />
-          )}
-        </div>
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-center pb-12 sm:pb-16 z-10 text-center">
-          <h1 className="text-3xl sm:text-5xl font-semibold leading-snug">{format.title}</h1>
-        </div>
-      </section>
+  {/* Десктопное видео */}
+  <div className="absolute inset-0 hidden sm:block">
+    {format.heroDesktop?.type === "video" ? (
+      <video
+        src={format.heroDesktop.src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <img
+        src={format.heroDesktop?.src}
+        alt={format.title}
+        className="w-full h-full object-cover"
+      />
+    )}
+  </div>
+
+  {/* Градиент поверх видео/фото */}
+  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/77 via-black/20 to-transparent"></div>
+
+  {/* Заголовок */}
+  <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 sm:pb-16 z-20 text-center">
+    <h1 className="text-3xl sm:text-5xl font-semibold leading-snug text-white">
+      {format.title}
+    </h1>
+  </div>
+</section>
 
       {/* Галерея медиа */}
       {(format.heroImages || format.heroVideos) && (
@@ -277,7 +295,7 @@ export default function FormatPage() {
     {/* Фото после "У нас в движке много творческих" */}
     {slug === "artists" && i === 4 && (
       <img
-        src="/formats/artists/artists2.jpg"
+        src="/formats/artists/vanfi1.JPG"
         alt="Dvizh × Артисты"
         className="w-full my-6 rounded-xl object-cover"
       />
