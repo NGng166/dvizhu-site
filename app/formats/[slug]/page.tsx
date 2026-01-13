@@ -365,15 +365,18 @@ export default function FormatPage() {
 {slug === "mountains" && i === 0 && (
   <div className="my-6 w-full max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
     <iframe
-      src="https://vk.com/video_ext.php?oid=160591040&id=456239065&hash=YOUR_HASH&hd=2"
+      src="https://vk.com/video_ext.php?oid=-160591040&id=456239065&autoplay=1"
       width="100%"
       height="100%"
-      allow="autoplay; fullscreen"
+      style={{ backgroundColor: "#000" }}
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock"
       allowFullScreen
-      className="w-full h-full"
+      className="w-full h-full rounded-xl overflow-hidden"
+      frameBorder="0"
     ></iframe>
   </div>
 )}
+
     
     {/* Вставляем вертикальное видео после следующего абзаца */}
     {slug === "mountains" && i === 2 && format.verticalVideo && format.verticalVideo.type === "video" && (
