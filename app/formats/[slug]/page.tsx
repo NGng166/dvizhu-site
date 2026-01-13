@@ -150,11 +150,11 @@ artists: {
   ]
 },
 mountains: {
-  title: "Горы & походы",
+  title: "Походы и горы",
   description:
     "Походы в горы - это формат про природу, вызов и настоящее чувство команды. Восхождения, пещеры, уютные домики, баня, костёр и вечерние посиделки - здесь каждый выезд становится маленьким приключением и остаётся в памяти надолго.",
   about: [
-  "Формат «Горы & походы» - это наши выезды на природу, где главные роли играют свежий воздух, красивые виды и живое общение. Мы собираемся командой, грузимся в автобус или минивэны и уезжаем из города, чтобы на время выпасть из привычного ритма и прожить что-то настоящее.",
+  "Этот формат про наши выезды на природу, где главные роли играют свежий воздух, красивые виды и живое общение. Мы собираемся командой, грузимся в автобус или минивэны и уезжаем из города, чтобы на время выпасть из привычного ритма и прожить что-то настоящее.",
   "Мы поднимаемся на вершины Урала - Айгир, Малиновая, Зюраткуль, Иремель - или отправляемся исследовать пещеры и заповедные места. Бывают лёгкие маршруты для открытия сезона и более серьёзные подъёмы, где нужно собраться, поддержать друг друга и дойти до конца.",
     // ← ЗДЕСЬ БУДЕТ СЛАЙДЕР
   "Каждый выезд - это не только подъём. Это дорога с музыкой и смехом, уютные домики, горячая еда после маршрута, шашлыки, баня и долгие вечерние разговоры. Часто после восхождения начинается тот самый чилл, ради которого многие и возвращаются снова.",
@@ -179,14 +179,9 @@ mountains: {
     "/formats/mountains/11.jpg",
   ],
 
-  wideMedia: {
-    type: "video",
-    src: "/formats/mountains/mountains-wide.mp4",
-  },
-
   verticalVideo: {
     type: "video",
-    src: "/formats/mountains/mountains-vertical.mp4",
+    src: "/formats/mountains/mountains3.mp4",
   },
 
   events: [
@@ -361,25 +356,22 @@ export default function FormatPage() {
       />
     )}
 
-{/* Вставляем видео из VK после нужного абзаца */}
-{slug === "mountains" && i === 0 && (
-  <div className="my-6 w-full max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
-    <iframe
-      src="https://vk.com/video_ext.php?oid=-160591040&id=456239065&autoplay=1"
-      width="100%"
-      height="100%"
-      style={{ backgroundColor: "#000" }}
-      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock"
-      allowFullScreen
-      className="w-full h-full rounded-xl overflow-hidden"
-      frameBorder="0"
-    ></iframe>
+{/* Ссылка на видео из VK после нужного абзаца */}
+{slug === "mountains" && i === 2 && (
+  <div className="my-6 max-w-3xl mx-auto">
+    <a
+      href="https://vk.com/video-160591040_456239065"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-400 hover:underline"
+    >
+      А тут один видео-отчет из наших походов))
+    </a>
   </div>
 )}
-
     
     {/* Вставляем вертикальное видео после следующего абзаца */}
-    {slug === "mountains" && i === 2 && format.verticalVideo && format.verticalVideo.type === "video" && (
+    {slug === "mountains" && i === 0 && format.verticalVideo && format.verticalVideo.type === "video" && (
       <div className="my-6 w-full max-w-xs mx-auto aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
         <video src={format.verticalVideo.src} controls autoPlay muted loop className="w-full h-full object-cover" />
       </div>
