@@ -163,7 +163,7 @@ mountains: {
   "В походы с нами едут самые разные люди: кто-то впервые пробует горы, а кто-то уже опытный турист. Здесь не важно, с кем ты приехал - один или с друзьями. Уже в дороге ты становишься частью общей команды.",
     // ← ЗДЕСЬ ВЕРТИКАЛЬНОЕ ВИДЕО
   ],
-  heroDesktop: { type: "video", src: "/formats/mountains/hero-mobile.mp4" },
+    heroDesktop: { type: "video", src: "/formats/mountains/hero-mobile.mp4" },
   heroMobile: { type: "video", src: "/formats/mountains/hero-mobile.mp4" },
   heroImages: [
     "/formats/mountains/1.jpg",
@@ -313,18 +313,14 @@ export default function FormatPage() {
 
       <h2 className="text-2xl font-bold mb-4 w-full text-center">Что это за формат?</h2>
 
-      {/* Абзацы из about */}
-      {format.about.map((item: React.ReactNode, i: number) => (
-        <section key={i} className="mb-2 max-w-3xl w-full text-left">
-          {typeof item === "string" ? (
-            <p className={`text-lg leading-relaxed text-gray-200 text-justify indent-6`}>
-              {item}
-            </p>
-          ) : (
-            <div className="text-lg leading-relaxed text-gray-200 text-justify indent-6">
-              {item}
-            </div>
-          )}
+{/* Абзацы из about */}
+{format.about.map((item: React.ReactNode, i: number) => (
+  <section key={i} className="mb-2 max-w-3xl w-full text-left">
+    {typeof item === "string" ? (
+      <p className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</p>
+    ) : (
+      <div className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</div>
+    )}
 
     {/* Фото перед "На наших афтепати и выездах выступали" */}
     {slug === "artists" && i === 2 && (
@@ -337,88 +333,79 @@ export default function FormatPage() {
 
     {/* Фото после "У нас в движке много творческих" */}
     {slug === "artists" && i === 4 && (
-<img
-  src="/formats/artists/vanfi1.webp"
-  loading="lazy"
-  fetchPriority="low"
-  decoding="async"
-  alt="Dvizh × Артисты"
-  className="w-full max-w-4xl mx-auto my-6 rounded-xl object-cover"
-/>
+      <img
+        src="/formats/artists/vanfi1.webp"
+        loading="lazy"
+        fetchPriority="low"
+        decoding="async"
+        alt="Dvizh × Артисты"
+        className="w-full max-w-4xl mx-auto my-6 rounded-xl object-cover"
+      />
     )}
 
-          {/* Фото после "а быть частью происходящего" для tusy */}
-          {slug === "tusy" && i === 1 && (
-            <img
-              src="/formats/tusy/tusy4.jpg"
-              alt="Dvizh Тусы"
-              className="w-full my-6 rounded-xl object-cover"
-            />
-          )}
+    {/* Фото после "а быть частью происходящего" для tusy */}
+    {slug === "tusy" && i === 1 && (
+      <img
+        src="/formats/tusy/tusy4.jpg"
+        alt="Dvizh Тусы"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
 
-          {/* Горизонтальное фото перед "Но Dvizh - это не только сцена" */}
-          {slug === "tusy" && i === 2 && (
-            <img
-              src="/formats/tusy/1.jpg"
-              alt="Dvizh Тусы"
-              className="w-full my-6 rounded-xl object-cover"
-            />
-          )}
+    {/* Горизонтальное фото перед "Но Dvizh - это не только сцена" */}
+    {slug === "tusy" && i === 2 && (
+      <img
+        src="/formats/tusy/1.jpg"
+        alt="Dvizh Тусы"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
 
-          {/* Существующие фото для concerts */}
-          {slug === 'concerts' && i === 0 && (
-            <img
-              src="/formats/concerts/concert-line0.jpg"
-              alt="Концертные выезды"
-              className="w-full my-6 rounded-xl object-cover"
-            />
-          )}
-          {slug === 'concerts' && i === 1 && (
-            <img
-              src="/formats/concerts/concert-line1.jpg"
-              alt="Концертные выезды"
-              className="w-full my-6 rounded-xl object-cover"
-            />
-          )}
-          {slug === 'concerts' && i === 2 && (
-            <img
-              src="/formats/concerts/concert-line2.webp"
-              alt="Концертные выезды"
-              className="w-full my-6 rounded-xl object-cover"
-            />
-          )}
-        </section>
-      ))}
+{/* Вставляем видео из VK после нужного абзаца */}
+{slug === "mountains" && i === 0 && (
+  <div className="my-6 w-full max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
+    <iframe
+      src="https://vk.com/video_ext.php?oid=160591040&id=456239065&hash=YOUR_HASH&hd=2"
+      width="100%"
+      height="100%"
+      allow="autoplay; fullscreen"
+      allowFullScreen
+      className="w-full h-full"
+    ></iframe>
+  </div>
+)}
+    
+    {/* Вставляем вертикальное видео после следующего абзаца */}
+    {slug === "mountains" && i === 2 && format.verticalVideo && format.verticalVideo.type === "video" && (
+      <div className="my-6 w-full max-w-xs mx-auto aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+        <video src={format.verticalVideo.src} controls autoPlay muted loop className="w-full h-full object-cover" />
+      </div>
+    )}
 
-      {/* Видео широкий блок после первого абзаца */}
-      {format.wideMedia && format.wideMedia.type === "video" && (
-        <div
-          className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
-          style={{ aspectRatio: "16/9" }}
-          onClick={() => setOpenWideVideo(true)}
-        >
-          <video src={format.wideMedia.src} autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl" />
-          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition rounded-2xl">
-            <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">▶</div>
-          </div>
-
-          {openWideVideo && (
-            <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-              <div className="relative w-full max-w-3xl">
-                <button
-                  onClick={(e) => { e.stopPropagation(); setOpenWideVideo(false); }}
-                  className="fixed top-6 right-6 z-50 w-12 h-12 bg-black/70 text-white text-3xl rounded-full flex items-center justify-center hover:bg-black/90 transition"
-                >
-                  ✕
-                </button>
-                <div className="bg-black rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
-                  <video ref={wideVideoRef} src={format.wideMedia.src} controls autoPlay muted={false} className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+    {/* Существующие фото для concerts */}
+    {slug === "concerts" && i === 0 && (
+      <img
+        src="/formats/concerts/concert-line0.jpg"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+    {slug === "concerts" && i === 1 && (
+      <img
+        src="/formats/concerts/concert-line1.jpg"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+    {slug === "concerts" && i === 2 && (
+      <img
+        src="/formats/concerts/concert-line2.webp"
+        alt="Концертные выезды"
+        className="w-full my-6 rounded-xl object-cover"
+      />
+    )}
+  </section>
+))}
     </div>
   </section>
 )}
