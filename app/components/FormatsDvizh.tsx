@@ -23,12 +23,7 @@ export default function FormatsDvizh() {
       description: "Другие города, большие сцены и дорога вместе",
       slug: "concerts",
       media: [
-        { type: "image", src: "/formats/concerts/concerts1.jpg" },
-        { type: "image", src: "/formats/concerts/concerts2.jpg" },
-        { type: "image", src: "/formats/concerts/concerts3.jpg" },
-        { type: "image", src: "/formats/concerts/concerts4.jpg" },
-        { type: "image", src: "/formats/concerts/concerts5.webp" },
-        //{ type: "video", src: "/formats/concerts-video.mp4" },
+        { type: "video", src: "/formats/concerts/concerts-card.mp4" }
       ],
     },
     {

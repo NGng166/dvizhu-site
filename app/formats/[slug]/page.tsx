@@ -74,7 +74,8 @@ about: [
       src: "/formats/concerts/concert-wide.mp4"
     },
     events: [
-      { title: "BUSTOUR | UFA - ALMATY", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/formats/concerts/bustour-06-09.jpg" },
+      { title: "BUSTOUR | Ufa - Almaty", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/formats/concerts/bustour-06-09.jpg" },
+      { title: "BUSTOUR | Ufa — Kazakstan",  date: "1–8 октября 2024",  slug: "bustour-05-10", image: "/formats/concerts/bustour-05-10.jpg"},
       { title: "Макс Корж | Пермь", date: "13 декабря 2019", slug: "concert-perm-13-12", image: "/concert-perm-13-12/cover.jpg" },
       { title: "Макс Корж | Пенза", date: "6 декабря 2019", slug: "concert-penza-06-12", image: "/concert-penza-06-12/cover.jpg" },
       { title: "Макс Корж | Москва", date: "31 августа 2019", slug: "concert-moscow-31-08", image: "/concert-moscow-31-08/cover.jpg" },
@@ -126,19 +127,20 @@ artists: {
     "У нас в движке много творческих ребят: кто-то пишет песни, кто-то уже устраивал концерты - привет, ВАНФИ!)). Они уже звучат у нас в наушниках, но скоро и вы о них услышите!",
     "Формат Dvizh × Артисты - это возможность быть частью музыкальной семьи, увидеть любимых артистов, поддержать локальные таланты и создать вместе незабываемые воспоминания."
   ],
-  heroDesktop: { type: "video", src: "/formats/artists/artists-hero.mp4" },
-  heroMobile: { type: "video", src: "/formats/artists/artists-herom-optimized.mp4" },
+  heroDesktop: { type: "video", src: "/formats/artists/artists-hero-optimized.webm" },
+  heroMobile: { type: "video", src: "/formats/artists/artists-herom-optimized.webm" },
   heroImages: [
     "/formats/artists/hleb1.jpg",
     "/formats/artists/kangi1.jpg",
     "/formats/artists/selebr2.jpg",
-    "/formats/artists/hleb2.jpeg",
-    "/formats/artists/kangi2.jpg",
+    "/formats/artists/hleb2.webp",
+    "/formats/artists/kangi2.webp",
     "/formats/artists/selebr1.jpg",
     "/formats/artists/hleb3.jpg",
     "/formats/artists/kangi3.webp",
-    "/formats/artists/selebr3.jpg"
-  ],
+    "/formats/artists/selebr3.jpg",
+    "/formats/artists/vanfi2.webp"
+],
   events: [
     { title: "Выезд на Хлеб | Екатеринбург", date: "xx.xx.2025", slug: "hleb-ekb", image: "/formats/artists/hleb.jpg" },
     { title: "Концерт Канги | Ufa", date: "02.12.2025", slug: "kangi-ufa-02-12", image: "/formats/artists/kangi.jpg" },
@@ -294,11 +296,14 @@ export default function FormatPage() {
 
     {/* Фото после "У нас в движке много творческих" */}
     {slug === "artists" && i === 4 && (
-      <img
-        src="/formats/artists/vanfi1.JPG"
-        alt="Dvizh × Артисты"
-        className="w-full my-6 rounded-xl object-cover"
-      />
+<img
+  src="/formats/artists/vanfi1.webp"
+  loading="lazy"
+  fetchPriority="low"
+  decoding="async"
+  alt="Dvizh × Артисты"
+  className="w-full max-w-4xl mx-auto my-6 rounded-xl object-cover"
+/>
     )}
 
           {/* Фото после "а быть частью происходящего" для tusy */}
