@@ -4,12 +4,26 @@ import Link from "next/link";
 import Slider from "../../components/Slider";
 import SocialPopup from "../../components/SocialPopup";
 
-const photos = [
+const photosBefore = [
   { src: "/bustour-05-10/1.jpg", alt: "Поездка в Казахстан" },
-  { src: "/bustour-05-10/2.jpg", alt: "Поездка в Казахстан" },
-  { src: "/bustour-05-10/3.jpg", alt: "Поездка в Казахстан" },
-  { src: "/bustour-05-10/4.jpg", alt: "Поездка в Казахстан" },
-  { src: "/bustour-05-10/5.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/01.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/02.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/03.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/04.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/05.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/04.jpg", alt: "Поездка в Казахстан" },
+];
+
+const photosAfter = [
+  { src: "/bustour-05-10/1-1.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-2.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-3.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-4.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-5.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-6.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-7.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-8.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/1-9.jpg", alt: "Поездка в Казахстан" },
 ];
 
 export default function BustourKazakhstanFirstTripPage() {
@@ -17,16 +31,16 @@ export default function BustourKazakhstanFirstTripPage() {
     <main className="bg-gray-900 text-white min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-6 sm:px-10">
 
-      {/* Заголовок */}
-      <section className="mb-12 text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+        {/* Заголовок */}
+        <section className="mb-12 text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
             BUSTOUR <br />
             Ufa - Kazakstan<br />
-        </h1>
-        <p className="text-lg text-gray-300 italic">
-          1–8 октября 2024
-        </p>
-      </section>
+          </h1>
+          <p className="text-lg text-gray-300 italic">
+            1–8 октября 2024
+          </p>
+        </section>
 
         {/* Обложка */}
         <img
@@ -40,40 +54,42 @@ export default function BustourKazakhstanFirstTripPage() {
           <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
             Этот бастур стал для нас особенным. Впервые решились на настолько дальнюю поездку и отправились в мини-путешествие по Казахстану. Из-за отмены концерта Макса это был не выезд на концерт, а настоящее приключение, которое навсегда осталось в памяти.
           </p>
+          
+          {/* Первый слайдер перед "За поездку" */}
+          <div className="my-6">
+            <Slider photos={photosBefore} />
+          </div>
+
           <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
             За поездку мы увидели сразу две столицы - Астану и Алматы, погрузились в атмосферу городов, познакомились с культурой и почувствовали масштаб путешествия. В Алматы поднялись в горы, любовались видами и ловили моменты, ради которых стоит уезжать так далеко.
           </p>
           <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
             Ночевали в отелях, а часть пути - прямо в автобусе. Но дорога не утомляла: в перерывах устраивали тусовки внутри баса. Музыка, смех, разговоры - ощущение, что ты не пассажир, а часть команды. Настоящий клуб на колёсах)))
           </p>
-{/* Под впечатлением от поездки */}
-<p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
-  Под впечатлением от поездки наш друг и молодой исполнитель ВАНФИ сразу после возвращения записал трек «Солнца свет».
-</p>
 
-{/* Плеер Яндекс.Музыки */}
-<div className="mb-8 mx-auto max-w-md">
-  <iframe
-    frameBorder="0"
-    allow="clipboard-write"
-    style={{ border: "none", width: "100%", height: "244px" }}
-    src="https://music.yandex.ru/iframe/album/36205241/track/138148544"
-    title="Солнца свет — ВАНФИ"
-  ></iframe>
-</div>
+          {/* Плеер Яндекс.Музыки */}
+          <div className="mb-8 mx-auto max-w-md">
+            <iframe
+              frameBorder="0"
+              allow="clipboard-write"
+              style={{ border: "none", width: "100%", height: "180px" }}
+              src="https://music.yandex.ru/iframe/album/36205241/track/138148544"
+              title="Солнца свет — ВАНФИ"
+            ></iframe>
+          </div>
 
-{/* Слайдер фото */}
-<div className="mt-8">
-  <Slider photos={photos} />
-</div>
+          {/* Под впечатлением от поездки */}
+          <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
+            Под впечатлением от поездки наш друг и молодой исполнитель ВАНФИ сразу после возвращения записал трек «Солнца свет».
+          </p>
+
+          {/* Второй слайдер после плеера */}
+          <div className="mt-8">
+            <Slider photos={photosAfter} />
+          </div>
         </section>
 
-        {/* Коротко */}
         <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-3">
-            Коротко о главном 🫡
-          </h2>
-
           <p className="text-lg leading-relaxed indent-6 text-justify">
             Выехали 1-го октября, а вернулись - 8-го.
             Неделя, которая пролетела незаметно, но подарила эмоции, впечатления и
