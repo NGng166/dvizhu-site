@@ -1,56 +1,71 @@
 "use client";
 
 import Link from "next/link";
+import Slider from "../../components/Slider";
 import SocialPopup from "../../components/SocialPopup";
+
+const photos = [
+  { src: "/bustour-05-10/1.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/2.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/3.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/4.jpg", alt: "Поездка в Казахстан" },
+  { src: "/bustour-05-10/5.jpg", alt: "Поездка в Казахстан" },
+];
 
 export default function BustourKazakhstanFirstTripPage() {
   return (
     <main className="bg-gray-900 text-white min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-6 sm:px-10">
 
-        {/* Заголовок */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 leading-tight">
-            🔥 BUSTOUR <br />
-            UFA — KAZAKHSTAN 🔥<br />
-            <span className="text-3xl sm:text-4xl font-normal">
-              октябрь
-            </span>
-          </h1>
-        </div>
+      {/* Заголовок */}
+      <section className="mb-12 text-center max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+            BUSTOUR <br />
+            Ufa - Kazakstan<br />
+        </h1>
+        <p className="text-lg text-gray-300 italic">
+          1–8 октября 2024
+        </p>
+      </section>
 
         {/* Обложка */}
         <img
-          src="/bustour-kz-first/bustour-cover.jpg"
+          src="/bustour-05-10/hero.jpg"
           alt="Первый дальний бастур в Казахстан"
           className="w-full max-w-3xl rounded-lg shadow-lg mb-12 mx-auto"
         />
 
         {/* Вступление */}
         <section className="mb-10">
-          <p className="text-lg leading-relaxed indent-6 text-justify">
-            Этот бастур стал для нас по-настоящему особенным. Годом ранее мы впервые
-            решились на такую дальнюю поездку и отправились в мини-путешествие по
-            Казахстану. Это был не просто выезд на концерт — это было приключение,
-            которое навсегда осталось в памяти.
-          </p>
-        </section>
-
-        {/* О поездке */}
-        <section className="mb-10">
           <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
-            За одну поездку мы увидели сразу две столицы — Астану и Алматы,
-            погрузились в атмосферу городов, познакомились с культурой и почувствовали
-            масштаб путешествия. В Алматы поднялись в горы, любовались видами и
-            ловили моменты, ради которых вообще стоит уезжать так далеко.
+            Этот бастур стал для нас особенным. Впервые решились на настолько дальнюю поездку и отправились в мини-путешествие по Казахстану. Из-за отмены концерта Макса это был не выезд на концерт, а настоящее приключение, которое навсегда осталось в памяти.
           </p>
-
           <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
-            Ночевали в отелях, а часть дороги — прямо в автобусе. Но дорога не была
-            утомительной: в перерывах мы устраивали настоящие тусовки внутри баса.
-            Музыка, смех, разговоры и ощущение, что ты не пассажир, а часть команды.
-            Настоящий клуб на колёсах.
+            За поездку мы увидели сразу две столицы - Астану и Алматы, погрузились в атмосферу городов, познакомились с культурой и почувствовали масштаб путешествия. В Алматы поднялись в горы, любовались видами и ловили моменты, ради которых стоит уезжать так далеко.
           </p>
+          <p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
+            Ночевали в отелях, а часть пути - прямо в автобусе. Но дорога не утомляла: в перерывах устраивали тусовки внутри баса. Музыка, смех, разговоры - ощущение, что ты не пассажир, а часть команды. Настоящий клуб на колёсах)))
+          </p>
+{/* Под впечатлением от поездки */}
+<p className="text-lg leading-relaxed indent-6 mb-4 text-justify">
+  Под впечатлением от поездки наш друг и молодой исполнитель ВАНФИ сразу после возвращения записал трек «Солнца свет».
+</p>
+
+{/* Плеер Яндекс.Музыки */}
+<div className="mb-8 mx-auto max-w-md">
+  <iframe
+    frameBorder="0"
+    allow="clipboard-write"
+    style={{ border: "none", width: "100%", height: "244px" }}
+    src="https://music.yandex.ru/iframe/album/36205241/track/138148544"
+    title="Солнца свет — ВАНФИ"
+  ></iframe>
+</div>
+
+{/* Слайдер фото */}
+<div className="mt-8">
+  <Slider photos={photos} />
+</div>
         </section>
 
         {/* Коротко */}
@@ -60,8 +75,8 @@ export default function BustourKazakhstanFirstTripPage() {
           </h2>
 
           <p className="text-lg leading-relaxed indent-6 text-justify">
-            Выезд — 01.10. Возвращение в Уфу — примерно 08.10. Неделя,
-            которая пролетела незаметно, но подарила эмоции, впечатления и
+            Выехали 1-го октября, а вернулись - 8-го.
+            Неделя, которая пролетела незаметно, но подарила эмоции, впечатления и
             воспоминания, к которым хочется возвращаться.
           </p>
         </section>
@@ -74,7 +89,7 @@ export default function BustourKazakhstanFirstTripPage() {
 
           <p className="text-lg leading-relaxed indent-6 text-justify">
             Эта поездка стала отправной точкой. Первой настолько дальней,
-            первой по-настоящему масштабной и первой, после которой стало понятно —
+            первой по-настоящему масштабной и первой, после которой стало понятно -
             такие бастуры обязательно будут снова. Мы вернулись уставшими,
             счастливыми и очень вдохновлёнными.
           </p>
