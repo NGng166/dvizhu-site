@@ -75,7 +75,7 @@ about: [
     },
     events: [
       { title: "BUSTOUR | Ufa - Almaty", date: "2–9 сентября 2025", slug: "bustour-06-09", image: "/formats/concerts/bustour-06-09.jpg" },
-      { title: "BUSTOUR | Ufa — Kazakstan",  date: "1–8 октября 2024",  slug: "bustour-05-10", image: "/formats/concerts/bustour-05-10.jpg"},
+      { title: "BUSTOUR | Ufa - Kazakstan",  date: "1–8 октября 2024",  slug: "bustour-05-10", image: "/bustour-05-10/1-1.jpg"},
       { title: "Макс Корж | Пермь", date: "13 декабря 2019", slug: "concert-perm-13-12", image: "/concert-perm-13-12/cover.jpg" },
       { title: "Макс Корж | Пенза", date: "6 декабря 2019", slug: "concert-penza-06-12", image: "/concert-penza-06-12/cover.jpg" },
       { title: "Макс Корж | Москва", date: "31 августа 2019", slug: "concert-moscow-31-08", image: "/concert-moscow-31-08/cover.jpg" },
@@ -100,7 +100,8 @@ tusy: {
     "Наши вечеринки собирают людей, которые ценят живые эмоции, громкий звук и свободу. Это не про статус, это про момент.",
     "Если тебе близка атмосфера концертов и настоящего движения, если хочется не просто сходить куда-то, а прожить ночь - ты точно с нами. Увидимся на танцполе)"
   ],
-  heroImage: "/formats/tusy-hero.jpg",
+  heroDesktop: { type: "video", src: "/formats/tusy/hero.mp4" },
+  heroMobile: { type: "video", src: "/formats/tusy/hero.mp4" },
   heroImages: [
     "/formats/tusy/tusy1.jpg",
     "/formats/tusy/tusy2.jpg",
@@ -130,7 +131,6 @@ artists: {
   heroDesktop: { type: "video", src: "/formats/artists/artists-hero-optimized.webm" },
   heroMobile: { type: "video", src: "/formats/artists/artists-herom-optimized.webm" },
   heroImages: [
-    "/formats/artists/hleb1.jpg",
     "/formats/artists/kangi1.jpg",
     "/formats/artists/selebr2.jpg",
     "/formats/artists/hleb2.webp",
@@ -139,7 +139,8 @@ artists: {
     "/formats/artists/hleb3.jpg",
     "/formats/artists/kangi3.webp",
     "/formats/artists/selebr3.jpg",
-    "/formats/artists/vanfi2.webp"
+    "/formats/artists/vanfi2.webp",
+    "/formats/artists/hleb1.jpg"
 ],
   events: [
     { title: "Выезд на Хлеб | Екатеринбург", date: "xx.xx.2025", slug: "hleb-ekb", image: "/formats/artists/hleb.jpg" },
@@ -148,15 +149,55 @@ artists: {
     { title: "DJ Selebrium | Афтепати", date: "xx.xx.2025", slug: "dj-selebrium", image: "/formats/artists/selebrium.jpg" }
   ]
 },
-  mountains: {
-    title: "Горы & походы",
-    description:
-      "Айгир, природа, испытания и командный дух. Походы, снег, баня и шашлыки.",
-    heroImage: "/formats/mountains-hero.jpg",
-    events: [
-      { title: "Айгир", date: "1–2 марта 2025", slug: "aygir-01-03", image: "/aygir-01-03/aygir-01-03.jpg" },
-    ],
+mountains: {
+  title: "Горы & походы",
+  description:
+    "Походы в горы - это формат про природу, вызов и настоящее чувство команды. Восхождения, пещеры, уютные домики, баня, костёр и вечерние посиделки - здесь каждый выезд становится маленьким приключением и остаётся в памяти надолго.",
+  about: [
+  "Формат «Горы & походы» - это наши выезды на природу, где главные роли играют свежий воздух, красивые виды и живое общение. Мы собираемся командой, грузимся в автобус или минивэны и уезжаем из города, чтобы на время выпасть из привычного ритма и прожить что-то настоящее.",
+  "Мы поднимаемся на вершины Урала - Айгир, Малиновая, Зюраткуль, Иремель - или отправляемся исследовать пещеры и заповедные места. Бывают лёгкие маршруты для открытия сезона и более серьёзные подъёмы, где нужно собраться, поддержать друг друга и дойти до конца.",
+    // ← ЗДЕСЬ БУДЕТ СЛАЙДЕР
+  "Каждый выезд - это не только подъём. Это дорога с музыкой и смехом, уютные домики, горячая еда после маршрута, шашлыки, баня и долгие вечерние разговоры. Часто после восхождения начинается тот самый чилл, ради которого многие и возвращаются снова.",
+  "Иногда наши поездки превращаются в настоящее приключение: мараловые фермы, заповедники, неожиданные встречи с животными, челленджи и небольшие соревнования внутри команды. Мы любим добавлять детали, которые делают каждый выезд особенным.",
+    // ← ЗДЕСЬ ШИРОКОЕ ВИДЕО
+  "В походы с нами едут самые разные люди: кто-то впервые пробует горы, а кто-то уже опытный турист. Здесь не важно, с кем ты приехал - один или с друзьями. Уже в дороге ты становишься частью общей команды.",
+    // ← ЗДЕСЬ ВЕРТИКАЛЬНОЕ ВИДЕО
+  ],
+  heroDesktop: { type: "video", src: "/formats/mountains/hero-mobile.mp4" },
+  heroMobile: { type: "video", src: "/formats/mountains/hero-mobile.mp4" },
+  heroImages: [
+    "/formats/mountains/1.jpg",
+    "/formats/mountains/2.jpg",
+    "/formats/mountains/3.jpg",
+    "/formats/mountains/4.jpg",
+    "/formats/mountains/5.jpg",
+    "/formats/mountains/6.jpg",
+    "/formats/mountains/7.jpg",
+    "/formats/mountains/8.jpg",
+    "/formats/mountains/9.jpg",
+    "/formats/mountains/10.jpg",
+    "/formats/mountains/11.jpg",
+  ],
+
+  wideMedia: {
+    type: "video",
+    src: "/formats/mountains/mountains-wide.mp4",
   },
+
+  verticalVideo: {
+    type: "video",
+    src: "/formats/mountains/mountains-vertical.mp4",
+  },
+
+  events: [
+    {
+      title: "Айгир",
+      date: "1–2 марта 2025",
+      slug: "aygir-01-03",
+      image: "/aygir-01-03/aygir-01-03.jpg",
+    },
+  ],
+},
   community: {
     title: "Комьюнити-ивенты",
     description:

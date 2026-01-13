@@ -20,6 +20,7 @@ export default function AllEventsPage() {
     { title: "Встреча Нового года с ДвижУфой", date: "31.12.24 - 04.01.25", slug: "noviy-god-31-12", image: "/noviy-god-31-12/noviy-god-31-12.jpg" },
     { title: "DVIZH Лагерь", date: "15-17 ноября 2024", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
     { title: "Анонс мерча", date: "7 ноября 2024", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
+    { title: "BUSTOUR | Ufa — Kazakstan",  date: "1–8 октября 2024",  slug: "bustour-05-10", image: "/bustour-05-10/1-1.jpg"},
     { title: "Встречай лето 2022", date: "27 мая 2022", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
     { title: "Концерт Макса Коржа | Пермь", date: "13 декабря 2019", slug: "concert-perm-13-12", image: "/concert-perm-13-12/cover.jpg" },
     { title: "Концерт Макса Коржа | Пенза", date: "6 декабря 2019", slug: "concert-penza-06-12", image: "/concert-penza-06-12/cover.jpg" },

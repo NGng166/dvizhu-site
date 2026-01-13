@@ -11,7 +11,6 @@ const photosBefore = [
   { src: "/bustour-05-10/03.jpg", alt: "Поездка в Казахстан" },
   { src: "/bustour-05-10/04.jpg", alt: "Поездка в Казахстан" },
   { src: "/bustour-05-10/05.jpg", alt: "Поездка в Казахстан" },
-  { src: "/bustour-05-10/04.jpg", alt: "Поездка в Казахстан" },
 ];
 
 const photosAfter = [
