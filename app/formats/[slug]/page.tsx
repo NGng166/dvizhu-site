@@ -193,16 +193,66 @@ mountains: {
     },
   ],
 },
-  community: {
-    title: "Комьюнити-ивенты",
-    description:
-      "BeerPong, квартирники, сборы и просто быть вместе. Игры, встречи и душевная компания.",
-    heroImage: "/formats/community-hero.jpg",
-    events: [
-      { title: "BeerPong", date: "12 апреля 2025", slug: "beerpong-12-04", image: "/beerpong-12-04/beerpong-12-04.jpg" },
-      { title: "Квартирник", date: "27 апреля 2025", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04.jpg" },
-    ],
-  },
+community: {
+  title: "Комьюнити-ивенты",
+  description:
+    "Сборы, посиделки, прогулки, игры и просто быть вместе. Флэты, пейнтбол, настольные игры или BeerPong - всё для ламповой атмосферы и новых знакомств.",
+  about: [
+    "Комьюнити-ивенты - это теплые и живые встречи разных мероприятий. Мы собираемся на квартирники, FLAT-вечеринки, прогулки, пейнтбол, BeerPong и настольные игры.",
+    "Здесь можно познакомиться с новыми людьми, провести время активно или спокойно, разделить общие интересы, посмеяться и отдохнуть от повседневной рутины.",
+    "Это про свободу, дружескую энергетику и настоящую движуху: вечеринки без лишнего пафоса, уютные посиделки, совместные прогулки и небольшие приключения, которые остаются в памяти.",
+    "Главное в этом формате - быть вместе, создавать атмосферу, делиться эмоциями и наслаждаться моментом.",
+  ],
+  heroImage: "/formats/community-hero.jpg",
+  events: [
+    { title: "FLAT - DvizhUfa", date: "18 октября 2025", slug: "flat-18-10", image: "/flat-18-10/afish.jpg" },
+    {
+      title: "FLAT | 27 сентября",
+      date: "27 сентября 2025",
+      slug: "flat-27-09",
+      image: "/formats/community/flat-sept.jpg",
+    },
+    { title: "BEERPONG", date: "20 сентября 2025", slug: "beerpong-20-09", image: "/beerpong-20-09/beerpong-20-09.jpg" },
+    {
+      title: "Сбор перед концертом Макса Коржа",
+      date: "31 августа 2025",
+      slug: "max-korzh-gathering-31-08",
+      image: "/formats/community/max-korzh.jpg",
+    },
+    { title: "Общий сбор в Дустаре", date: "14 августа 2025", slug: "obshe-sbor-14-08", image: "/obshe-sbor-14-08/obshe-sbor-14-08.webp" },
+    {
+      title: "Пейнтбол",
+      date: "27 июля 2025",
+      slug: "paintball-27-07",
+      image: "/formats/community/paintball.jpg",
+    },
+    { title: "Dvizh Ufa x Dvizh Samara | Тур на Флэт",date: "6–7 июля 2025", slug: "dvizh-ufa-samara-flat", image: "/formats/community/flat-ufa-samara.jpg", },
+    { title: "Питбайки", date: "12 июля 2025", slug: "pitbike-12-07", image: "/pitbike-12-07/pitbike-12-07.jpg" },
+    { title: "Квартирник", date: "27 апреля 2025", slug: "kvartirnik-27-04", image: "/kvartirnik-27-04/kvartirnik-27-04.jpg" },
+    { title: "BeerPong", date: "12 апреля 2025", slug: "beerpong-12-04", image: "/beerpong-12-04/beerpong-12-04.jpg" },
+    { title: "Квартирник", date: "16 февраля 2025", slug: "kvartirnik-16-02", image: "/kvartirnik-16-02/kvartirnik-16-02.jpg" },
+    { title: "Встреча Нового года с ДвижУфой", date: "31.12.24 - 04.01.25", slug: "noviy-god-31-12", image: "/noviy-god-31-12/noviy-god-31-12.jpg" },
+    { title: "Анонс мерча", date: "7 ноября 2024", slug: "den-h-07-11", image: "/den-h-07-11/den-h-07-11.jpg" },
+    {
+      title: "Новогодний корпоратив",
+      date: "19 декабря 2025",
+      slug: "newyear-corporate-19-12",
+      image: "/formats/community/newyear.jpg",
+    },
+    {
+      title: "Квартирник и настольные игры",
+      date: "16 февраля 2025",
+      slug: "kvartirnik-16-02",
+      image: "/formats/community/kvartirnik.jpg",
+    },
+    {
+      title: "Квартирник | 27 апреля",
+      date: "27 апреля 2025",
+      slug: "kvartirnik-27-04",
+      image: "/formats/community/kvartirnik-apr.jpg",
+    },
+  ],
+}
 };
 
 export default function FormatPage() {
@@ -306,16 +356,21 @@ export default function FormatPage() {
   <section className="py-4 px-6 sm:px-16 md:px-32">
     <div className="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-gray-200 leading-relaxed">
 
-      <h2 className="text-2xl font-bold mb-4 w-full text-center">Что это за формат?</h2>
+      {/* Только если не community */}
+      {slug !== "community" && (
+        <h2 className="text-2xl font-bold mb-4 w-full text-center">
+          Что это за формат?
+        </h2>
+      )}
 
-{/* Абзацы из about */}
-{format.about.map((item: React.ReactNode, i: number) => (
-  <section key={i} className="mb-2 max-w-3xl w-full text-left">
-    {typeof item === "string" ? (
-      <p className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</p>
-    ) : (
-      <div className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</div>
-    )}
+      {/* Абзацы из about */}
+      {format.about.map((item: React.ReactNode, i: number) => (
+        <section key={i} className="mb-2 max-w-3xl w-full text-left">
+          {typeof item === "string" ? (
+            <p className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</p>
+          ) : (
+            <div className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{item}</div>
+          )}
 
     {/* Фото перед "На наших афтепати и выездах выступали" */}
     {slug === "artists" && i === 2 && (
