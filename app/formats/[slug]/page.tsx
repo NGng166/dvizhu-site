@@ -413,16 +413,16 @@ export default function FormatPage() {
 
 {/* Ссылка на видео из VK после нужного абзаца */}
 {slug === "mountains" && i === 2 && (
-  <div className="my-6 max-w-3xl mx-auto">
-    <a
-      href="https://vk.com/video-160591040_456239065"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-400 hover:underline"
-    >
-      А тут один видео-отчет из наших походов))
-    </a>
-  </div>
+<div className="my-6 max-w-3xl mx-auto text-center">
+  <a
+    href="https://vk.com/video-160591040_456239065"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-400 hover:underline"
+  >
+    А тут один видео-отчет из наших походов))
+  </a>
+</div>
 )}
     
     {/* Вставляем вертикальное видео после следующего абзаца */}
