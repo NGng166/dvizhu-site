@@ -1,87 +1,95 @@
 "use client";
 
-export default function EventPage() {
+import { useState } from "react";
+import Slider from "../../components/Slider";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
+
+const photos = [
+  { src: "/novogodnij-korporativ/3.jpg", alt: "Новогодний корпоратив 1" },
+  { src: "/novogodnij-korporativ/4.jpg", alt: "Новогодний корпоратив 2" },
+  { src: "/novogodnij-korporativ/5.jpg", alt: "Новогодний корпоратив 3" },
+  { src: "/novogodnij-korporativ/6.jpg", alt: "Новогодний корпоратив 3" },
+  { src: "/novogodnij-korporativ/8.jpg", alt: "Новогодний корпоратив 3" },
+];
+
+export default function NewYearCorporatePage() {
+  const [openVideoId, setOpenVideoId] = useState<number | null>(null);
+
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center text-orange-400">
-        Новогодний корпоратив
-      </h1>
 
-      {/* Фото 1 */}
-      <img
-        src="/nk1.jpg"
-        alt="Новогодний корпоратив"
-        className="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-6"
-      />
-
-      {/* Описание мероприятия */}
-      <section className="mb-12">
-        <p className="mb-4 text-lg leading-relaxed indent-6">
-          В преддверии Нового Года мы все хотим немного отвлечься от привычной
-          суеты и встретиться с друзьями 🫶🏻. Наша движка это понимает как никто
-          другой. Именно поэтому мы делаем общий сбор на корпоративе.
+      {/* Заголовок */}
+      <section className="mb-12 text-center max-w-5xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
+          Новогодний корпоратив 2025 🎄
+        </h1>
+        <p className="text-lg text-gray-300">
+          В прошлом году праздник был ламповым, а в этом - ещё ярче и веселее!
         </p>
-
-        <ul className="list-disc list-inside space-y-2 text-lg mb-6">
-          <li>Профессиональные диджеи</li>
-          <li>Приятные цены на баре</li>
-          <li>Море друзей и новых знакомств</li>
-          <li>Новогоднее настроение 😉</li>
-        </ul>
-
-        <p className="mb-4 text-lg leading-relaxed indent-6">
-          Всё это, и не только, ждёт вас 19-го числа 😏
-        </p>
-
-        <p className="text-lg leading-relaxed">
-          <strong>Начало:</strong> 19.12 | 22:00 <br />
-          <strong>Локация:</strong> Soty Lounge Club (проспект Октября 79/1) <br />
-          <strong>Первая партия билетов:</strong> 700р <br />
-          <strong>Вторая партия билетов:</strong> 800р
-        </p>
-
-        <a
-          href="https://dvizh-ufa.timepad.ru/event/3689809/#register/"
-          target="_blank"
-          className="block mt-6 text-orange-400 underline text-lg"
-        >
-          Купить билеты 🎫
-        </a>
       </section>
 
-      {/* Фото 2 */}
-      <img
-        src="/nk2.jpg"
-        alt="Атмосфера мероприятия"
-        className="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-6"
-      />
-
-      {/* Ограничения */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Ограничения и правила</h2>
-
-        <ul className="list-disc list-inside space-y-2 text-lg">
-          <li>Возраст участников: 18+</li>
-          <li>FC / DC</li>
-        </ul>
+      {/* Hero фото */}
+      <section className="mb-12 max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
+        <img
+          src="/novogodnij-korporativ/hero.jpg"
+          alt="Новогодний корпоратив"
+          className="w-full h-auto object-cover rounded-xl"
+        />
       </section>
 
-      {/* Фото 3 */}
-      <img
-        src="/nk3.jpg"
-        alt="Друзья и тусовка"
-        className="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-6"
-      />
+      {/* Основной текст */}
+      <section className="max-w-5xl mx-auto mb-20 space-y-6 text-lg leading-relaxed text-justify">
+        <p className="indent-6">
+          В преддверии Нового Года мы собрались вместе, чтобы провести уходящий год в большой дружной компании. Музыка, танцы, любимая ламповая атмосфера и море друзей на танцполе - всё это создаёт уникальное настроение, за которое мы так любим наши тусовки.
+        </p>
+        <p className="indent-6">
+          Профессиональные диджеи, фри-бар, конкурсы и сюрпризы сделали вечер по-настоящему ярким. Каждый смог поймать настроение друг друга и уйти с эмоциями, которые остаются в памяти.
+        </p>
+        <p className="indent-6">
+          А ещё мы все вместе создали праздничное настроение, пришли в костюмах и с маленькими элементами новогодней тематики, что добавило вечеринке особого шарма.
+        </p>
+      </section>
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      {/* Слайдер с фото */}
+      <section className="mb-20 max-w-4xl mx-auto">
+        <Slider photos={photos} />
+      </section>
+
+      {/* Финальная строка */}
+      <section className="text-center mt-8 text-lg text-gray-300">
+        Этот Новый Год мы провели вместе с друзьями и любимой ламповой атмосферой DVIZH 🫶🏻
+      </section>
+      <section className="text-center mt-8 text-lg text-gray-300">
+      </section>
+      {/* Навигация */}
+      <section className="pb-16">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/formats/concerts#format-events"
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </Link>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Попап соцсетей */}
+      <SocialPopup />
     </main>
   );
 }

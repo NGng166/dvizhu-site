@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import SocialPopup from "../../components/SocialPopup";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Kvartirnik2704Page() {
   const [openVideo, setOpenVideo] = useState<number | null>(null);
+  const router = useRouter();
 
   const videos = [
     {
@@ -24,7 +28,7 @@ export default function Kvartirnik2704Page() {
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
       {/* ЗАГОЛОВОК */}
-      <section className="max-w-3xl mx-auto mb-14 text-center">
+      <section className="max-w-5xl mx-auto mb-14 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
           Квартирник
         </h1>
@@ -34,7 +38,7 @@ export default function Kvartirnik2704Page() {
       </section>
 
       {/* ТЕКСТ */}
-      <section className="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-20">
+      <section className="max-w-5xl mx-auto space-y-8 text-lg leading-relaxed mb-20">
         <p className="indent-6">
           В этот вечер мы просто собрались друзьями в уже полюбившемся антикафе
           «Странные дела». Без спешки и без плана - поиграть на гитаре,
@@ -95,7 +99,7 @@ export default function Kvartirnik2704Page() {
             className="
               fixed top-6 right-6 z-50
               w-12 h-12
-              bg-black/70 text-white text-3xl
+              bg-black/70 text-white text-5xl
               rounded-full flex items-center justify-center
               hover:bg-black/90 transition
             "
@@ -116,19 +120,40 @@ export default function Kvartirnik2704Page() {
           </div>
         </div>
       )}
-        <p className="indent-6">
+        <p className="text-center mt-8 text-lg text-gray-300">
           Такие вечера не хочется описывать подробно.
           Их хочется запомнить.
         </p>
-      {/* КНОПКА НАЗАД */}
-      <div className="text-center mt-12">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+        <p className="text-center mt-8 text-lg text-gray-300">
+        </p>
+
+      {/* Навигация */}
+      <section className="pb-16">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <button
+            onClick={() => router.back()} // <-- возвращаем на предыдущую страницу
+              className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      <SocialPopup />
     </main>
   );
 }

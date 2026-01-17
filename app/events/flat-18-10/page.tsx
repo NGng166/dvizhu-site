@@ -27,7 +27,7 @@ export default function FlatPage() {
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
       {/* Заголовок */}
-      <section className="mb-12 text-center max-w-3xl mx-auto">
+      <section className="mb-12 text-center max-w-5xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 mb-4">
           FLAT
         </h1>
@@ -37,7 +37,7 @@ export default function FlatPage() {
       </section>
 
       {/* Hero фото */}
-      <section className="mb-12 max-w-3xl mx-auto overflow-hidden rounded-xl shadow-lg">
+      <section className="mb-12 max-w-5xl mx-auto overflow-hidden rounded-xl shadow-lg">
         <img
           src="/flat-18-10/hero.jpg"
           alt="FLAT вечеринка"
@@ -46,7 +46,7 @@ export default function FlatPage() {
       </section>
 
       {/* Основной текст */}
-      <section className="max-w-3xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
+      <section className="max-w-5xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
         <p className="indent-6">
           После насыщенного лета мы снова собрались на коттедже, чтобы разнести танцпол и просто хорошо провести вечер. Четырёхэтажный коттедж, диджей-сет всю ночь, фри-бар, конкурсы, турнир по Флипкапу и тематическая вечеринка GTA - всё это делало вечер огненным 🔥
         </p>
@@ -82,7 +82,7 @@ export default function FlatPage() {
                 className="w-full h-full object-cover rounded-xl"
               />
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
-                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-5xl">
                   ▶
                 </div>
               </div>
@@ -95,11 +95,11 @@ export default function FlatPage() {
       {[...reportVideos, ...progrevs].map(video => (
         openVideoId === video.id && (
           <div key={video.id} className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
-            <div className="relative w-full max-w-3xl">
+            <div className="relative w-full max-w-5xl">
               <button
                 onClick={() => setOpenVideoId(null)}
                 className="fixed top-6 right-6 z-50 w-12 h-12
-                           bg-black/70 text-white text-3xl
+                           bg-black/70 text-white text-5xl
                            rounded-full flex items-center justify-center
                            hover:bg-black/90 transition"
               >
@@ -120,7 +120,7 @@ export default function FlatPage() {
 
       {/* Превью видео-прогревов */}
       <section className="max-w-4xl mx-auto mb-8">
-        <section className="max-w-3xl mx-auto mb-8 text-lg text-gray-300 space-y-4">
+        <section className="max-w-5xl mx-auto mb-8 text-lg text-gray-300 space-y-4">
           <p className="font-semibold">
             Подготовка тоже была частью лагеря.
           </p>
@@ -146,7 +146,7 @@ export default function FlatPage() {
                 className="w-full h-full object-cover rounded-xl"
               />
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition">
-                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-3xl">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-black text-5xl">
                   ▶
                 </div>
               </div>

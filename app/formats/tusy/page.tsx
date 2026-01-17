@@ -25,7 +25,7 @@ export default function TusyPage() {
 
         <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 sm:pb-16 z-20 text-center">
           <h1 className="text-5xl sm:text-5xl font-semibold">
-            Dvizh Тусы
+            DVIZH.ТУСА
           </h1>
         </div>
       </section>
@@ -111,8 +111,10 @@ export default function TusyPage() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {[
-    { title: "DvizhTusa 1", date: "xx xx 2025", slug: "xx", image: "/xx/afish.jpg" },
-    { title: "DvizhTusa 2", date: "xx xx 2025", slug: "xx", image: "/xx/afish.jpg" },
+    { title: "DVIZH.ТУСА | 29 января | G-ROOM", date: "29 января 2022", slug: "xx", image: "/formats/tusy/29.01.jpg" },
+    { title: "DVIZH.ТУСА | 8 мая | ТИНЬКОФФ ХОЛЛ", date: "8 мая 2021", slug: "xx", image: "/formats/tusy/8.05.jpg" },
+    { title: "DVIZH.ТУСА | 6 марта | LABIRINT.UNDER", date: "6 марта 2021", slug: "xx", image: "/formats/tusy/7.10.jpg" },
+
           ].map((event, i) => (
             <Link key={i} href={`/events/${event.slug}`}>
               <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">

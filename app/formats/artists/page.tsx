@@ -39,7 +39,7 @@ export default function ArtistsPage() {
 
   {/* текст */}
   <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 sm:pb-16 z-20 text-center">
-    <h1 className="text-3xl sm:text-5xl font-semibold">
+    <h1 className="text-5xl sm:text-5xl font-semibold">
       Dvizh × Артисты
     </h1>
   </div>
@@ -67,7 +67,7 @@ export default function ArtistsPage() {
 
       {/* ОПИСАНИЕ */}
       <section className="mb-6 px-6 sm:px-16 md:px-32">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <p className="text-lg leading-relaxed text-justify">
             Особые события с музыкантами и гостями. Да, мы - фанаты Макса Коржа, но дружим и с другими артистами - Канги, DJ Selebrium, группой Хлеб и многими другими. Здесь мы собираемся всей командой на концерты, афтепати и поддерживаем локальных талантливых музыкантов из Уфы.
           </p>
@@ -82,7 +82,7 @@ export default function ArtistsPage() {
             Что это за формат?
           </h2>
 
-          <section className="max-w-3xl w-full text-left space-y-4">
+          <section className="max-w-5xl w-full text-left space-y-4">
             <p className="text-lg text-justify indent-6">
               Главный наш любимый исполнитель - Макс Корж. Мы ездим на его концерты толпой, создавая неповторимую атмосферу: смех, песни, совместные моменты и эмоции, которые остаются надолго.
             </p>
@@ -130,10 +130,13 @@ export default function ArtistsPage() {
         <h2 className="text-2xl font-bold my-8 text-center">Мероприятия этого формата</h2>
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {[
-            { title: "Выезд на Хлеб | Екатеринбург", date: "xx.xx.2025", slug: "hleb-ekb", image: "/formats/artists/hleb.jpg" },
-            { title: "Концерт Канги | Ufa", date: "02.12.2025", slug: "kangi-ufa-02-12", image: "/formats/artists/kangi.jpg" },
-            { title: "АТЛ | Выезд всей командой", date: "xx.xx.2025", slug: "atl-excursion", image: "/formats/artists/atl.jpg" },
-            { title: "DJ Selebrium | Афтепати", date: "xx.xx.2025", slug: "dj-selebrium", image: "/formats/artists/selebrium.jpg" }
+            { title: "АТЛ | 30 апреля / 1 мая 2025", date: "30.04-01.05.2025", slug: "atl-excursion", image: "/formats/artists/atl1.jpg" },
+            { title: "КАНГИ | 6 октября 2023 | КЛУБ ДОМ ПЕЧАТИ", date: "06.10.2023", slug: "kangi-ufa-06-10", image: "/formats/artists/kangi3.webp" },
+            { title: "КАНГИ | 3 апреля 2022 | MusicHall27", date: "03.04.2022", slug: "kangi-ufa-03-04", image: "/formats/artists/kangi1.jpg" },
+            { title: "КАНГИ | 2 декабря 2021 | MusicHall27", date: "02.12.2021", slug: "kangi-ufa-02-12", image: "/formats/artists/kangi2.webp" },
+            { title: "DJ Selebrium | DVIZH.ТУСА", date: "06.03.2020", slug: "dj-selebrium-06-03", image: "/formats/artists/selebr3.jpg" },
+            { title: "ХЛЕБ | 16.02.2019 | Екатеринбург", date: "16.02.2019", slug: "hleb-ekb", image: "/formats/artists/hleb.jpg" },
+            { title: "DJ Selebrium | Афтепати", date: "01.12.2018", slug: "dj-selebrium-01-12", image: "/formats/artists/selebr1.jpg" }
           ].map((event, index) => (
             <Link key={index} href={`/events/${event.slug}`}>
               <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">

@@ -4,9 +4,9 @@ import Link from "next/link";
 import SocialPopup from "../../components/SocialPopup";
 import { VideoMobileSlider } from "../../components/VideoMobileSlider";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
 
-// Массив фотографий для слайдера
 const photosSlider1 = [
   { src: "/bustour-06-09/p1.jpg", alt: "Мерч ДвижУфы для парней" },
   { src: "/bustour-06-09/p2.jpg", alt: "Мерч ДвижУфы в горах" },
@@ -15,7 +15,6 @@ const photosSlider1 = [
   { src: "/bustour-06-09/p5.jpg", alt: "Мерч ДвижУфы в городе" },
 ];
 
-// Массив видео для блока с тремя видео
 const videos = [
   { src: "/bustour-06-09/vid1.mp4", caption: "Атмосфера бастура ДвижУфы - она такая)))" },
   { src: "/bustour-06-09/vid2.mp4", caption: "В бастуре рождается любовь!.." },
@@ -24,17 +23,15 @@ const videos = [
 
 export default function BustourPage() {
   const [openVideo, setOpenVideo] = useState<string | null>(null);
+  const router = useRouter();
 
   return (
     <main className="bg-gray-900 text-white min-h-screen py-16">
-      {/* Центральный контейнер */}
       <div className="max-w-5xl mx-auto px-6 sm:px-10">
-
         {/* Заголовок */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 leading-tight">
-            BUSTOUR <br />
-            Ufa - Almaty<br />
+            BUSTOUR <br /> Ufa - Almaty <br />
             <span className="text-lg text-gray-300 italic">6 сентября</span>
           </h1>
         </div>
@@ -187,37 +184,32 @@ export default function BustourPage() {
           </p>
         </section>
 
-        {/* Навигация */}
-        <section className="pb-16">
-          <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
-
-            <Link
-              href="/formats/concerts#format-events"
+      {/* Навигация */}
+      <section className="pb-16">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          <button
+            onClick={() => router.back()} // <-- возвращаем на предыдущую страницу
               className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
-            >
-              ←
-            </Link>
+          >
+            ←
+          </button>
 
-            <Link
-              href="/#formats"
-              className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
-            >
-              К форматам
-            </Link>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
 
-            <Link
-              href="/events"
-              className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-            >
-              Все мероприятия
-            </Link>
-
-          </div>
-        </section>
-
-      </div>
-
-      {/* Попап соцсетей */}
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+</div>
       <SocialPopup />
     </main>
   );
