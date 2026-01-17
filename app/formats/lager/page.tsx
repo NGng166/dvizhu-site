@@ -39,7 +39,7 @@ export default function LagerPage() {
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 sm:pb-16 z-20 text-center">
-          <h1 className="text-3xl sm:text-5xl font-semibold">
+          <h1 className="text-5xl sm:text-5xl font-semibold">
             Dvizh Лагеря, смены, ежегодные фестивали
           </h1>
         </div>
@@ -64,7 +64,7 @@ export default function LagerPage() {
 
       {/* ОПИСАНИЕ */}
       <section className="mb-6 px-6 sm:px-16 md:px-32">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <p className="text-lg leading-relaxed text-justify indent-6">
             Каждый год мы проводим серию мероприятий, объединённых общим форматом: встречи на природе, летние и зимние фестивали, лагеря и небольшие сборы друзей. Все они дают возможность провести время вместе, активно и интересно, независимо от того, приезжаешь ли ты один или с компанией
           </p>
@@ -79,7 +79,7 @@ export default function LagerPage() {
             Что это за формат?
           </h2>
 
-    <section className="max-w-3xl w-full text-left space-y-4">
+    <section className="max-w-5xl w-full text-left space-y-4">
       <p
         className="text-lg indent-6"
         style={{ textAlign: "justify", textJustify: "inter-word" }}

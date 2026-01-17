@@ -60,7 +60,7 @@ export default function ConcertsPage() {
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/77 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 sm:pb-16 z-20 text-center">
-          <h1 className="text-3xl sm:text-5xl font-semibold leading-snug text-white">{format.title}</h1>
+          <h1 className="text-5xl sm:text-5xl font-semibold leading-snug text-white">{format.title}</h1>
         </div>
       </section>
 
@@ -79,7 +79,7 @@ export default function ConcertsPage() {
 
       {/* Описание */}
       <section className="mb-6 px-6 sm:px-16 md:px-32">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <p className="text-lg leading-relaxed text-justify indent-6">{format.description}</p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function ConcertsPage() {
       <section className="py-4 px-6 sm:px-16 md:px-32">
         <div className="max-w-5xl mx-auto flex flex-col items-center space-y-6 text-gray-200 leading-relaxed">
           {format.about.map((text, i) => (
-            <section key={i} className="mb-2 max-w-3xl w-full text-left">
+            <section key={i} className="mb-2 max-w-5xl w-full text-left">
               <p className="text-lg leading-relaxed text-gray-200 text-justify indent-6">{text}</p>
 
               {i === 0 && <img src="/formats/concerts/concert-line0.jpg" alt="Концертные выезды" className="w-full my-6 rounded-xl object-cover" />}
