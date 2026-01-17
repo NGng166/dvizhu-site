@@ -67,8 +67,6 @@ export default function FormatsDvizh() {
       description: "BeerPong, квартирники и тёплые сборы",
       slug: "community",
       media: [
-        { type: "image", src: "/formats/community/community1.jpg" },
-        { type: "image", src: "/formats/community/community2.jpg" },
         { type: "video", src: "/formats/community/community3.mp4" },
         { type: "video", src: "/formats/community/community4.mp4" },
       ],
