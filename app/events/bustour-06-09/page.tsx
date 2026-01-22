@@ -32,8 +32,10 @@ export default function BustourPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-orange-400 leading-tight">
             BUSTOUR <br /> Ufa - Almaty <br />
-            <span className="text-lg text-gray-300 italic">6 сентября</span>
           </h1>
+        <p className="text-lg text-gray-300">
+          6 сентября
+        </p>
         </div>
 
         {/* Фото под заголовком */}

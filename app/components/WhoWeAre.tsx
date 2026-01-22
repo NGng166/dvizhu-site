@@ -6,8 +6,8 @@ export default function WhoWeAre() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8 text-center">Кто мы</h2>
 
-        <p className="mb-6 text-lg leading-relaxed text-center sm:text-left">
-          Движ (Dvizh) - молодежное международное движение, выросшее из фан-сообщества Макса Коржа
+        <p className="mb-6 text-lg leading-relaxed text-justify" style={{ textIndent: "2rem" }} >
+          Движ - молодежное международное движение, выросшее из фан-сообщества Макса Коржа
           и распространившееся от России и СНГ до городов Европы и Азии. Когда-то всё начиналось 
           с автобусных поездок на концерты, а сегодня Движ - это сообщество друзей, 
           которое живёт намного шире музыки.
@@ -16,18 +16,18 @@ export default function WhoWeAre() {
         <img
           src="/dvizh1.jpg"
           alt="Атмосфера Движа"
-          className="w-full max-w-3xl mx-auto rounded-lg mb-8 object-cover"
+          className="w-full max-w-5xl mx-auto rounded-lg mb-8 object-cover"
         />
 
 {/* Большой текст + цитата Коржа */}
-<p className="mb-6 text-lg leading-relaxed text-center sm:text-left">
+<p className="mb-6 text-lg leading-relaxed text-justify" style={{ textIndent: "2rem" }} >
   Мы встречаемся, дружим, путешествуем, устраиваем лагеря, походы, квартирники, 
   бирпонг, пейнтбол, Flat-вечеринки, совместные выезды в горы и поездки на концерты. 
   В любом городе есть ребята, которые рады принять, согреть и показать лучшие места.
 </p>
 
 {/* Цитата */}
-<div className="bg-gray-700 border-l-4 border-orange-400 p-6 rounded-r-lg mb-8 shadow-md max-w-3xl mx-auto">
+<div className="bg-gray-700 border-l-4 border-orange-400 p-6 rounded-r-lg mb-8 shadow-md max-w-5xl mx-auto">
   <p className="text-lg italic leading-relaxed text-center sm:text-left">
     "Даже потеряв всё, с сумкой пустой тебе устроят хороший приём..."
   </p>
@@ -39,10 +39,10 @@ export default function WhoWeAre() {
         <img
           src="/dvizh2.jpg"
           alt="Встречи Движа"
-          className="w-full max-w-3xl mx-auto rounded-lg mb-8 object-cover"
+          className="w-full max-w-5xl mx-auto rounded-lg mb-8 object-cover"
         />
 
-        <p className="mb-12 text-lg leading-relaxed text-center sm:text-left">
+        <p className="mb-12 text-lg leading-relaxed text-center">
           Движ Уфа - это про тепло и своё. У нас нет формальностей - мы семья, 
           где принимают по сердцу, а не по правилам.
         </p>

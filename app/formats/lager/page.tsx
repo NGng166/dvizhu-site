@@ -135,11 +135,23 @@ export default function LagerPage() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {[
-      { title: "Dvizh Лагерь II смена", date: "15–17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
-      { title: "Dvizh Лагерь I смена", date: "27–29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
-      { title: "Winter Camp 2.0", date: "7–9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
-      { title: "Dvizh Лагерь 2024", date: "15-17 ноября 2024 г.", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
-      { title: "Встречай лето 2022", date: "27-29 мая 2022 г.", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
+      { title: "Dvizh Лагерь | II смена", date: "15–17 августа 2025", slug: "lager-15-08", image: "/lager-15-08/lager-15-08.jpg" },
+      { title: "Dvizh Лагерь | I смена", date: "27–29 июня 2025", slug: "dvizh-lager-27-06", image: "/dvizh-lager-27-06/dvizh-lager-27-06.jpg" },
+      { title: "Winter Camp", date: "7–9 февраля 2025", slug: "winter-camp-07-02", image: "/winter-camp-2-0-07-02/winter-camp-2-0-07-02.jpg" },
+      { title: "Dvizh Лагерь | 2024", date: "15-17 ноября 2024", slug: "dvizh-lager-15-11", image: "/dvizh-lager-15-11/dvizh-lager-15-11.jpg" },
+      { title: "Summer Fest", date: "21 июня 2024", slug: "summer-fest-21-06", image: "/formats/community/summer-fest-21-06.jpg" },
+      { title: "Встречай лето | 2024", date: "31 мая - 2 июня 2024", slug: "vstrechay-leto-2024", image: "/formats/community/vstrechay-leto-2024.jpg" },
+      { title: "Summer Camp | part. 2", date: "18-20 августа 2023", slug: "summer-camp-18-08", image: "/summer-camp-18-08/summer-camp-18-08.jpg" },
+      { title: "Summer Camp | part. 1", date: "16-18 июня 2023", slug: "summer-camp-16-06", image: "/summer-camp-16-06/summer-camp-16-06.jpg" },
+      { title: "Встречай лето | 2023", date: "26-28 мая 2023", slug: "vstrechay-leto-2023", image: "/formats/community/vstrechay-leto-2023.jpg" },
+      { title: "Dvizh Лагерь | II смена", date: "26-28 августа 2022", slug: "dvizh-lager-2022-2", image: "/dvizh-lager-2022-2/dvizh-lager-2022-2.jpg" },
+      { title: "Dvizh Лагерь | I смена", date: "8-10 июля 2022", slug: "dvizh-lager-2022", image: "/dvizh-lager-2022/dvizh-lager-2022.jpg" },
+      { title: "Встречай лето | 2022", date: "27-29 мая 2022", slug: "vstrechay-leto-2022", image: "/vstrechay-leto-2022/vstrechay-leto-2022.jpg" },
+      { title: "г. Зигальга", date: "26-27 февраля 2022", slug: "zigal-26-02", image: "/zigal-26-02/zigal-26-02.jpg"},
+      { title: "Летний лагерь | II смена", date: "6-8 августа 2021", slug: "letniy-lager-6-08", image: "/letniy-lager-6-08/letniy-lager-6-08.jpg" },
+      { title: "Летний лагерь | I смена", date: "25-27 июня 2021", slug: "letniy-lager-25-06", image: "/letniy-lager-25-06/letniy-lager-25-06.jpg" },
+      { title: "Летний лагерь | II смена", date: "7-9 августа 2020", slug: "letniy-lager-7-08", image: "/letniy-lager-7-08/letniy-lager-7-08.jpg" },
+      { title: "Летний лагерь | I смена", date: "10-12 июля 2020", slug: "letniy-lager-10-07", image: "/letniy-lager-10-07/letniy-lager-10-07.jpg" },
           ].map((event, i) => (
             <Link key={i} href={`/events/${event.slug}`}>
               <div className="rounded-lg overflow-hidden hover:scale-105 transition-transform">

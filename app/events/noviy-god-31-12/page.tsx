@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const photos = [
   { src: "/noviy-god-31-12/p5.jpg", alt: "Новогодняя ночь с Dvizh - атмосфера" },
@@ -12,6 +15,7 @@ const photos = [
 ];
 
 export default function NoviyGodPage() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   return (
@@ -194,15 +198,37 @@ export default function NoviyGodPage() {
         </p>
       </section>
       
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }

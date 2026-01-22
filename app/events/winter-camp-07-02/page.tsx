@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import Slider from "../../components/Slider";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Slider from "../../components/Slider";
 import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const photos = [
   { src: "/winter-camp-2-0-07-02/p1.jpg", alt: "Winter Camp 2.0 - костёр" },
@@ -14,6 +15,7 @@ const photos = [
 ];
 
 export default function WinterCampPage() {
+  const router = useRouter();
   const [openVideo, setOpenVideo] = useState(false);
 
   return (
@@ -121,35 +123,37 @@ export default function WinterCampPage() {
           Лагерь начинается задолго до первого костра 😉
         </p>
       </section>
-
+      
       {/* Навигация */}
-      <section className="pb-16 px-6 sm:px-16 md:px-32">
+      <section className="pb-16 mt-12">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/formats/lager#format-events"
-            aria-label="К мероприятиям формата"
-            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
           >
             ←
-          </Link>
+          </button>
+
           <Link
             href="/#formats"
-            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center leading-none hover:bg-white hover:text-black transition"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
           >
             К форматам
           </Link>
+
           <Link
             href="/events"
-            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center leading-none hover:bg-gray-200 transition"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
           >
             Все мероприятия
           </Link>
         </div>
       </section>
 
-      {/* Попап социальных сетей */}
+      {/* Соцсети */}
       <SocialPopup />
-
     </main>
   );
 }

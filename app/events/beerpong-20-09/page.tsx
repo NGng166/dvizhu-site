@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const loopVideos = [
   { id: 1, srcLoop: "/beerpong-20-09/v1.mp4", srcFull: "/beerpong-20-09/v1.mp4" },
@@ -8,6 +11,7 @@ const loopVideos = [
 ];
 
 export default function BeerPongPage() {
+  const router = useRouter();
   const [openVideoId, setOpenVideoId] = useState<number | null>(null);
 
   return (
@@ -115,16 +119,37 @@ export default function BeerPongPage() {
       <section className="text-center mt-8 text-lg text-gray-300">
         Берёшь друга - и залетаешь 🍻
       </section>
+      
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }

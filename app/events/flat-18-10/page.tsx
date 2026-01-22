@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const photos = [
   { src: "/flat-18-10/p1.jpg", alt: "Флэт вечеринка 1" },
@@ -21,6 +24,7 @@ const progrevs = [
 ];
 
 export default function FlatPage() {
+  const router = useRouter();
   const [openVideoId, setOpenVideoId] = useState<number | null>(null);
 
   return (
@@ -37,7 +41,7 @@ export default function FlatPage() {
       </section>
 
       {/* Hero фото */}
-      <section className="mb-12 max-w-5xl mx-auto overflow-hidden rounded-xl shadow-lg">
+      <section className="mb-12 max-w-2xl mx-auto overflow-hidden rounded-xl shadow-lg">
         <img
           src="/flat-18-10/hero.jpg"
           alt="FLAT вечеринка"
@@ -160,15 +164,36 @@ export default function FlatPage() {
         Флэт начинается ещё до танцпола 😉
       </section>
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }

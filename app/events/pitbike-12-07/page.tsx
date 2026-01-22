@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
+
 
 const loopVideos = [
   { id: 1, srcLoop: "/pitbike-12-07/v1-loop.mp4", srcFull: "/pitbike-12-07/v1-full.mp4" },
@@ -8,7 +12,6 @@ const loopVideos = [
   { id: 3, srcLoop: "/pitbike-12-07/v3-loop.mp4", srcFull: "/pitbike-12-07/v3-full.mp4" },
 ];
 
-// Новое видео (объявляем ДО return)
 const extraVideo = { 
   id: 4, 
   srcLoop: "/pitbike-12-07/v4-loop.mp4", 
@@ -16,6 +19,7 @@ const extraVideo = {
 };
 
 export default function PitbikePage() {
+  const router = useRouter();
   const [openVideoId, setOpenVideoId] = useState<number | null>(null);
 
   return (
@@ -39,7 +43,7 @@ export default function PitbikePage() {
       </section>
 
       {/* Текст */}
-      <section className="max-w-3xl mx-auto mb-20 space-y-6 text-lg leading-relaxed">
+      <section className="max-w-4xl mx-auto mb-20 space-y-6 text-lg leading-relaxed text-justify">
         <p className="indent-6">
           В этот день мы снова собрались на питбайки. Маленькая компания, эндуро и питбайки, поля и леса вокруг Уфы - всё как надо для настоящего заряда адреналина.
         </p>
@@ -156,15 +160,37 @@ export default function PitbikePage() {
         Эмоции за вечер, которые не забыть 😉
       </section>
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }
+

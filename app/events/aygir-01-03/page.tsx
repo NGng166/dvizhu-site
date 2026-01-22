@@ -1,8 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Slider from "../../components/Slider";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 export default function AygirTripPage() {
+  const router = useRouter();
   const [openVideo, setOpenVideo] = useState(false);
 
   return (
@@ -19,9 +24,9 @@ export default function AygirTripPage() {
       </section>
 
       {/* ТЕКСТ + ФОТО */}
-      <section className="max-w-3xl mx-auto mb-16 space-y-8 text-lg leading-relaxed">
+      <section className="max-w-4xl mx-auto mb-16 space-y-8 text-lg leading-relaxed justify-center">
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto mb-16 space-y-8 text-lg leading-relaxed justify-center">
           В начале марта мы снова сделали то, что любим больше всего - поехали в горы.
           Просто вырваться из города, собраться вместе и прожить пару дней иначе.
         </p>
@@ -42,20 +47,20 @@ export default function AygirTripPage() {
           />
         </div>
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
           Мы ехали в электричке, с рюкзаками и тёплой одеждой, болтали, шутили и постепенно
           настраивались на горы. Уже в дороге стало спокойно - будто город остался где-то
           далеко позади.
         </p>
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
           На месте мы заселились в уютный домик, немного выдохнули и отправились вверх.
           Зима в горах - это особенное состояние: снег под ногами, холодный воздух и
           ощущение, что ты здесь по-настоящему. Подъём был непростым, но в этом и есть
           весь смысл - идти, поддерживать друг друга и не спешить.
         </p>
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
           Когда мы поднялись на вершину, мы просто постояли. Сделали фото, посмотрели
           по сторонам и запомнили этот момент. Такие вещи не хочется объяснять словами —
           их хочется сохранить.
@@ -118,32 +123,52 @@ export default function AygirTripPage() {
 
 
       {/* ФИНАЛ */}
-      <section className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed mb-20">
+      <section className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed mb-20 justify-center">
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
           После спуска нас ждала деревенская баня, горячий пар, шашлыки и долгие душевные
           разговоры. Усталость в теле и редкое чувство внутреннего покоя.
         </p>
 
-        <p className="indent-6">
-          Мы ходим в горы круглый год.<br />
-          Снег, холод и зима — нам не помеха, а часть пути.
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
+          Мы ходим в горы круглый год. Снег, холод и зима — нам не помеха, а часть пути.
         </p>
 
-        <p className="indent-6">
+        <p className="indent-6 max-w-4xl mx-auto space-y-8 text-lg leading-relaxed justify-center">
           И эта поездка в Айгир — ещё одно тёплое воспоминание, которое мы забираем с собой.
         </p>
       </section>
       
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }

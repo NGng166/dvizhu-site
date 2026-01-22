@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
+import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const photosWarm = [
   { src: "/kvartirnik-16-02/p1.jpg", alt: "Квартирник - гитара" },
@@ -16,6 +19,7 @@ const photosMemory = [
 ];
 
 export default function KvartirnikPage() {
+  const router = useRouter();
   const [openVideo, setOpenVideo] = useState(false);
 
   return (
@@ -100,7 +104,7 @@ export default function KvartirnikPage() {
       </section>
 
       {/* В ПАМЯТИ */}
-      <section className="max-w-3xl mx-auto mb-20">
+      <section className="max-w-4xl mx-auto mb-20">
         <p className="text-lg leading-relaxed indent-6 mb-6">
           Воскресный вечер напомнил, что главное - люди рядом и простые радости.
           Немного фотокарточек в память о том, как тепло мы посидели этим вечером. ❤️
@@ -132,15 +136,36 @@ export default function KvartirnikPage() {
         </div>
       </section>
 
-      {/* Кнопка назад */}
-      <div className="text-center mt-8">
-        <a
-          href="/"
-          className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition"
-        >
-          Назад на главную
-        </a>
-      </div>
+      {/* Навигация */}
+      <section className="pb-16 mt-12">
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <Link
+            href="/#formats"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
+          >
+            К форматам
+          </Link>
+
+          <Link
+            href="/events"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          >
+            Все мероприятия
+          </Link>
+        </div>
+      </section>
+
+      {/* Соцсети */}
+      <SocialPopup />
     </main>
   );
 }

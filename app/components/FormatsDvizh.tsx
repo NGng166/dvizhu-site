@@ -10,12 +10,7 @@ export default function FormatsDvizh() {
       description: "Смены, песни до утра и полная перезагрузка",
       slug: "lager",
       media: [
-        { type: "image", src: "/formats/lager/lager1.jpg" },
-        { type: "image", src: "/formats/lager/lager2.jpg" },
-        { type: "image", src: "/formats/lager/lager3.jpg" },
-        { type: "image", src: "/formats/lager/lager4.jpg" },
-        { type: "image", src: "/formats/lager/lager5.jpg" },
-        //{ type: "video", src: "/formats/lager-video.mp4" },
+        { type: "video", src: "/formats/lager/look_web.mp4" },
       ],
     },
     {
@@ -31,11 +26,7 @@ export default function FormatsDvizh() {
       description: "Вечеринки и клубы, когда выбираешь эмоции, а не сон",
       slug: "tusy",
       media: [
-        { type: "image", src: "/formats/tusy/tusy1.jpg" },
-        { type: "image", src: "/formats/tusy/tusy2.jpg" },
-        { type: "image", src: "/formats/tusy/tusy3.jpg" },
-        { type: "image", src: "/formats/tusy/tusy4.jpg" },
-        { type: "image", src: "/formats/tusy/tusy5.jpg" },
+        { type: "video", src: "/formats/tusy/hero_web_8s.mp4" },
       ],
     },
     {

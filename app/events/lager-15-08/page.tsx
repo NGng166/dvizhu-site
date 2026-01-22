@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
 import SocialPopup from "../../components/SocialPopup";
+import Link from "next/link";
 
 const photos = [
   { src: "/lager-15-08/p1.jpg", alt: "Девушки в лагере" },
@@ -12,6 +14,7 @@ const photos = [
 ];
 
 export default function LagerPage() {
+  const router = useRouter();
   return (
     <main className="bg-gray-900 text-white min-h-screen px-6 sm:px-16 md:px-32 py-16">
 
@@ -35,7 +38,7 @@ export default function LagerPage() {
       </section>
 
       {/* Основной текст */}
-      <section className="max-w-3xl mx-auto mb-12 sm:mb-20 space-y-4 sm:space-y-6 text-lg leading-relaxed text-justify">
+      <section className="max-w-4xl mx-auto mb-12 sm:mb-20 space-y-4 sm:space-y-6 text-lg leading-relaxed text-justify">
         <p className="indent-6">
           Эта смена стала настоящей перезагрузкой лета. Новая площадка, живописный берег реки Белая, корпус или палатка на выбор – всё для того, чтобы уехать от города и полностью погрузиться в атмосферу лагеря.
         </p>
@@ -60,40 +63,35 @@ export default function LagerPage() {
       </section>
 
       {/* Навигация */}
-      <section className="pt-8 sm:pt-12 pb-16 px-6 sm:px-16 md:px-32">
+      <section className="pb-16 mt-12">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
-
-          {/* К формату «Лагерь» — стрелка */}
-          <Link
-            href="/formats/lager#format-events"
-            aria-label="К мероприятиям формата"
-            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center text-2xl font-bold leading-none hover:bg-white hover:text-black transition"
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
+            className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
           >
             ←
-          </Link>
+          </button>
 
-          {/* К форматам */}
           <Link
             href="/#formats"
-            className="px-6 py-3 border border-white rounded-lg flex items-center justify-center leading-none hover:bg-white hover:text-black transition"
+            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition"
           >
             К форматам
           </Link>
 
-          {/* Все мероприятия */}
           <Link
             href="/events"
-            className="px-6 py-3 bg-white text-black rounded-lg flex items-center justify-center leading-none hover:bg-gray-200 transition"
+            className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
           >
             Все мероприятия
           </Link>
-
         </div>
       </section>
 
-      {/* Попап социальных сетей */}
+      {/* Соцсети */}
       <SocialPopup />
-
     </main>
   );
 }

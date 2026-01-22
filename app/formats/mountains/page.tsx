@@ -37,25 +37,25 @@ export default function MountainsPage() {
     },
     events: [
       {
-        title: "Айгир",
+        title: "г. Айгир",
         date: "1–2 марта 2025",
         slug: "aygir-01-03",
         image: "/aygir-01-03/aygir-01-03.jpg",
       },
       {
-        title: "Зюраткуль",
+        title: "г. Зюраткуль",
         date: "10-11 августа 2024",
         slug: "zura-10-08",
         image: "/zura-10-08/zura-10-08.jpg",
       },
       {
-        title: "Малиновая",
+        title: "г. Малиновая",
         date: "23-24 марта 2024",
         slug: "malinovaya-23-03",
         image: "/malinovaya-23-03/malinovaya-23-03.jpg",
       },
       {
-        title: "Зюраткуль",
+        title: "г. Зюраткуль",
         date: "7-8 октября 2023",
         slug: "zura-7-10",
         image: "/zura-7-10/zura-7-10.jpg",
@@ -65,6 +65,24 @@ export default function MountainsPage() {
         date: "18-19 июня 2022",
         slug: "malinovaya-18-06",
         image: "/malinovaya-18-06/malinovaya-18-06.jpg",
+      },
+      {
+        title: "г. Зигальга",
+        date: "26-27 февраля 2022",
+        slug: "zigal-26-02",
+        image: "/zigal-26-02/zigal-26-02.jpg",
+      },
+      {
+        title: "г. Зюраткуль",
+        date: "6-7 ноября 2021",
+        slug: "zura-6-11",
+        image: "/zura-6-11/zura-6-11.jpg",
+      },
+      {
+        title: "г. Иремель",
+        date: "16-17 октября 2021",
+        slug: "malinovaya-18-06",
+        image: "/iremel-16-10/iremel-16-10.jpg",
       },
     ],
   };

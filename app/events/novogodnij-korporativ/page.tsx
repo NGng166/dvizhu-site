@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Slider from "../../components/Slider";
 import SocialPopup from "../../components/SocialPopup";
 import Link from "next/link";
@@ -14,6 +15,7 @@ const photos = [
 ];
 
 export default function NewYearCorporatePage() {
+  const router = useRouter();
   const [openVideoId, setOpenVideoId] = useState<number | null>(null);
 
   return (
@@ -62,15 +64,18 @@ export default function NewYearCorporatePage() {
       </section>
       <section className="text-center mt-8 text-lg text-gray-300">
       </section>
+      
       {/* Навигация */}
-      <section className="pb-16">
+      <section className="pb-16 mt-12">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/formats/concerts#format-events"
+          
+          {/* Назад по истории */}
+          <button
+            onClick={() => router.back()}
             className="px-6 py-3 border border-white rounded-lg text-2xl font-bold hover:bg-white hover:text-black transition"
           >
             ←
-          </Link>
+          </button>
 
           <Link
             href="/#formats"
@@ -88,7 +93,7 @@ export default function NewYearCorporatePage() {
         </div>
       </section>
 
-      {/* Попап соцсетей */}
+      {/* Соцсети */}
       <SocialPopup />
     </main>
   );
