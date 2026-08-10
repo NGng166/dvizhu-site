@@ -1,37 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dvizhu
 
-## Getting Started
+A website for a youth community that organizes events, concert trips and fan meetups.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+https://dvizhu-site.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+DvizhUfa is a youth community built around Max Korzh's fan community.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The community organizes concert trips, meetups and other public events. The website serves as a place to present the community, showcase past and upcoming events, and provide dedicated pages with information and photos for each event.
 
-## Learn More
+The project was also created with future development in mind, including the possibility of adding online ticket sales for events.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Separate pages for individual events
+- Event descriptions and photo galleries
+- Different event formats and categories
+- Responsive layout
+- Animated interface elements
+- Custom 404 page
+- Deployed on Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# „¢¨¦-“ä "  
+- `app/events` - individual event pages
+- `app/formats` - different event formats
+- `app/components` - reusable UI components
+- `public` - images and other static assets
+
+## Planned Features
+
+- Online ticket purchasing
+- Expanded event management functionality
